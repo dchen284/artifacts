@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LogoutButton from './auth/LogoutButton';
+import LoginFormModal from './auth/LoginFormModal';
+import SignUpModal from './auth/SignUpModal';
 import styles from '../css-modules/NavBar.module.css'
 const NavBar = () => {
   // TODO: Turn Login into button once Modal is created
+  const [currentModal , setCurrentModal] = useState('');
+  console.log("mode", currentModal)
   const user = useSelector(state => state.session.user);
   
   return (
@@ -27,9 +31,10 @@ const NavBar = () => {
           {user ? 
           <LogoutButton />
           :
-          <NavLink to="/login" exact={true} activeClassName="active">
-          Login
-          </NavLink>
+          <>
+          <LoginFormModal setCurrentModal={setCurrentModal} isLogin={currentModal === 'login'}/>
+          <SignUpModal setCurrentModal={setCurrentModal} isSignup={currentModal === 'signup'}/>
+          </>
           }
         
           <NavLink to="/shopping-cart" className={styles.shoppingCart}>
