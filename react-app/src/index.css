@@ -1,1 +1,59 @@
 /* TODO Add site wide styles */
+* {
+    box-sizing: border-box;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  ol,
+  li,
+  ul,
+  div,
+  span,
+  body,
+  header,
+  nav {
+    font-size: 1rem;
+    color: inherit;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-weight: normal;
+    list-style-type: none;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  input,
+  textarea,
+  select {
+    border: 1px solid lightgray;
+  
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border: 1px solid gray;
+    box-shadow: 0 0 5px lightgray;
+  }
+
+  a{
+      text-decoration: none;
+  }
+  
