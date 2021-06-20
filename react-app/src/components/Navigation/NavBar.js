@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import LogoutButton from './auth/LogoutButton';
-import LoginFormModal from './auth/LoginFormModal';
-import SignUpModal from './auth/SignUpModal';
-import styles from '../css-modules/NavBar.module.css'
+import LoginFormModal from '../auth/LoginFormModal';
+import SignUpModal from '../auth/SignUpModal';
+import ProfileButton from './ProfileButton'
+import styles from '../../css-modules/NavBar.module.css'
 const NavBar = () => {
   // TODO: Turn Login into button once Modal is created
   const [currentModal , setCurrentModal] = useState('');
@@ -29,11 +29,17 @@ const NavBar = () => {
         </li>
         <li className={styles.rightMenu}>
           {user ? 
-          <LogoutButton />
+          <>
+            {/* <LogoutButton />  */}
+            <button className={styles.favoritesBtn}>
+              <i className="far fa-heart fa-lg" />
+            </button>
+            <ProfileButton user={user}/>
+          </>
           :
           <>
-          <LoginFormModal setCurrentModal={setCurrentModal} isLogin={currentModal === 'login'}/>
-          <SignUpModal setCurrentModal={setCurrentModal} isSignup={currentModal === 'signup'}/>
+            <LoginFormModal setCurrentModal={setCurrentModal} isLogin={currentModal === 'login'}/>
+            <SignUpModal setCurrentModal={setCurrentModal} isSignup={currentModal === 'signup'}/>
           </>
           }
         
@@ -41,17 +47,6 @@ const NavBar = () => {
             <i className="fas fa-shopping-cart fa-lg" />
           </NavLink>    
         </li>
-
-        {/* <li>
-          <NavLink to="/sign-up" exact={true} activeClassName="active">
-            Sign Up
-          </NavLink>
-        </li> */}
-        {/* <li>
-          <NavLink to="/users" exact={true} activeClassName="active">
-            Users
-          </NavLink>
-        </li> */}
         
       </ul>
     </nav>

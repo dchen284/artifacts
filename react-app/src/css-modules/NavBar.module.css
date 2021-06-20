@@ -9,23 +9,69 @@
 }
 
 
-/* Right Menu (Login, Profile, Shopping Cart) */
+/*** Right Menu (Login, Profile, Shopping Cart) ***/
 .rightMenu{
     display: flex;
-    margin: 10px;
 }
+
+/* Profile */
+.profileMenu{
+    position: relative;
+}
+
+.dropDown{
+    background: white;
+    border: 1px solid lightgray;
+    width: 150px;
+    position: absolute;
+    right: 0px;
+}   
+
+.dropDown li:hover{
+    background: rgb(209, 209, 209);
+}
+
+.profileBtn,
+.favoritesBtn,
+.shoppingCart{
+    width: 40px;
+    height: 40px;
+    background:transparent;
+    transition: .2s ease-in;
+}
+
+.logoutBtn{
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+}
+
+/* Shopping cart */
+.shoppingCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileBtn:hover,
+.favoritesBtn:hover,
+.shoppingCart:hover{
+    background: rgb(209, 209, 209);
+    transition: .2s ease-in;
+}
+
 
 /* Searchbar */
 .searchContainer{
     width: 75vw;
     display: flex;
-
+    margin: 0px 10px;
 }
 
 .searchBar{
     display: flex;
     width: 100%;
-    height: 35px;
+    height: 40px;
 }
 
 .searchBar input{
@@ -51,11 +97,7 @@
 
 
 
-/* Shopping cart */
-.shoppingCart{
-}
-
-
+/* MEDIA QUERIES */
 @media screen and (max-width: 600px){
     .navItems{
         flex-wrap: wrap;
