@@ -7,7 +7,17 @@ def seed_users():
     demo = User(username='Demo', email='demo@aa.io',
                 password='password')
 
-    db.session.add(demo)
+    u1 = User(username='CarmenSandiego', email='carmen@sandiego.com', password='123123')
+    u2 = User(username='MrsFrizzle', email='frizzle@magicschoolbus.com', password='123123')
+    u3 = User(username='MartyMcFly', email='marty@mcfly.com', password='123123')
+    u4 = User(username='DrEmmetBrown', email='emmet@brown.com', password='123123')
+    u5 = User(username='TheProtagonist', email='protagonist@tennet.com', password='123123')
+    u6 = User(username='MrCage', email='nation@treasure.com', password='123123')
+    
+    users = [demo, u1, u2, u3, u4, u5, u6]
+
+    for user in users:
+        db.session.add(user)
 
     db.session.commit()
 
