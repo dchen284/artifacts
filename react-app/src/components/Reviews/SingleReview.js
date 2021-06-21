@@ -17,12 +17,21 @@ function SingleReview() {
     }, [dispatch])
 
 
+
     return (
-        <div class='outer-div'>
+        <div className='outer-div'>
             <div>
-                <li>{reviews.map((review) => review.content)}</li>
+                {reviews.map((review) => 
+                <div className='reviewsAll'>
+                    <li>ID: {review.id}</li>
+                    <li>Rating: {review.rating}</li>
+                    <li>{review.content}</li>
+                    <li>User ID: {review.userId}</li>
+                    <li>Product ID: {review.productId}</li>
+                </div>)}
             </div>
-            <div class="rate">
+            {/* the stars: */}
+            <div className="rate">
                 <input type="radio" id="star5" name="rate" value="5" />
                 <label for="star5" title="text">5 stars</label>
                 <input type="radio" id="star4" name="rate" value="4" />
