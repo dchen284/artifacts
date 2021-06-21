@@ -10,7 +10,7 @@ const LogoutButton = () => {
 
   };
 
-  return <button className={styles.logoutBtn}onClick={onLogout}>
+  return <button className={styles.dropDownBtn}onClick={onLogout}>
           <span>Logout</span>
           <i className="fas fa-sign-out-alt" />
         </button>;
