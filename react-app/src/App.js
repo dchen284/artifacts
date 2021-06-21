@@ -43,9 +43,9 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <Route path="/:category" exact={true}>
+        {/* <Route path="/:category" exact={true}>
           <Listings />
-        </Route>
+        </Route> */}
         <Route path="/reviews" exact={true}>
           <SingleReview />
         </Route>

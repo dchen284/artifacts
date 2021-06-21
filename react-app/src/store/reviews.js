@@ -42,6 +42,24 @@ export const getReviews = () => async (dispatch) => {
     }
 }
 
+export const createReview = (review) => async (dispatch) => {
+    const { rating, content, userId, productId } = review;
+    const res = await fetch(`/api/reviews/${review.id}`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            rating,
+            content
+        })
+    });
+
+    if(res.ok) {
+        const data = await res.json();
+        dispatch(addReview(data.reviews));
+        return data;
+    }
+}
+
 // reducers
 
 const initialState = {}
@@ -54,6 +72,10 @@ const reviewsReducer = (state = initialState, action) => {
             action.reviews.forEach((review) => {
                 newState[review.id] = review;
             });
+            return newState
+        case ADD_REVIEW:
+            newState = Object.assign({}, state);
+            newState[action.payload.id] = action.payload;
             return newState
         default:
             return state;
