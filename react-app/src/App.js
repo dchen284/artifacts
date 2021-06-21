@@ -39,8 +39,7 @@ function App() {
           <h1>Splash Page</h1>
         </Route>
         <Route path="/login" exact={true}>
-          <LoginForm
-          />
+          <LoginForm />
         </Route>
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
@@ -52,7 +51,7 @@ function App() {
           <SingleReview />
         </Route>
         <ProtectedRoute path="/users" exact={true}>
-          <UsersList/>
+          <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
