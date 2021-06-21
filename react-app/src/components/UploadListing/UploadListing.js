@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect, useHistory } from 'react-router';
 import styles from '../../css-modules/UploadListing.module.css'
 
 export default function UploadListing({ setCurrentModal }) {
     const dispatch = useDispatch();
+    const history = useHistory();
     const user = useSelector(state => state.session.user);
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState(0);
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState('');
     const [image, setImage] = useState(null);
-    const [categoryId, setCategoryId] = useState('');
+    const [categoryId, setCategoryId] = useState('1');
+    console.log(categoryId)
 
     const updateImage = (e) => {
         const file = e.target.files[0];
@@ -39,13 +42,18 @@ export default function UploadListing({ setCurrentModal }) {
         Category: ${product.get('categoryId')},
         `)
 
-        setCurrentModal('');
-
-        const res = await fetch('/api/s3/upload', {
+        const res = await fetch('/api/category/new-product', {
             method: "POST",
             body: product,
         });
-        console.log('response', await res.json());
+        const data = await res.json();
+
+        if(data){
+            console.log('Data', 'Test')
+            history.push('/')
+            setCurrentModal('');
+        }
+
     }
 
     return (
