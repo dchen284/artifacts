@@ -1,20 +1,20 @@
-// import ListingsNavBar from "./ListingsNavBar";
-// import ListingGrid from "./ListingGrid";
-// import React from "react";
+import ListingsNavBar from "./ListingsNavBar";
+import ListingGrid from "./ListingGrid";
+import React from "react";
 
 
-// const Listings = () => {
+const Listings = () => {
 
 
-//   return (
-//     <>
-//       {/* <ListingsNavBar /> */}
-//       <div>
-//         <ListingGrid />
-//       </div>
-//     </>
-//   )
-// }
+  return (
+    <>
+      {/* <ListingsNavBar /> */}
+      <div>
+        <ListingGrid />
+      </div>
+    </>
+  )
+}
 
 
-// export default Listings
+export default Listings

@@ -1,12 +1,12 @@
-// import React from "react";
+import React from "react";
 
-// const ProductDisplay = ({product}) => {
-//   return (
-//     <div className='productDisplay__container'>
+const ProductDisplay = ({product}) => {
+  return (
+    <div className='productDisplay__container'>
 
-//     </div>
-//   )
-// }
+    </div>
+  )
+}
 
 
-// export default ProductDisplay
+export default ProductDisplay
