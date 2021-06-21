@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+
 
 const ProductDisplay = ({product}) => {
   return (
@@ -9,3 +10,4 @@ const ProductDisplay = ({product}) => {
 }
 
 export default ProductDisplay;
+
