@@ -39,6 +39,7 @@ export const getReviews = () => async (dispatch) => {
     if(res.ok) {
         const reviews = await res.json();
         dispatch(loadReviews(reviews));
+        console.log(reviews)
         return res;
     }
 }

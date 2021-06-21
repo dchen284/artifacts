@@ -9,8 +9,7 @@ function SingleReview() {
     const dispatch = useDispatch();
     const reviewState = useSelector(state => state.reviews)
     const reviews = Object.values(reviewState);
-    const currentState = useSelector(state => console.log(state))
-    currentState()
+    
     console.log(reviews)
 
     useEffect(() => {
