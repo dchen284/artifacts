@@ -1,3 +1,5 @@
+import React from "react";
+
 const ProductDisplay = ({product}) => {
   return (
     <div className='productDisplay__container'>
@@ -5,3 +7,5 @@ const ProductDisplay = ({product}) => {
     </div>
   )
 }
+
+export default ProductDisplay;

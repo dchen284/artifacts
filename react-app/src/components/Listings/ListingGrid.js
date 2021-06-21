@@ -18,7 +18,7 @@ const ListingGrid = () => {
   return (
    <div className='listingGrid__container'>
      {products?.map(product => {
-       return <ProductDisplay product={product}/>
+       return <ProductDisplay product={product} key={product.id}/>
      })}
 
    </div>

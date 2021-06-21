@@ -5,13 +5,14 @@ import LoginFormModal from '../auth/LoginFormModal';
 import SignUpModal from '../auth/SignUpModal';
 import UploadListingModal from '../UploadListing/UploadListingModal'
 import ProfileButton from './ProfileButton'
+import SearchBar from './SearchBar';
 import styles from '../../css-modules/NavBar.module.css'
 const NavBar = () => {
   // TODO: Turn Login into button once Modal is created
   const [currentModal , setCurrentModal] = useState('');
   console.log("mode", currentModal)
   const user = useSelector(state => state.session.user);
-  
+
   return (
     <nav>
       <ul className={styles.navItems}>
@@ -23,16 +24,17 @@ const NavBar = () => {
             Explore
           </NavLink>
         </li>
-        <li className={styles.searchContainer}>
+        {/* <li className={styles.searchContainer}>
           <div className={styles.searchBar}>
             <input type="text" placeholder="Search for anything"/>
             <button>
               <i className="fas fa-search fa-lg" />
-            </button>    
+            </button>
           </div>
-        </li>
+        </li> */}
+        <SearchBar />
         <li className={styles.rightMenu}>
-          {user ? 
+          {user ?
           <>
             {/* <LogoutButton />  */}
             <button className={styles.favoritesBtn}>
@@ -47,12 +49,12 @@ const NavBar = () => {
             <SignUpModal setCurrentModal={setCurrentModal} isSignup={currentModal === 'signup'}/>
           </>
           }
-        
+
           <NavLink to="/shopping-cart" className={styles.shoppingCart}>
             <i className="fas fa-shopping-cart fa-lg" />
-          </NavLink>    
+          </NavLink>
         </li>
-        
+
       </ul>
     </nav>
   );
