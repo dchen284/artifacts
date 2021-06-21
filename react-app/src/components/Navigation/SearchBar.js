@@ -11,8 +11,14 @@ const SearchBar = () => {
     setSearchTerm(e.target.value);
   }
 
-  const searchForTerm = async (e) => {
+  const searchForTerm = async () => {
     history.push(`/search/${searchTerm}`);
+  }
+
+  const checkForEnter = (e) => {
+    if (e.key === 'Enter') {
+      searchForTerm();
+    }
   }
 
     return (
@@ -24,6 +30,7 @@ const SearchBar = () => {
             placeholder="Search for anything"
             value={searchTerm}
             onChange={updateSearchTerm}
+            onKeyPress={checkForEnter}
             />
             <button onClick={searchForTerm}>
               <i className="fas fa-search fa-lg" />
