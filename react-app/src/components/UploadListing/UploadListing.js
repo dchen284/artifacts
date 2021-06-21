@@ -17,7 +17,7 @@ export default function UploadListing({ setCurrentModal }) {
         setImage(file);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         //TODO: dispatch thunk action creator - set up thunk action creator in the store
         e.preventDefault();
         const product = new FormData();
@@ -40,6 +40,12 @@ export default function UploadListing({ setCurrentModal }) {
         `)
 
         setCurrentModal('');
+
+        const res = await fetch('/api/s3/upload', {
+            method: "POST",
+            body: product,
+        });
+        console.log('response', await res.json());
     }
 
     return (
