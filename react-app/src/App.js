@@ -46,6 +46,7 @@ function App() {
         </Route>
         <Route path="/:category" exact={true}>
           <Listings />
+        </Route>
         <Route path="/reviews" exact={true}>
           <SingleReview />
         </Route>
