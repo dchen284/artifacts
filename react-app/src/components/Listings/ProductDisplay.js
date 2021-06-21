@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ProductDisplay = ({product}) => {
   return (
     <div className='productDisplay__container'>
@@ -9,3 +10,4 @@ const ProductDisplay = ({product}) => {
 }
 
 export default ProductDisplay;
+
