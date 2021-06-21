@@ -35,10 +35,9 @@ const removeReview = (id) => {
 
 export const getReviews = () => async (dispatch) => {
     const res = await fetch('/api/reviews');
-    console.log(res)
     if(res.ok) {
         const reviews = await res.json();
-        dispatch(loadReviews(reviews));
+        dispatch(loadReviews(reviews.reviews));
         return res;
     }
 }
