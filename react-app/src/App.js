@@ -38,19 +38,19 @@ function App() {
           <h1>Splash Page</h1>
         </Route>
         <Route path="/login" exact={true}>
-          <LoginForm
-          />
+          <LoginForm />
         </Route>
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
         <Route path="/:category" exact={true}>
           <Listings />
+        </Route>
         <Route path="/reviews" exact={true}>
           <SingleReview />
         </Route>
         <ProtectedRoute path="/users" exact={true}>
-          <UsersList/>
+          <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
