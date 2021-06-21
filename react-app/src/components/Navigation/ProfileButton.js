@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
+import UploadListingModal from '../UploadListing/UploadListingModal'
 import styles from '../../css-modules/NavBar.module.css';
 
-export default function ProfileButton({user}) {
+export default function ProfileButton({user, setCurrentModal}) {
     const [showMenu, setShowMenu] = useState(false);
 
     useEffect(() => {
@@ -32,6 +33,11 @@ export default function ProfileButton({user}) {
                         {user.username}
                         <div>View your profile</div>
                     </NavLink>
+                </li>
+                <li>
+                    <button className={styles.dropDownBtn} onClick={() => {
+                    setCurrentModal('upload');
+                    }}>Add Listing</button>
                 </li>
                 <li>
                     <LogoutButton />
