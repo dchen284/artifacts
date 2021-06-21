@@ -14,7 +14,10 @@ def seed_users():
     u5 = User(username='TheProtagonist', email='protagonist@tennet.com', password='123123')
     u6 = User(username='MrCage', email='nation@treasure.com', password='123123')
     
-    db.session.add(demo)
+    users = [demo, u1, u2, u3, u4, u5, u6]
+
+    for user in users:
+        db.session.add(user)
 
     db.session.commit()
 
