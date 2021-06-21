@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
+import Listings from "./components/Listings";
 import NavBar from "./components/Navigation/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
@@ -23,7 +24,7 @@ function App() {
   }, []);
 
   if (!loaded) {
-    // TODO: Maybe add a loading animation in place of null? 
+    // TODO: Maybe add a loading animation in place of null?
     return null;
   }
 
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
+        </Route>
+        <Route path="/:category" exact={true}>
+          <Listings />
         </Route>
         <ProtectedRoute path="/users" exact={true}>
           <UsersList/>
