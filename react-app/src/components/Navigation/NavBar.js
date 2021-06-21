@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignUpModal from '../auth/SignUpModal';
+import UploadListingModal from '../UploadListing/UploadListingModal'
 import ProfileButton from './ProfileButton'
 import SearchBar from './SearchBar';
 import styles from '../../css-modules/NavBar.module.css'
@@ -18,6 +19,9 @@ const NavBar = () => {
         <li className={styles.leftMenu}>
           <NavLink to="/" exact={true} activeClassName="active">
             Artifacts
+          </NavLink>
+          <NavLink to="/Prehistoric" exact={true} activeClassName="active">
+            Explore
           </NavLink>
         </li>
         {/* <li className={styles.searchContainer}>
@@ -36,7 +40,8 @@ const NavBar = () => {
             <button className={styles.favoritesBtn}>
               <i className="far fa-heart fa-lg" />
             </button>
-            <ProfileButton user={user}/>
+            <ProfileButton user={user} setCurrentModal={setCurrentModal}/>
+            <UploadListingModal setCurrentModal={setCurrentModal} isUpload={currentModal === 'upload'}/>
           </>
           :
           <>

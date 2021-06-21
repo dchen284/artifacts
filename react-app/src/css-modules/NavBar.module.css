@@ -6,6 +6,11 @@
 /* Logo */
 .leftMenu{
     margin: 10px;
+    display: flex;
+}
+
+.leftMenu a{
+    margin: 0 10px;
 }
 
 
@@ -40,7 +45,7 @@
     transition: .2s ease-in;
 }
 
-.logoutBtn{
+.dropDownBtn{
     width: 100%;
     padding: 10px;
     background: transparent;
