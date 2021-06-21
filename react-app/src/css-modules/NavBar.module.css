@@ -1,0 +1,113 @@
+.navItems{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+/* Logo */
+.leftMenu{
+    margin: 10px;
+}
+
+
+/*** Right Menu (Login, Profile, Shopping Cart) ***/
+.rightMenu{
+    display: flex;
+}
+
+/* Profile */
+.profileMenu{
+    position: relative;
+}
+
+.dropDown{
+    background: white;
+    border: 1px solid lightgray;
+    width: 150px;
+    position: absolute;
+    right: 0px;
+}   
+
+.dropDown li:hover{
+    background: rgb(209, 209, 209);
+}
+
+.profileBtn,
+.favoritesBtn,
+.shoppingCart{
+    width: 40px;
+    height: 40px;
+    background:transparent;
+    transition: .2s ease-in;
+}
+
+.logoutBtn{
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+}
+
+/* Shopping cart */
+.shoppingCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileBtn:hover,
+.favoritesBtn:hover,
+.shoppingCart:hover{
+    background: rgb(209, 209, 209);
+    transition: .2s ease-in;
+}
+
+
+/* Searchbar */
+.searchContainer{
+    width: 75vw;
+    display: flex;
+    margin: 0px 10px;
+}
+
+.searchBar{
+    display: flex;
+    width: 100%;
+    height: 40px;
+}
+
+.searchBar input{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.searchBar button{
+    border: 1px solid black;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.searchBar input,
+.searchBar button{
+    padding: 5px;
+}
+
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px){
+    .navItems{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .searchContainer{
+        order: 3;
+        width: 100vw;
+        margin: 10px 0px;
+    }
+ 
+}

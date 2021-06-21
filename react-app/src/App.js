@@ -3,14 +3,14 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navigation/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./store/session";
 
 function App() {
-  // const [authenticated, setAuthenticated] = useState(false);
+  // TODO: Login and Signup forms should be modals
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
   const [loaded, setLoaded] = useState(false);
@@ -31,6 +31,10 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
+        {/* Removed protected route so it wouldn't redirect to login */}
+        <Route exact path="/" exact={true} >
+          <h1>Splash Page</h1>
+        </Route>
         <Route path="/login" exact={true}>
           <LoginForm
           />
@@ -44,8 +48,8 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} >
-          <h1>My Home Page</h1>
+        <ProtectedRoute path="/shopping-cart" exact={true}>
+          <h1>Shopping Cart</h1>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
