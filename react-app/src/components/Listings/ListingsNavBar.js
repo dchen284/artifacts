@@ -4,10 +4,10 @@ import React from "react";
 const ListingsNavBar = () => {
   return (
     <ul className='categories__navlinks'>
-      <NavLink to='/Prehistoric'>Prehistoric</NavLink>
-      <NavLink to='/Antiquities'>Antiquities</NavLink>
-      <NavLink to='/Modern'>Modern</NavLink>
-      <NavLink to='/Future'>Future</NavLink>
+      <NavLink to={'/category/Prehistoric'}>Prehistoric</NavLink>
+      <NavLink to='/category/Antiquities'>Antiquities</NavLink>
+      <NavLink to='/category/Modern'>Modern</NavLink>
+      <NavLink to='/category/Future'>Future</NavLink>
     </ul>
   )
 }

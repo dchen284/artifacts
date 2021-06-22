@@ -8,7 +8,7 @@ const Listings = () => {
 
   return (
     <>
-      {/* <ListingsNavBar /> */}
+      <ListingsNavBar />
       <div>
         <ListingGrid />
       </div>
