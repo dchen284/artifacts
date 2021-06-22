@@ -1,0 +1,60 @@
+.landingContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.welcomeContainer {
+    width: 95%;
+    height: 300px;
+    background-image: url('../components/LandingPage/images/pocket-watch.jpeg');
+    background-size: cover;
+    background-position: left 30% top 10%;
+    /* transform: rotateY(180deg); */
+    margin: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.welcomeTextBox{
+    background: rgb(0,0,0,.5);
+    margin-right: 100px;
+    box-shadow: 0px 0px 10px 10px rgb(0,0,0,.5);
+    padding: 15px;
+}
+
+.header,
+.subHeader{
+    color: white;
+    text-align: right;
+    /* background: rgb(0,0,0,.5); */
+
+}
+
+.header {
+    font-size: 4.3em;
+}
+.subHeader{
+    font-size: 1.5em;
+}
+
+/* Categories carousel images */
+
+.categoryBox {
+    height: 300px;
+    width: 95%;
+}
+
+.singleCategory {
+    height: 300px;
+    width: 100%;
+    background-image: url('../components/LandingPage/images/egypt.jpeg');
+    background-size: cover;
+}
+.singleCategory img {
+    height: 100%;
+}
