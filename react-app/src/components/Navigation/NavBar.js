@@ -20,7 +20,7 @@ const NavBar = () => {
           <NavLink to="/" exact={true} activeClassName="active">
             Artifacts
           </NavLink>
-          <NavLink to="/Prehistoric" exact={true} activeClassName="active">
+          <NavLink to="/category/Prehistoric" exact={true} activeClassName="active">
             Explore
           </NavLink>
         </li>

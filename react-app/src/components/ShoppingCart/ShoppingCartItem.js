@@ -21,7 +21,7 @@ const ShoppingCartItem = () => {
     return (
         <div className="shopping_cart__item">
             <div>Item</div>
-            <div>In Stock?  Stock Number?  Just a few left?</div>
+            <div>In Stock / Order Soon (on less than 10) / 0</div>
             <label htmlFor="quantity">Quantity:</label>
             <select name="quantity" id="quantity">
                 <option value="0">0 (Delete From Cart)</option>
@@ -29,6 +29,7 @@ const ShoppingCartItem = () => {
                 <option value="2">2</option>
                 <option value="3">3</option>
             </select>
+            <div>Total for this item (quantity*item price)</div>
             <button>Delete Item</button>
         </div>
     )

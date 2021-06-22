@@ -15,13 +15,14 @@ class Product(db.Model):
   user = db.relationship("User", back_populates="products")
   category = db.relationship("Category", back_populates="products")
   reviews = db.relationship("Review", back_populates="product")
+  shopping_cart_items = db.relationship("ShoppingCartItem", back_populates="products")
 
   def to_dict(self):
     return {
       "id": self.id,
       "quantity": self.quantity,
       "price": self.price,
-      "name": self.name, 
+      "name": self.name,
       "description": self.description,
       "imgURL": self.imgURL,
       "userId": self.userId,

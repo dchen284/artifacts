@@ -11,7 +11,7 @@ function SingleReview() {
     const dispatch = useDispatch();
     const reviewState = useSelector(state => state.reviews)
     const reviews = Object.values(reviewState);
-    
+
     console.log(reviews)
 
     useEffect(() => {
@@ -23,8 +23,8 @@ function SingleReview() {
     return (
         <div className='outer-div'>
             <div>
-                {reviews.map((review) => 
-                <div className='reviewsAll'>
+                {reviews.map((review) =>
+                <div className='reviewsAll' key={review.id}>
                     <li>ID: {review.id}</li>
                     <li>Rating: {review.rating}</li>
                     <li>{review.content}</li>

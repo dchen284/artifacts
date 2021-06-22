@@ -13,7 +13,8 @@ class User(db.Model, UserMixin):
   products = db.relationship("Product", back_populates="user")
   reviews = db.relationship("Review", back_populates="user")
   orders = db.relationship("Order", back_populates="user")
-  
+  shopping_cart_items = db.relationship("ShoppingCartItem", back_populates="user")
+
   @property
   def password(self):
     return self.hashed_password

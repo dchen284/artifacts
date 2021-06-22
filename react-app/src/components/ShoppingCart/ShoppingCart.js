@@ -4,35 +4,54 @@ import './ShoppingCart.css';
 
 const ShoppingCart = () => {
 
-    // make shopping_cart_items model and seeder
+    // post route for shopping_cart_items
     // get route for shopping_cart_items
+
 
     // for single product page:
         // what shows when there is no inventory?
+            //disable button or show message hiding button
         // when is there an update on inventory?
+            //updated on checkout
+            //when going to single product page (already has this)
 
         // note: items added to cart are really "phantom items"
         // or "voucher" that may not be redeemable if no stock
 
     //what happens when "Add to Shopping Cart" is clicked?
+        // on the product page, we have the current quantity
+            // check availability
+                // disable the Checkout button if insufficient availability
+        //on clicking the Checkout
+            // render a component modal with links to cart and continue shopping (product listings page)
+                //(look into useHistory to go back?)
 
     //load ShoppingCartItems from database
-        //when?
+        //on login, or when app is loaded when logged in
 
 
     //checkout button goes to confirmation modal
-        //actions
+        //shows credits
+        //show total price
+        //confirm button
+        //cancel button (exit modal)
 
     //purchase button on confirmation modal
-        //actions
-        //redirect to root (on success? on fail?)
+        //for each shopping cart item, query for the given product to get the most up-to-date quantity
+            //check availability
+                //if there is not availaibity, close the modal, render the error
+                    //on the shopping cart page, checkout button is disabled
+                //if there is availability
+                    // create an order
+                    // update all product quantities
+                    // clear shopping_cart_items on backend
+                    // clear ShoppingCart component on frontend
+                    // redirect to root
 
-    //checks on inventory:
-        //when?
-            //maybe multiple checks?
-        //what happens if item is not available?
 
 
+    //get all items from shopping cart
+    //calculate price from quantity*product price
 
     //JSX
     return (
