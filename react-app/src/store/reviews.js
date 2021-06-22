@@ -13,7 +13,7 @@ const loadReviews = (reviews) => {
 const addReview = (review) => {
     return {
         type: ADD_REVIEW,
-        payload: review
+        review
     }
 }
 
@@ -44,18 +44,22 @@ export const getReviews = () => async (dispatch) => {
 
 export const createReview = (review) => async (dispatch) => {
     const { rating, content, userId, productId } = review;
-    const res = await fetch(`/api/reviews/${review.id}`, {
+
+    const formData = new FormData();
+    formData.append('rating', rating);
+    formData.append('content', content);
+    formData.append('userId', userId);
+    formData.append('productId', productId);
+
+    const res = await fetch(`/api/reviews/new_review`, {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({
-            rating,
-            content
-        })
+        body: formData
     });
 
     if(res.ok) {
         const data = await res.json();
-        dispatch(addReview(data.reviews));
+        console.log(data, "DATAAAAA")
+        dispatch(addReview(data));
         return data;
     }
 }
@@ -75,7 +79,7 @@ const reviewsReducer = (state = initialState, action) => {
             return newState
         case ADD_REVIEW:
             newState = Object.assign({}, state);
-            newState[action.payload.id] = action.payload;
+            newState[action.review.id] = action.review;
             return newState
         default:
             return state;

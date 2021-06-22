@@ -1,7 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+
 .rate {
     float: left;
     height: 46px;
@@ -38,6 +35,16 @@
     color: #c59b08;
 }
 
-.reviewsAll {
-    margin: 10px
+.review-box {
+    padding: 15px;
+}
+
+.submit-button {
+    margin: 5px;
+}
+
+.review-header {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px;
 }
