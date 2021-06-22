@@ -32,12 +32,18 @@ def create_review():
     return review.to_dict()
 
 
+# PUT /api/reviews/:reviewId
+@reviews_routes.route('/<int:reviewId>', methods=["PUT"])
+def update_review(reviewId):
+
+
 # DELETE /api/reviews/:reviewId
 @reviews_routes.route('/<int:reviewId>', methods=["DELETE"])
+@login_required
 def delete_review(reviewId):
     review = Review.query.get(reviewId)
     db.session.delete(review)
     db.session.commit()
 
-    return review.to_dict()
+    return jsonify("Success")
 
