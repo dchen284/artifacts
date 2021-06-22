@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { retrieveProduct } from '../../store/products';
+import ProductDetails from "./ProductDetails";
+import "./index.css"
 
 const ProductPage = () => {
   const { productId } = useParams();
@@ -18,7 +20,7 @@ const ProductPage = () => {
     <div>
       <div className='productPage__listing'>
         <img className='productPage__image' src={product?.imgURL} alt={product.name}/>
-        <div className='productPage__details' ></div>
+        <ProductDetails product={ product }/>
       </div>
     </div>
   )
