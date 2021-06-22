@@ -11,6 +11,8 @@ import NavBar from "./components/Navigation/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
+import SearchResults from "./components/search/SearchResults";
+import LandingPage from "./components/LandingPage/LandingPage"
 import SearchResults from "./components/Search/SearchResults";
 import ShoppingCart from "./components/ShoppingCart"
 import { authenticate } from "./store/session";
@@ -39,7 +41,7 @@ function App() {
       <Switch>
         {/* Removed protected route so it wouldn't redirect to login */}
         <Route exact path="/" exact={true} >
-          <h1>Splash Page</h1>
+          <LandingPage />
         </Route>
         <Route path="/login" exact={true}>
           <LoginForm />
