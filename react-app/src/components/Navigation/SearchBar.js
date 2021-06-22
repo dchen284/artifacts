@@ -4,23 +4,26 @@ import styles from '../../css-modules/NavBar.module.css'
 
 
 const SearchBar = () => {
+  //hooks
   const [searchTerm, setSearchTerm] = useState("");
   const history = useHistory();
 
-  const updateSearchTerm = (e) => {
-    setSearchTerm(e.target.value);
-  }
-
-  const searchForTerm = async () => {
-    history.push(`/search/${searchTerm}`);
-  }
-
-  const checkForEnter = (e) => {
+  //functions
+  const checkForEnter = (e) => { //allows Enter key to work for searchbar
     if (e.key === 'Enter') {
       searchForTerm();
     }
   }
 
+  const searchForTerm = async () => { //runs search
+    history.push(`/search/${searchTerm}`);
+  }
+
+  const updateSearchTerm = (e) => { //updates search term while typing (to be used with dynamic search)
+    setSearchTerm(e.target.value);
+  }
+
+  //JSX
     return (
         <li className={styles.searchContainer}>
           <div className={styles.searchBar}>
