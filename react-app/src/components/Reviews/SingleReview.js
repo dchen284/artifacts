@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { getReviews } from '../../store/reviews';
+import { getReviews, deleteReview } from '../../store/reviews';
 import './Review.css';
 
 
@@ -12,13 +12,14 @@ function SingleReview() {
     const reviewState = useSelector(state => state.reviews)
     const reviews = Object.values(reviewState);
 
-    console.log(reviews)
-
     useEffect(() => {
         dispatch(getReviews())
     }, [dispatch])
 
-
+    const handleDelete = async (id) => {
+        dispatch(deleteReview(id));
+        dispatch(getReviews())
+    }
 
     return (
         <div className='outer-div'>
@@ -32,6 +33,12 @@ function SingleReview() {
                     <li>Product ID: {review.productId}</li>
                     <div>
                         <button onClick={() => history.push(`/reviews/review_form/${review.productId}`)}>Review Form</button>
+                    </div>
+                    <div>
+                        <button>Edit Review</button>
+                    </div>
+                    <div>
+                        <button onClick={() => handleDelete(review.id)}>Delete Review</button>
                     </div>
                 </div>)}
             </div>

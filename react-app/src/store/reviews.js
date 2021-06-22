@@ -1,7 +1,7 @@
 const LOAD_REVIEWS = 'review/loadReviews';
 const ADD_REVIEW = 'review/addReview';
-// const EDIT_REVIEW = 'review/editReview';
-// const REMOVE_REVIEW = 'review/removeReview';
+const EDIT_REVIEW = 'review/editReview';
+const REMOVE_REVIEW = 'review/removeReview';
 
 const loadReviews = (reviews) => {
     return {
@@ -17,19 +17,19 @@ const addReview = (review) => {
     }
 }
 
-// const editReview = (review) => {
-//     return {
-//         type: EDIT_REVIEW,
-//         review
-//     }
-// }
+const editReview = (review) => {
+    return {
+        type: EDIT_REVIEW,
+        review
+    }
+}
 
-// const removeReview = (id) => {
-//     return {
-//         type: REMOVE_REVIEW,
-//         id
-//     }
-// }
+const removeReview = (id) => {
+    return {
+        type: REMOVE_REVIEW,
+        id
+    }
+}
 
 // THUNKS
 
@@ -64,6 +64,16 @@ export const createReview = (review) => async (dispatch) => {
     }
 }
 
+export const deleteReview = (id) => async (dispatch) => {
+    const res = await fetch(`/reviews/${id}`, {
+        method: 'DELETE'
+    })
+
+    if(res.ok) {
+        dispatch(removeReview(id))
+    }
+}
+
 // reducers
 
 const initialState = {}
@@ -80,6 +90,10 @@ const reviewsReducer = (state = initialState, action) => {
         case ADD_REVIEW:
             newState = Object.assign({}, state);
             newState[action.review.id] = action.review;
+            return newState
+        case REMOVE_REVIEW:
+            newState = { ...state }
+            delete newState[action.id]
             return newState
         default:
             return state;
