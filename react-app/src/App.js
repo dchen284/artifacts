@@ -6,6 +6,7 @@ import SignUpForm from "./components/auth/SignUpForm";
 import Listings from "./components/Listings";
 import ProductPage from "./components/ProductPage";
 import SingleReview from "./components/Reviews/SingleReview";
+import ReviewForm from "./components/Reviews/ReviewForm";
 import NavBar from "./components/Navigation/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
@@ -53,6 +54,9 @@ function App() {
         </Route>
         <Route path="/reviews" exact={true}>
           <SingleReview />
+        </Route>
+        <Route path="/reviews/review_form/:productId" exact={true}>
+          <ReviewForm />
         </Route>
         <ProtectedRoute path="/users" exact={true}>
           <UsersList />
