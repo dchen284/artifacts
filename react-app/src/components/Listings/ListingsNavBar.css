@@ -1,0 +1,37 @@
+.categories__navlinks
+{
+  display: flex;
+  width: 100vw;
+  text-align: center;
+  justify-content:center;
+  border-bottom: black solid 1px;
+  margin-bottom: 10px;
+}
+
+.categories__titles
+{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-bottom: none;
+  padding: 3px;
+  font-size: 20px;
+}
+
+.categories__titles > span
+{
+  font-size: 14px;
+  font-style: italic;
+}
+
+
+.modern-nav
+{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.antiquities-nav
+{
+  margin-left: 5px;
+}

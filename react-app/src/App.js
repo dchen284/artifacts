@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import Listings from "./components/Listings";
+import ProductPage from "./components/ProductPage";
 import SingleReview from "./components/Reviews/SingleReview";
 import NavBar from "./components/Navigation/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
@@ -46,6 +47,9 @@ function App() {
         </Route>
         <Route path="/category/:category" exact={true}>
           <Listings />
+        </Route>
+        <Route path="/products/:productId" exact={true}>
+          <ProductPage />
         </Route>
         <Route path="/reviews" exact={true}>
           <SingleReview />
