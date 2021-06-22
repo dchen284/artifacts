@@ -1,0 +1,27 @@
+.shopping_cart {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.shopping_cart__item {
+    border: 1px solid green;
+}
+
+.shopping_cart__item_display {
+    border: 1px solid black;
+    width: 70%;
+}
+
+.shopping_cart__summary {
+    border: 1px solid red;
+    width: 25%;
+}
+
+.shopping_cart__summary_divider {
+    border: 0;
+    height: 0;
+    width: 90%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}

@@ -4,13 +4,14 @@ import { useParams } from "react-router-dom";
 import { getProducts } from "../../store/products";
 import ProductDisplay from "./ProductDisplay";
 import React from "react";
+import "./ListingGrid.css"
 
 const ListingGrid = () => {
   const dispatch = useDispatch();
   const { category } = useParams();
   const products = Object.values(useSelector(state => state.products));
 
-  console.log(products, 'the state of things')
+
   useEffect(() => {
     dispatch(getProducts(category))
   }, [dispatch, category])

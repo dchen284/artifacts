@@ -4,13 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import Listings from "./components/Listings";
+import ProductPage from "./components/ProductPage";
 import SingleReview from "./components/Reviews/SingleReview";
+import ReviewForm from "./components/Reviews/ReviewForm";
 import NavBar from "./components/Navigation/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import SearchResults from "./components/search/SearchResults";
 import LandingPage from "./components/LandingPage/LandingPage"
+import SearchResults from "./components/Search/SearchResults";
+import ShoppingCart from "./components/ShoppingCart"
 import { authenticate } from "./store/session";
 
 function App() {
@@ -48,8 +52,14 @@ function App() {
         <Route path="/category/:category" exact={true}>
           <Listings />
         </Route>
+        <Route path="/products/:productId" exact={true}>
+          <ProductPage />
+        </Route>
         <Route path="/reviews" exact={true}>
           <SingleReview />
+        </Route>
+        <Route path="/reviews/review_form/:productId" exact={true}>
+          <ReviewForm />
         </Route>
         <ProtectedRoute path="/users" exact={true}>
           <UsersList />
@@ -58,7 +68,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path="/shopping-cart" exact={true}>
-          <h1>Shopping Cart</h1>
+          <ShoppingCart />
         </ProtectedRoute>
         <Route path="/search/:searchTerm">
           <SearchResults />

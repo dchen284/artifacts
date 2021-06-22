@@ -9,7 +9,7 @@ const Listings = () => {
   return (
     <>
       <ListingsNavBar />
-      <div>
+      <div className='ListingsPage__container'>
         <ListingGrid />
       </div>
     </>
