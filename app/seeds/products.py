@@ -3,7 +3,7 @@ from app.models import db, Product
 def seed_products():
     # skeleton => Product(quantity=, price=, name='', description='', imgURL='', userId=, categoryId=)
 
-    # Prehistoric 
+    # Prehistoric
     p1 = Product(
         name='Authentic Saber-Tooth Tiger Cub',
         quantity=20, price=10000, userId=1, categoryId=1,
@@ -31,7 +31,7 @@ def seed_products():
     a1 = Product(
         name='Original "Fifty Raids of Gray"',
         quantity=100, price=250, userId=1, categoryId=2,
-        imgURL='https://media.istockphoto.com/photos/dead-sea-scroll-replica-picture-id1024215380',
+        imgURL='https://www.judaicawebstore.com/media/catalog/product/Assets/NewProductImages/product_page_image_large_no_frame/D/e/Deluxe-Megilat-Esther-Scroll-JT-7102-7103-2_large.jpg',
         description='''Rescued from the Greaty Library of Alexandria right
             before the great fire, these are original copies of the
             great romance novel, "Fifty Raids of Gray"!  Professional
@@ -51,7 +51,7 @@ def seed_products():
     a3 = Product(
         name='THE Sphinx\'s Nose',
         quantity=1, price=9000000, userId=1, categoryId=2,
-        imgURL='http://images.artparks.co.uk/sculpture/lrg_img/artpark_sculpture_will_davies_nose_1.jpg',
+        imgURL='https://chairish-prod.global.ssl.fastly.net/image/product/master/86266890-c840-4b81-bde6-86e10a95c4e8',
         description='''Q: What happened to the Sphinx\'s nose?  A: It needed
             to spice up your living space!  Originally lost in time, our
             crack team of time-travelling procurement agents have been able
@@ -66,7 +66,7 @@ def seed_products():
     m1 = Product(
         name='Prohibition Era Bootlegger\'s Wine',
         quantity=200, price=50, userId=1, categoryId=3,
-        imgURL='https://www.thevintagenews.com/2015/07/28/when-america-went-dry-23-awesome-facts-about-prohibition-era/',
+        imgURL='https://www.thevintagenews.com/wp-content/uploads/2015/07/Prohibition-small.jpg',
         description='''Bring the spirit of the 1920s to your table!  This
             bespoke wine was made under the cover of night, with a secret
             recipe, and brought to you from the Prohibition Era.  This
@@ -75,14 +75,15 @@ def seed_products():
             and/or death.''',
     )
     m2 = Product(quantity=5, price=450, name="Malcom X's Glasses", description='', imgURL='https://i.pinimg.com/originals/a1/4b/cb/a14bcb3e4eab84a87b717a38f36eae1c.jpg', userId=4, categoryId=3)
-    m3 = Product(quantity=20, price=600, name='Bose Quietcomfort Headphones', description='Noise cancelling still works! Made in 2010.', 
-        imgURL='https://snpi.dell.com/snp/images/products/large/en-us~A9895712/A9895712.jpg', 
-        userId=4, 
+    m3 = Product(quantity=20, price=600, name='Bose Quietcomfort Headphones', description='Noise cancelling still works! Made in 2010.',
+        imgURL='https://snpi.dell.com/snp/images/products/large/en-us~A9895712/A9895712.jpg',
+        userId=4,
         categoryId=3)
     m4 = Product(quantity=50, price=200, name='Birkenstock sandals', description='Never goes out of style. 100 percent real vegan leather',
          imgURL='https://content.backcountry.com/images/items/900/BRK/BRK0039/HABOILLEA.jpg',
          userId=5, categoryId=3)
-    m5 = Product(quantity=1, price=900000, name='The Declaration of Independence', description='They say something interesting happens when you rub lemon juice on the back...' , imgURL='', userId=6, categoryId=2)
+    m5 = Product(quantity=1, price=900000, name='The Declaration of Independence', description='They say something interesting happens when you rub lemon juice on the back...' ,
+         imgURL='https://library.wustl.edu/wp-content/uploads/2016/07/160624_jwb_declaration_of_independence_003-1024x691.jpg', userId=6, categoryId=3)
 
     # Future
     f1 = Product(
@@ -101,17 +102,16 @@ def seed_products():
     # f5 = Product(quantity=1, price=1, name='', description='', imgURL='', userId=6, categoryId=4)
 
     products = [
-        p1, p2, 
-        a1, a2, a3, 
+        p1, p2,
+        a1, a2, a3,
         m1, m2, m3, m4, m5,
         f1,
     ]
     for product in products:
         db.session.add(product)
-    
+
     db.session.commit()
 
 def undo_products():
     db.session.execute('TRUNCATE products RESTART IDENTITY CASCADE;')
     db.session.commit()
-    
