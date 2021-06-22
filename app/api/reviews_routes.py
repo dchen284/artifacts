@@ -35,6 +35,18 @@ def create_review():
 # PUT /api/reviews/:reviewId
 @reviews_routes.route('/<int:reviewId>', methods=["PUT"])
 def update_review(reviewId):
+    review = Review.query.get(reviewId)
+
+    form = ReviewForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    form['userId'].data = review.userId
+    form['productId'].data = review.productId
+
+    if form.validate():
+        form.populate_obj(review)
+        db.session.commit()
+        
+    return review.to_dict()
 
 
 # DELETE /api/reviews/:reviewId

@@ -21,6 +21,15 @@ function SingleReview() {
         dispatch(getReviews())
     }
 
+    const openForm = () => {
+        document.getElementById("myForm").style.display = 'block';
+    }
+
+    const closeForm = () => {
+        document.getElementById("myForm").style.display = 'none';
+    }
+
+
     return (
         <div className='outer-div'>
             <div>
@@ -35,10 +44,13 @@ function SingleReview() {
                         <button onClick={() => history.push(`/reviews/review_form/${review.productId}`)}>Review Form</button>
                     </div>
                     <div>
-                        <button>Edit Review</button>
+                        <button className='open-edit-form' onClick={openForm()}>Edit Review</button>
                     </div>
                     <div>
                         <button onClick={() => handleDelete(review.id)}>Delete Review</button>
+                    </div>
+                    <div className='form-popup' id='myForm'>
+
                     </div>
                 </div>)}
             </div>
