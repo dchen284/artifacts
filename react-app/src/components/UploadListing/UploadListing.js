@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, useHistory } from 'react-router';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 import styles from '../../css-modules/UploadListing.module.css'
 
 export default function UploadListing({ setCurrentModal }) {
-    const dispatch = useDispatch();
     const history = useHistory();
     const user = useSelector(state => state.session.user);
     const [name, setName] = useState('');
@@ -62,15 +61,15 @@ export default function UploadListing({ setCurrentModal }) {
             <form className={styles.uploadForm} onSubmit={handleSubmit}>
                 <label>
                     Name
-                    <input type="text" onChange={e => setName(e.target.value)}/>    
+                    <input type="text" onChange={e => setName(e.target.value)}/>
                 </label>
                 <label>
                     Quantity
-                    <input type="number" min="1" onChange={e => setQuantity(e.target.value)}/>    
+                    <input type="number" min="1" onChange={e => setQuantity(e.target.value)}/>
                 </label>
                 <label>
                     Price
-                    <input type="number" min="1" onChange={e => setPrice(e.target.value)}/>    
+                    <input type="number" min="1" onChange={e => setPrice(e.target.value)}/>
                 </label>
                 <label>
                     <textarea placeholder='Add a description (optional)' onChange={e => setDescription(e.target.value)}/>

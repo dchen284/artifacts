@@ -15,6 +15,7 @@ const [rating, setRating] = useState(0);
 const [content, setContent] = useState('');
 const [errors, setErrors] = useState([]);
 
+
 useEffect(() => {
     dispatch(getReviews())
 }, [dispatch])

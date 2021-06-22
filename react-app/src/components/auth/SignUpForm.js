@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
-import LoginFormModal from "./LoginFormModal";
 
 const SignUpForm = ({setCurrentModal}) => {
   const dispatch = useDispatch();
@@ -15,7 +14,7 @@ const SignUpForm = ({setCurrentModal}) => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      await dispatch(signUp(username, email, password));
       // TODO: add errors for signup form
       setCurrentModal('');
     }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { getReviews } from '../../store/reviews';
@@ -6,7 +6,7 @@ import './Review.css';
 
 
 function SingleReview() {
-    const user = useSelector(state => state.session.user);
+    // const user = useSelector(state => state.session.user);
     const history = useHistory();
     const dispatch = useDispatch();
     const reviewState = useSelector(state => state.reviews)

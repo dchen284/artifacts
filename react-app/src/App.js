@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import Listings from "./components/Listings";
@@ -20,15 +20,15 @@ import { authenticate } from "./store/session";
 function App() {
   // TODO: Login and Signup forms should be modals
   const dispatch = useDispatch();
-  const user = useSelector(state => state.session.user);
+  //const user = useSelector(state => state.session.user);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     (async() => {
-      const user = await dispatch(authenticate());
+      await dispatch(authenticate());
       setLoaded(true);
     })();
-  }, []);
+  }, [dispatch]);
 
   if (!loaded) {
     // TODO: Maybe add a loading animation in place of null?
@@ -40,7 +40,7 @@ function App() {
       <NavBar />
       <Switch>
         {/* Removed protected route so it wouldn't redirect to login */}
-        <Route exact path="/" exact={true} >
+        <Route path="/" exact={true} >
           <LandingPage />
         </Route>
         <Route path="/login" exact={true}>
