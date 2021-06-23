@@ -10,16 +10,16 @@ search_routes = Blueprint('search', __name__)
 def search(search_term):
 
     # Query to see if any categories match the search term
-    categories = Category.query.filter(Category.name.ilike(f'%{search_term}%')).all()
+    categories = Category.query.filter(Category.name.ilike(f'{search_term}')).all()
 
     # Queries to see if any of the product names or product descriptions match the search term
 
     products_by_name = Product.query.filter(Product.name.ilike(f'%{search_term}%')).all()
-    products_by_descrip = Product.query.filter(Product.description.ilike(f'%{search_term}%')).all()
+    # products_by_descrip = Product.query.filter(Product.description.ilike(f'%{search_term}%')).all()
 
     # Combine all queries into one products set; set to remove repeat entries
 
-    products = set(products_by_name) | set(products_by_descrip)
+    products = set(products_by_name)
     for category in categories: # handles the cases where multiple categories match the search term
         products_by_category = Product.query.filter(Product.categoryId == category.id).all()
         products = set(products) | set(products_by_category)
