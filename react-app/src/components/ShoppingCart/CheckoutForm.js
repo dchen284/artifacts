@@ -1,12 +1,12 @@
 import React from "react";
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import './CheckoutForm.css';
 
 const CheckoutForm = ({ setShowModal }) => {
 
     //hooks and state
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const history = useHistory();
 
     //functions
