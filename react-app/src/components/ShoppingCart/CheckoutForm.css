@@ -1,0 +1,28 @@
+.checkout_form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 30px 30px;
+
+}
+
+.checkout_form__button {
+    height: 50px;
+    width: 45%;
+    margin: 5px;
+}
+
+.checkout_form__button_line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.checkout_form__title {
+    border-bottom: 1px solid black;
+}
+
+.shopping_cart_summary__item_list {
+    height: 300px;
+    overflow: auto;
+}

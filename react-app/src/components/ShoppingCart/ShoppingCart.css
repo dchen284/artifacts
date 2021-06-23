@@ -1,7 +1,17 @@
 .shopping_cart {
     display: flex;
     justify-content: space-between;
-    margin: 15px;
+    margin: 25px;
+}
+
+.shopping_cart_checkout_button {
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+.shopping_cart_checkout_button:disabled {
+    background-color: lightgrey;
 }
 
 /* Shopping cart items */
@@ -12,8 +22,8 @@
 }
 
 .shopping_cart_item__image {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 250px;
     background-color: pink;
     margin: 5px;
 }
@@ -30,6 +40,10 @@
 
 .shopping_cart_item__quantity_label {
     margin: 0px 15px 0px 0px;
+}
+
+.shopping_cart_item__quantity_number {
+    width: 75px;
 }
 
 .shopping_cart_item__stock_yes {
@@ -50,6 +64,8 @@
 
 .shopping_cart_item_display {
     width: 70%;
+    height: 500px;
+    overflow: auto;
     /* border: 1px solid black; */
 }
 
