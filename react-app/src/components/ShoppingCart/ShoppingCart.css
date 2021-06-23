@@ -18,7 +18,7 @@
 
 .shopping_cart_item {
     display: flex;
-    /* border: 1px solid green; */
+    border: 1px solid green;
 }
 
 .shopping_cart_item__image {
@@ -30,6 +30,7 @@
 
 .shopping_cart_item__line {
     padding: 6px 15px;
+    width: 120%;
 }
 
 .shopping_cart_item__priceline {
@@ -40,6 +41,12 @@
 
 .shopping_cart_item__quantity_label {
     margin: 0px 15px 0px 0px;
+}
+
+.shopping_cart_item__quantity_error {
+    padding: 0px 15px;
+    color: red;
+    font-size: 12px;
 }
 
 .shopping_cart_item__quantity_number {
@@ -66,7 +73,7 @@
     width: 70%;
     height: 500px;
     overflow: auto;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .shopping_cart_item_display__title {
