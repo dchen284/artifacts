@@ -1,23 +1,50 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from '../../css-modules/LandingPage.module.css'
-
+//autoPlay
 export default function Categories() {
     return (
         <div className={styles.categoryBox}>
-            <Carousel infiniteLoop useKeyboardArrows autoPlay showThumbs={false}>
-                <div className={styles.singleCategory1}>
-                    {/* <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8fcaea59-462c-4384-9011-39a6ca4c9be1/d78cv9a-2e5790ea-92f2-4ebe-97fc-2f8556e5b2fa.jpg/v1/fill/w_1600,h_804,q_75,strp/prehistoric_mammals_woolly_mammoths_by_balcsika_d78cv9a-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODA0IiwicGF0aCI6IlwvZlwvOGZjYWVhNTktNDYyYy00Mzg0LTkwMTEtMzlhNmNhNGM5YmUxXC9kNzhjdjlhLTJlNTc5MGVhLTkyZjItNGViZS05N2ZjLTJmODU1NmU1YjJmYS5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.a9c6ys0Uz7o0XH1H1jOxti8U7KscWetZGBXrw9l2eCA" /> */}
-                </div>
+            <Carousel infiniteLoop useKeyboardArrows  showThumbs={false}>
+                    <div className={styles.singleCategory1}>
+                        <div className={styles.categoryTextBox}>
+                            <h1 className={styles.categoryHeader}>Prehistoric</h1>
+                            <h2 className={styles.categorySubheader}>Before 3000 B.C.</h2>
+                        <Link to="/category/Prehistoric">
+                            <button className={styles.categoryLink}>Explore</button>
+                        </Link>
+                        </div>
+                    </div>
                 <div className={styles.singleCategory2}>
-                    {/* <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8fcaea59-462c-4384-9011-39a6ca4c9be1/d78cv9a-2e5790ea-92f2-4ebe-97fc-2f8556e5b2fa.jpg/v1/fill/w_1600,h_804,q_75,strp/prehistoric_mammals_woolly_mammoths_by_balcsika_d78cv9a-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODA0IiwicGF0aCI6IlwvZlwvOGZjYWVhNTktNDYyYy00Mzg0LTkwMTEtMzlhNmNhNGM5YmUxXC9kNzhjdjlhLTJlNTc5MGVhLTkyZjItNGViZS05N2ZjLTJmODU1NmU1YjJmYS5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.a9c6ys0Uz7o0XH1H1jOxti8U7KscWetZGBXrw9l2eCA" /> */}
+                    <div className={styles.categoryTextBox}>
+                        <h1 className={styles.categoryHeader}>Antiquities</h1>
+                        <h2 className={styles.categorySubheader}>3000 B.C. - 1500 A.D.</h2>
+                        <Link to="/category/Antiquities">
+                            <button className={styles.categoryLink}>Explore</button>
+                        </Link>
+                    </div>
+
                 </div>
                 <div className={styles.singleCategory3}>
-                    {/* <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8fcaea59-462c-4384-9011-39a6ca4c9be1/d78cv9a-2e5790ea-92f2-4ebe-97fc-2f8556e5b2fa.jpg/v1/fill/w_1600,h_804,q_75,strp/prehistoric_mammals_woolly_mammoths_by_balcsika_d78cv9a-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODA0IiwicGF0aCI6IlwvZlwvOGZjYWVhNTktNDYyYy00Mzg0LTkwMTEtMzlhNmNhNGM5YmUxXC9kNzhjdjlhLTJlNTc5MGVhLTkyZjItNGViZS05N2ZjLTJmODU1NmU1YjJmYS5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.a9c6ys0Uz7o0XH1H1jOxti8U7KscWetZGBXrw9l2eCA" /> */}
+                    <div className={styles.categoryTextBox}>
+                        <h1 className={styles.categoryHeader}>Modern</h1>
+                        <h2 className={styles.categorySubheader}>1500 A.D. - 2100 A.D.</h2>
+                        <Link to="/category/Modern">
+                            <button className={styles.categoryLink}>Explore</button>
+                        </Link>
+                    </div>  
+
                 </div>
                 <div className={styles.singleCategory4}>
-                    {/* <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8fcaea59-462c-4384-9011-39a6ca4c9be1/d78cv9a-2e5790ea-92f2-4ebe-97fc-2f8556e5b2fa.jpg/v1/fill/w_1600,h_804,q_75,strp/prehistoric_mammals_woolly_mammoths_by_balcsika_d78cv9a-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODA0IiwicGF0aCI6IlwvZlwvOGZjYWVhNTktNDYyYy00Mzg0LTkwMTEtMzlhNmNhNGM5YmUxXC9kNzhjdjlhLTJlNTc5MGVhLTkyZjItNGViZS05N2ZjLTJmODU1NmU1YjJmYS5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.a9c6ys0Uz7o0XH1H1jOxti8U7KscWetZGBXrw9l2eCA" /> */}
+                    <div className={styles.categoryTextBox}>
+                        <h1 className={styles.categoryHeader}>Future</h1>
+                        <h2 className={styles.categorySubheader}>After 2100 A.D.</h2>
+                        <Link to="/category/Future">
+                                <button className={styles.categoryLink}>Explore</button>
+                        </Link>
+                    </div>
                 </div>
             </Carousel>
         </div>
