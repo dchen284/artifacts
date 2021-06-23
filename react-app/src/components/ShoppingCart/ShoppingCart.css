@@ -4,6 +4,16 @@
     margin: 25px;
 }
 
+.shopping_cart_checkout_button {
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+.shopping_cart_checkout_button:disabled {
+    background-color: lightgrey;
+}
+
 /* Shopping cart items */
 
 .shopping_cart_item {
@@ -32,6 +42,10 @@
     margin: 0px 15px 0px 0px;
 }
 
+.shopping_cart_item__quantity_number {
+    width: 75px;
+}
+
 .shopping_cart_item__stock_yes {
     font-size: 14px;
 }
@@ -50,6 +64,8 @@
 
 .shopping_cart_item_display {
     width: 70%;
+    height: 500px;
+    overflow: auto;
     /* border: 1px solid black; */
 }
 

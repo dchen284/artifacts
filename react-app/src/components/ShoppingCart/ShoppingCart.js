@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
 import ShoppingCartItem from './ShoppingCartItem';
 import CheckoutModal from './CheckoutModal';
 import './ShoppingCart.css';
 
 const ShoppingCart = () => {
     //hooks and state variables
-    const [currentModal , setCurrentModal] = useState('');
+    const [currentModal, setCurrentModal] = useState('');
+    const [checkoutIsDisabled, setCheckoutIsDisabled] = useState(false);
+    // const dispatch = useDispatch();
+    // const cartItems = useSelector(state => state.cart);
+
+    // cartItems = [
+
+    // ]
 
     //functions
     // const checkout = () => {
@@ -17,7 +25,7 @@ const ShoppingCart = () => {
         <div className="shopping_cart">
             <div className="shopping_cart_item_display">
                 <div className="shopping_cart_item_display__title">Shopping Cart</div>
-                <ShoppingCartItem />
+                <ShoppingCartItem setCheckoutIsDisabled={setCheckoutIsDisabled}/>
                 <ShoppingCartItem />
                 <ShoppingCartItem />
                 <ShoppingCartItem />
@@ -38,8 +46,11 @@ const ShoppingCart = () => {
                     <div className="shopping_cart_summary__line--bold">$0.00</div>
                 </div>
                 <hr className="shopping_cart_summary__divider shopping_cart_summary__line"/>
-                {/* <button>Checkout</button> */}
-                <CheckoutModal setCurrentModal={setCurrentModal} isCheckout={currentModal === 'checkout'}/>
+                <CheckoutModal
+                    setCurrentModal={setCurrentModal}
+                    isCheckout={currentModal === 'checkout'}
+                    checkoutIsDisabled={checkoutIsDisabled}
+                />
             </div>
         </div>
     )

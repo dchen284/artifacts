@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ShoppingCart.css';
 
-const ShoppingCartItem = () => {
+const ShoppingCartItem = ({setCheckoutIsDisabled}) => {
+
+    //hooks and state
+    const [quantity, setQuantity] = useState(1);
 
     //to do
-
-    //clickable link to product page
-        //need path to product page
-
-    //when to update database when the cart items change?
 
     //functions
         //remove item from cart
@@ -17,6 +16,18 @@ const ShoppingCartItem = () => {
             //max is...?
                 //based off inventory?
 
+    // flow:
+    // changing the quantity here will update Redux store for cart
+    // Redux store will contain cart items
+    // so on the Shopping Cart, it will get all the cart items from store
+
+    // useEffects
+    useEffect(() => {
+        console.log(setCheckoutIsDisabled);
+        quantity > 3 ? console.log(true) : console.log(false);
+    }, [quantity])
+
+
     //JSX
     return (
         <div className="shopping_cart_item">
@@ -24,20 +35,27 @@ const ShoppingCartItem = () => {
                 <img className="shopping_cart_item__image"/>
             </div>
             <div>
-                <div className="shopping_cart_item__line">Item Name</div>
                 <div className="shopping_cart_item__line">
-                    <span className="shopping_cart_item__stock_yes">Stock: ### /</span>
+                    <Link to="/products/1">
+                        Item Name
+                    </Link>
+                </div>
+                <div className="shopping_cart_item__line">
+                    <span className="shopping_cart_item__stock_yes">Stock:
+                        <span>3</span>
+                    /</span>
                     <span className="shopping_cart_item__stock_low">Almost Out, Order Now! /</span>
                     <span className="shopping_cart_item__stock_no">Out of Stock</span>
                 </div>
                 <div className="shopping_cart_item__line">
                     <label htmlFor="quantity" className="shopping_cart_item__quantity_label">Quantity:</label>
-                        <select defaultValue="1" name="quantity" id="quantity">
-                            <option value="0">0 (Delete From Cart)</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
+                    <input
+                        type="number"
+                        value={quantity}
+                        onChange={(e) => setQuantity(e.target.value)}
+                        name="quantity"
+                        className="shopping_cart_item__quantity_number"
+                    />
                 </div>
                 <div className="shopping_cart_item__line shopping_cart_item__priceline">
                     <div>Total</div>

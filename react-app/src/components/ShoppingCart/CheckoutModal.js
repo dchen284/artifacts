@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from '../../context/Modal';
 import CheckoutForm from './CheckoutForm';
-export default function CheckoutModal({ setCurrentModal, isCheckout }) {
+import './ShoppingCart.css';
+
+export default function CheckoutModal({setCurrentModal, isCheckout, checkoutIsDisabled}) {
+
     const [showModal, setShowModal] = useState(false);
 
     // listen for when the button is hit
@@ -16,9 +19,13 @@ export default function CheckoutModal({ setCurrentModal, isCheckout }) {
 
     return (
         <>
-            <button onClick={() => {
-                setShowModal(true)
-            }}>Checkout</button>
+            <button
+                className="shopping_cart_checkout_button"
+                onClick={() => {setShowModal(true)}}
+                disabled={checkoutIsDisabled}
+            >
+                Checkout
+            </button>
             {showModal && (
                 <Modal onClose={() => {
                     setShowModal(false);
