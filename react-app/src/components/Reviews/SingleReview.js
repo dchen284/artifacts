@@ -32,7 +32,15 @@ function SingleReview() {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
+
+        const review = {
+            ...reviews,
+            rating,
+            content,
+            userId: user.id,
+            productId
+        }
     }
 
     return (
