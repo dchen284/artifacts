@@ -63,8 +63,7 @@ export const createReview = (review) => async (dispatch) => {
     }
 }
 
-export const updateReview = ({ rating, content, userId, productId }, id) => async (dispatch) => {
-    const review = { id, rating, content, userId, productId }
+export const updateReview = ({id, rating, content, userId, productId }) => async (dispatch) => {
 
     const formData = new FormData();
     formData.append('rating', rating);
