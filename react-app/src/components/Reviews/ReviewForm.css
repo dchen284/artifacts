@@ -1,4 +1,5 @@
 
+/* the stars: */
 .rate {
     float: left;
     height: 46px;
@@ -35,16 +36,65 @@
     color: #c59b08;
 }
 
-.review-box {
-    padding: 15px;
+.outer-div,
+.review-box-outer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.submit-button {
-    margin: 5px;
+.review-container {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    padding: 1.1rem;
+    width: 400px;
+    height: 200px;
+    align-items: center;
+    border-radius: 2px;
+    border: 1px solid grey;
+    background-color: rgba(167, 167, 167, 0.1);
 }
 
-.review-header {
-    font-weight: bold;
-    font-size: 20px;
-    margin: 5px;
+.review-container:hover {
+    box-shadow: 3px 3px lightgray, -1em 0 .4em lightgray;
+}
+
+.score-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-size: 2rem;
+}
+
+.score-stars {
+    margin-left: 0.8rem;
+}
+
+.review-text {
+    line-height: 1.45;
+}
+
+.open-edit-form,
+.delete-review-button {
+    background-color: rgba(230, 159, 29, 0.6);
+    border-radius: 2px;
+    height: 30px;
+    padding: 7px;
+    margin: 3px;
+    float: left;
+    cursor: pointer;
+}
+
+.open-edit-form:hover,
+.delete-review-button:hover {
+    box-shadow: 1px 2px 3px lightslategray;
+} 
+
+.add-review-button {
+    background-color: rgba(230, 159, 29, 0.6);
+    border-radius: 2px;
+    height: 30px;
+    padding: 7px;
+    margin: 2px;
+    cursor: pointer;
 }

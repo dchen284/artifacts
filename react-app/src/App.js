@@ -53,8 +53,6 @@ function App() {
         </Route>
         <Route path="/products/:productId" exact={true}>
           <ProductPage />
-        </Route>
-        <Route path="/reviews" exact={true}>
           <SingleReview />
         </Route>
         <Route path="/reviews/review_form/:productId" exact={true}>
