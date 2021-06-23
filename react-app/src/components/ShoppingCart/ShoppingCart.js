@@ -67,7 +67,7 @@ const ShoppingCart = () => {
         <div className="shopping_cart">
             <div className="shopping_cart_item_display">
                 <div className="shopping_cart_item_display__title">Shopping Cart</div>
-                {cartItems?.map(item => <ShoppingCartItem setCheckoutIsDisabled={setCheckoutIsDisabled} item={item} key={item.id}/>)}
+                {cartItems?.map(item => <ShoppingCartItem item={item} key={item.id}/>)}
             </div>
             <div className="shopping_cart_summary">
                 <div className="shopping_cart_summary__title shopping_cart_summary__line">Cart Summary</div>

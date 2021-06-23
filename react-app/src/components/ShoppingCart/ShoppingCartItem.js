@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ShoppingCart.css';
 
-const ShoppingCartItem = ({setCheckoutIsDisabled, item}) => {
+const ShoppingCartItem = ({item}) => {
     console.log('WHAT IS ITEM',)
     //hooks and state
     const [quantity, setQuantity] = useState(item.quantity);
@@ -64,10 +64,8 @@ const ShoppingCartItem = ({setCheckoutIsDisabled, item}) => {
     /*
     This function updates the Redux store that an item has been removed.
     */
-    const deleteCartItem = (e) => {
-        // console.log(setCheckoutIsDisabled);
-        // quantity > 3 ? console.log(true) : console.log(false);
-        // setQuantity(item.quantity);
+    const deleteCartItem = () => {
+       //dispatch(deleteCartItem(item))
     }
 
 

@@ -30,3 +30,11 @@ def shopping_cart():
         db.session.add(cart_item)
         db.session.commit()
         return cart_item.to_dict()
+
+@shopping_routes.route('/', methods=['DELETE'])
+def delete_cart_item():
+    data = request.get_json()
+    cart_item = ShoppingCartItem.query.filter(ShoppingCartItem.productId == data['productId'] and ShoppingCartItem.userId == data['userId']).first()
+    db.session.delete(cart_item)
+    db.session.commit()
+    return cart_item.to_dict()
