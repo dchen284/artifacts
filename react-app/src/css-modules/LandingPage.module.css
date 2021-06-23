@@ -13,6 +13,7 @@
     width: 95%;
     height: 40vh;
     /* background-image: url('../components/LandingPage/images/pocket-watch.jpeg'); */
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e37029ac-88b2-4c87-9bd2-ffd28e06e5da/dbv3rr4-c48d8e7d-fce7-4a59-b8f1-b72541fcb7e2.jpg/v1/fill/w_1158,h_690,q_70,strp/photography_class_03___part_timer_by_fyoriosity_dbv3rr4-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9Mjk0OSIsInBhdGgiOiJcL2ZcL2UzNzAyOWFjLTg4YjItNGM4Ny05YmQyLWZmZDI4ZTA2ZTVkYVwvZGJ2M3JyNC1jNDhkOGU3ZC1mY2U3LTRhNTktYjhmMS1iNzI1NDFmY2I3ZTIuanBnIiwid2lkdGgiOiI8PTQ5NDUifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.mNXM4PJ7QGLrMxMsFH3zRENpOflrbdZDx3nNmKsWHzQ');
     background-size: cover;
     background-position: left 30% top 10%;
     /* transform: rotateY(180deg); */
@@ -86,7 +87,7 @@
 }
 .singleCategory4 {
 
-    /* background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/55a976ff-7886-4ea3-85e6-4c54897e34be/dbirjwl-1ae7f663-d263-4a67-9162-b6fc621aeee7.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU1YTk3NmZmLTc4ODYtNGVhMy04NWU2LTRjNTQ4OTdlMzRiZVwvZGJpcmp3bC0xYWU3ZjY2My1kMjYzLTRhNjctOTE2Mi1iNmZjNjIxYWVlZTcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.tV-D6XPxZ9XZe0ae8ACSvKr7mFKkNfgBebxgZ35AsT8'); */
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/55a976ff-7886-4ea3-85e6-4c54897e34be/dbirjwl-1ae7f663-d263-4a67-9162-b6fc621aeee7.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU1YTk3NmZmLTc4ODYtNGVhMy04NWU2LTRjNTQ4OTdlMzRiZVwvZGJpcmp3bC0xYWU3ZjY2My1kMjYzLTRhNjctOTE2Mi1iNmZjNjIxYWVlZTcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.tV-D6XPxZ9XZe0ae8ACSvKr7mFKkNfgBebxgZ35AsT8');
     /* background-image: url('../components/LandingPage/images/future.png'); */
     background-position: center;
     background-size: cover;
@@ -99,7 +100,7 @@
 .categoryHeader,
 .categorySubheader{
     color: white;
-    /* text-align: left; */
+    text-align: left;
 }
 
 .categoryHeader{
