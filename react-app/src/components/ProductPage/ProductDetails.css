@@ -1,0 +1,37 @@
+.productDetails__container
+{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 400px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  box-sizing: border-box;
+  /* border: black solid 1px; */
+  background-color: rgba(167, 167, 167, 0.1);
+}
+
+.productDetails__container > input
+{
+  width: 20%;
+}
+
+.productDetails__container > button
+{
+  height: 45px;
+  width: 100%;
+  background-color: rgba(230, 159, 29, 0.6);
+}
+
+
+.productDetails__header
+{
+  font-size: 28px;
+}
+
+.productDetails__stock
+{
+  color: red;
+  font-weight: bold;
+}
