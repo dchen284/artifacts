@@ -51,10 +51,14 @@ function ShowEditReview({ review }) {
                         <button onClick={() => history.push(`/reviews/review_form/${review.productId}`)}>Review Form</button>
                     </div>
                     <div>
+                        {user.id == review.userId &&
                         <button className='open-edit-form' onClick={openForm}>Edit Review</button>
+                        }
                     </div>
                     <div>
+                        {user.id == review.userId &&
                         <button onClick={() => handleDelete(review.id)}>Delete Review</button>
+                        }
                     </div>
                 {showForm && (
                     <UpdateReviewForm reviewId={review.id} />
