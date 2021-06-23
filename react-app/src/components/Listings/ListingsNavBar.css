@@ -35,3 +35,8 @@
 {
   margin-left: 5px;
 }
+
+.active
+{
+  background-color: rgb(128, 128, 128, 0.5);
+}
