@@ -33,7 +33,7 @@ const handleSubmit = async (e) => {
 
         let createdReview = await dispatch(createReview(review))
         if (createdReview) {
-            history.push(`/reviews`);
+            history.push(`/products/${productId}`);
         }
     }
 
