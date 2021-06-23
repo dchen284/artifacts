@@ -12,7 +12,7 @@ from .api.product_routes import product_routes
 from .api.search_routes import search_routes
 from .api.s3_test_route import s3_test_route
 from .api.reviews_routes import reviews_routes
-
+from .api.shopping_routes import shopping_routes
 
 from .seeds import seed_commands
 
@@ -37,7 +37,7 @@ app.config.from_object(Config)
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(search_routes, url_prefix='/api/search')
 app.register_blueprint(product_routes, url_prefix='/api/category')
-
+app.register_blueprint(shopping_routes, url_prefix='/api/shopping')
 app.register_blueprint(s3_test_route, url_prefix='/api/s3')
 app.register_blueprint(reviews_routes, url_prefix='/api/reviews')
 
