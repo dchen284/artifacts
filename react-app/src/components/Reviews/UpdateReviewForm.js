@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory , useParams} from 'react-router-dom';
 import { updateReview } from '../../store/reviews';
 import './ReviewForm.css';
+import './ReviewFormPopUp.css'
 
-function UpdateReviewForm({ reviewId }) {
+function UpdateReviewForm({ reviewId, openForm }) {
     const user = useSelector(state => state.session.user);
     const history = useHistory();
     const dispatch = useDispatch();
@@ -56,6 +57,7 @@ function UpdateReviewForm({ reviewId }) {
                                 <textarea placeholder='Your Review' rows='10' cols='50' value={content} onChange={(e) => setContent(e.target.value)}></textarea>
                             </div>
                             <button type='submit' className='submit-button'>Submit</button>
+                            <button className='cancel-button' onClick={openForm}>Cancel</button>
                         </form>
                     </div>
         </div>

@@ -1,39 +1,7 @@
-
-/* the stars: */
-.rate {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
-}
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-}
-.rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
-}
-.rate:not(:checked) > label:before {
-    content: '★ ';
-}
-.rate > input:checked ~ label {
-    color: #ffc700;    
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
+.reviews-h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 5px;
 }
 
 .outer-div {
@@ -50,8 +18,9 @@
     overflow: scroll;
 }
 
-.review-container:hover {
-    box-shadow: 3px 3px lightgray, -1em 0 .4em lightgray;
+.review-container {
+    justify-content: right;
+    margin: 5px;
 }
 
 .score-container{
@@ -71,10 +40,11 @@
 .open-edit-form,
 .delete-review-button {
     background-color: rgba(230, 159, 29, 0.6);
+    justify-items: right;
     border-radius: 2px;
     height: 30px;
     padding: 7px;
-    margin: 3px;
+    margin: 5px;
     float: left;
     cursor: pointer;
 }
@@ -84,11 +54,17 @@
     box-shadow: 1px 2px 3px lightslategray;
 } 
 
-.add-review-button {
+.new-review {
     background-color: rgba(230, 159, 29, 0.6);
+    float: right;
     border-radius: 2px;
+    width: 200px;
     height: 30px;
     padding: 7px;
-    margin: 2px;
+    margin: 5px;
     cursor: pointer;
+}
+
+.new-review:hover {
+    box-shadow: 1px 2px 3px lightslategray;
 }
