@@ -1,0 +1,15 @@
+.listingFilters__container
+{
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  margin: 5px;
+  width: 20%;
+  border: black solid 1px;
+}
+
+.listingFilters__inputs
+{
+  display: flex;
+  flex-direction: column;
+}

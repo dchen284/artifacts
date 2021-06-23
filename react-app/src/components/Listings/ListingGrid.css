@@ -1,8 +1,10 @@
 .listingGrid__container
 {
   display: grid;
+  width: 60%;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   row-gap: 5px;
   column-gap: 5px;
+  margin: 0 8px 8px 8px;
 }
