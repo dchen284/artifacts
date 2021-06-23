@@ -15,7 +15,7 @@ const ProductDetails = ({ product }) => {
     const item = {
       userId : user.id,
       productId : product.id,
-      quantity: currentQuantity
+      quantity: +currentQuantity
     }
 
     dispatch(shopping(item));
