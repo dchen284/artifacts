@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory , useParams} from 'react-router-dom';
 import { getReviews, deleteReview } from '../../store/reviews';
 import UpdateReviewForm from './UpdateReviewForm';
 import './ReviewForm.css';
 
 function ShowEditReview({ review }) {
     const user = useSelector(state => state.session.user);
-    const history = useHistory();
     const dispatch = useDispatch();
     const reviewState = useSelector(state => state.reviews)
     const reviews = Object.values(reviewState);
@@ -40,28 +38,38 @@ function ShowEditReview({ review }) {
     }
 
     return (
-        <div>
-            <div className='reviewsAll' key={review.id}>
-                    <li>ID: {review.id}</li>
-                    <li>Rating: {review.rating}</li>
-                    <li>{review.content}</li>
-                    <li>User ID: {review.userId}</li>
-                    <li>Product ID: {review.productId}</li>
-                    <div>
-                        {user.id == review.userId &&
-                        <button className='open-edit-form' onClick={openForm}>Edit Review</button>
-                        }
+        <div className='review-box-outer'>
+            <div className='review-container' key={review.id}>
+                    <h4 className='review-title'>Product ID: {review.productId}</h4>
+                    <div className='review-score'>
+                        <div className='score-container'>
+                            <span className='score'>{review.rating}</span>
+                            <span>/5</span>
+                            <span className='score-stars'>
+                                ⭐
+                            </span>
+                        </div>
                     </div>
-                    <div>
-                        {user.id == review.userId &&
-                        <button onClick={() => handleDelete(review.id)}>Delete Review</button>
-                        }
+                    <div className='review-content'>
+                    <i>{review.content}</i>
+                    <small>User ID: {review.userId}</small>
+                    </div>
+                    <div className='button-group'>
+                        <div>
+                            {user.id == review.userId &&
+                            <button className='open-edit-form' onClick={openForm}>Edit Review</button>
+                            }
+                        </div>
+                        <div>
+                            {user.id == review.userId &&
+                            <button className='delete-review-button' onClick={() => handleDelete(review.id)}>Delete Review</button>
+                            }
+                        </div>
                     </div>
                 {showForm && (
                     <UpdateReviewForm reviewId={review.id} />
                 )}
                 </div>
-                <br></br>
         </div>
     )
 

@@ -23,12 +23,10 @@ function SingleReview() {
     return (
         <div className='outer-div'>
             <div>
+                <button className='add-review-button' onClick={() => history.push(`/reviews/review_form/${productId}`)}>Add A Review</button>
                 {reviews.map((review) =>
                     <ReviewShowForm review={review}/>
                 )}
-            </div>
-            <div>
-                <button onClick={() => history.push(`/reviews/review_form/${productId}`)}>Add A Review</button>
             </div>
         </div>
     )
