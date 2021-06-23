@@ -6,7 +6,7 @@ import './ReviewForm.css';
 
 
 function SingleReview() {
-    // const user = useSelector(state => state.session.user);
+    const user = useSelector(state => state.session.user);
     const history = useHistory();
     const dispatch = useDispatch();
     const reviewState = useSelector(state => state.reviews)
@@ -14,6 +14,7 @@ function SingleReview() {
     
 
     const [showForm, setShowForm] = useState(false);
+    const [deleteButton, showDeleteButton] = useState(false);
     const [rating, setRating] = useState(0);
     const [content, setContent] = useState('');
 
@@ -23,12 +24,22 @@ function SingleReview() {
     }, [dispatch])
 
     const handleDelete = async (id) => {
+        reviews.map((review) => {
+            if(user.id == review.userId) {
+                showDeleteButton(!deleteButton)
+            }
+    })
+
         dispatch(deleteReview(id));
         dispatch(getReviews())
     }
 
     const openForm = () => {
-        setShowForm(!showForm)
+        reviews.map((review) => {
+            if(user.id == review.userId) {
+                setShowForm(!showForm)
+            }
+        })
     }
 
     const handleSubmit = async (e) => {
@@ -39,7 +50,7 @@ function SingleReview() {
             rating,
             content,
             userId: user.id,
-            productId
+            // productId
         }
     }
 
