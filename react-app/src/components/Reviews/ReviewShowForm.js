@@ -48,9 +48,6 @@ function ShowEditReview({ review }) {
                     <li>User ID: {review.userId}</li>
                     <li>Product ID: {review.productId}</li>
                     <div>
-                        <button onClick={() => history.push(`/reviews/review_form/${review.productId}`)}>Review Form</button>
-                    </div>
-                    <div>
                         {user.id == review.userId &&
                         <button className='open-edit-form' onClick={openForm}>Edit Review</button>
                         }
@@ -64,6 +61,7 @@ function ShowEditReview({ review }) {
                     <UpdateReviewForm reviewId={review.id} />
                 )}
                 </div>
+                <br></br>
         </div>
     )
 
