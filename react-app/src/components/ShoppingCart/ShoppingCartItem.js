@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ShoppingCart.css';
 
-const ShoppingCartItem = ({setCheckoutIsDisabled}) => {
-
+const ShoppingCartItem = ({setCheckoutIsDisabled, item}) => {
+    console.log('WHAT IS ITEM',)
     //hooks and state
-    const [quantity, setQuantity] = useState(1);
-
+    const [quantity, setQuantity] = useState(item.quantity);
+    const { product } = item;
     //to do
 
     //functions
@@ -24,20 +24,21 @@ const ShoppingCartItem = ({setCheckoutIsDisabled}) => {
     // useEffects
     useEffect(() => {
         console.log(setCheckoutIsDisabled);
-        quantity > 3 ? console.log(true) : console.log(false);
-    }, [quantity])
+        // quantity > 3 ? console.log(true) : console.log(false);
+        setQuantity(item.quantity)
+    }, [item.quantity])
 
 
     //JSX
     return (
         <div className="shopping_cart_item">
             <div>
-                <img className="shopping_cart_item__image"/>
+                <img className="shopping_cart_item__image" src={product.imgURL}/>
             </div>
             <div>
                 <div className="shopping_cart_item__line">
-                    <Link to="/products/1">
-                        Item Name
+                    <Link to={`/products/${product.id}`}>
+                        {product.name}
                     </Link>
                 </div>
                 <div className="shopping_cart_item__line">
