@@ -1,0 +1,11 @@
+.productPage__listing
+{
+  display: flex;
+  justify-content: space-around;
+}
+
+.productPage__image
+{
+  height: 500px;
+  width: 450px;
+}
