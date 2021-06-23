@@ -19,18 +19,35 @@ const ShoppingCartItem = () => {
 
     //JSX
     return (
-        <div className="shopping_cart__item">
-            <div>Item</div>
-            <div>In Stock / Order Soon (on less than 10) / 0</div>
-            <label htmlFor="quantity">Quantity:</label>
-            <select name="quantity" id="quantity">
-                <option value="0">0 (Delete From Cart)</option>
-                <option defaultValue value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <div>Total for this item (quantity*item price)</div>
-            <button>Delete Item</button>
+        <div className="shopping_cart_item">
+            <div>
+                <img className="shopping_cart_item__image"/>
+            </div>
+            <div>
+                <div className="shopping_cart_item__line">Item Name</div>
+                <div className="shopping_cart_item__line">
+                    <span className="shopping_cart_item__stock_yes">Stock: ### /</span>
+                    <span className="shopping_cart_item__stock_low">Almost Out, Order Now! /</span>
+                    <span className="shopping_cart_item__stock_no">Out of Stock</span>
+                </div>
+                <div className="shopping_cart_item__line">
+                    <label htmlFor="quantity" className="shopping_cart_item__quantity_label">Quantity:</label>
+                        <select defaultValue="1" name="quantity" id="quantity">
+                            <option value="0">0 (Delete From Cart)</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                </div>
+                <div className="shopping_cart_item__line shopping_cart_item__priceline">
+                    <div>Total</div>
+                    <div>$0.00</div>
+                </div>
+                <div className="shopping_cart_item__line">
+                    <button>Delete Item</button>
+                </div>
+            </div>
+
         </div>
     )
 };

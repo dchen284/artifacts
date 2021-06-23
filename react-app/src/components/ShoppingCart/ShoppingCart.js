@@ -4,69 +4,32 @@ import './ShoppingCart.css';
 
 const ShoppingCart = () => {
 
-    // post route for shopping_cart_items
-    // get route for shopping_cart_items
-
-
-    // for single product page:
-        // what shows when there is no inventory?
-            //disable button or show message hiding button
-        // when is there an update on inventory?
-            //updated on checkout
-            //when going to single product page (already has this)
-
-        // note: items added to cart are really "phantom items"
-        // or "voucher" that may not be redeemable if no stock
-
-    //what happens when "Add to Shopping Cart" is clicked?
-        // on the product page, we have the current quantity
-            // check availability
-                // disable the Checkout button if insufficient availability
-        //on clicking the Checkout
-            // render a component modal with links to cart and continue shopping (product listings page)
-                //(look into useHistory to go back?)
-
-    //load ShoppingCartItems from database
-        //on login, or when app is loaded when logged in
-
-
-    //checkout button goes to confirmation modal
-        //shows credits
-        //show total price
-        //confirm button
-        //cancel button (exit modal)
-
-    //purchase button on confirmation modal
-        //for each shopping cart item, query for the given product to get the most up-to-date quantity
-            //check availability
-                //if there is not availaibity, close the modal, render the error
-                    //on the shopping cart page, checkout button is disabled
-                //if there is availability
-                    // create an order
-                    // update all product quantities
-                    // clear shopping_cart_items on backend
-                    // clear ShoppingCart component on frontend
-                    // redirect to root
-
-
-
-    //get all items from shopping cart
-    //calculate price from quantity*product price
-
     //JSX
     return (
         <div className="shopping_cart">
-            <div className="shopping_cart__item_display">
-                <h1>Shopping Cart</h1>
+            <div className="shopping_cart_item_display">
+                <div className="shopping_cart_item_display__title">Shopping Cart</div>
+                <ShoppingCartItem />
+                <ShoppingCartItem />
+                <ShoppingCartItem />
                 <ShoppingCartItem />
             </div>
-            <div className="shopping_cart__summary">
-                <h2>Summary</h2>
-                <h3>Subtotal: $0.00</h3>
-                <h3>Tax: $0.00</h3>
-                <hr className="shopping_cart__summary_divider"/>
-                <h3>Total: $0.00</h3>
-                <hr className="shopping_cart__summary_divider"/>
+            <div className="shopping_cart_summary">
+                <div className="shopping_cart_summary__title shopping_cart_summary__line">Cart Summary</div>
+                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
+                    <div>Subtotal</div>
+                    <div>$0.00</div>
+                </div>
+                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
+                    <div>Tax</div>
+                    <div>$0.00</div>
+                </div>
+                <hr className="shopping_cart_summary__divider shopping_cart_summary__line"/>
+                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
+                    <div className="shopping_cart_summary__line--bold">Total</div>
+                    <div className="shopping_cart_summary__line--bold">$0.00</div>
+                </div>
+                <hr className="shopping_cart_summary__divider shopping_cart_summary__line"/>
                 <button>Checkout</button>
             </div>
         </div>
