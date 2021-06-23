@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ShoppingCartItem from './ShoppingCartItem';
+import CheckoutModal from './CheckoutModal';
 import './ShoppingCart.css';
 
 const ShoppingCart = () => {
+    //hooks and state variables
+    const [currentModal , setCurrentModal] = useState('');
+
+    //functions
+    // const checkout = () => {
+
+    // }
 
     //JSX
     return (
@@ -30,7 +38,8 @@ const ShoppingCart = () => {
                     <div className="shopping_cart_summary__line--bold">$0.00</div>
                 </div>
                 <hr className="shopping_cart_summary__divider shopping_cart_summary__line"/>
-                <button>Checkout</button>
+                {/* <button>Checkout</button> */}
+                <CheckoutModal setCurrentModal={setCurrentModal} isCheckout={currentModal === 'checkout'}/>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 .shopping_cart {
     display: flex;
     justify-content: space-between;
-    margin: 15px;
+    margin: 25px;
 }
 
 /* Shopping cart items */
@@ -12,8 +12,8 @@
 }
 
 .shopping_cart_item__image {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 250px;
     background-color: pink;
     margin: 5px;
 }
