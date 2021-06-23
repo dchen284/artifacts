@@ -36,23 +36,18 @@
     color: #c59b08;
 }
 
-.outer-div,
-.review-box-outer {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.review-container {
-    margin-top: 2rem;
-    margin-left: 2rem;
-    padding: 1.1rem;
-    width: 400px;
-    height: 200px;
-    align-items: center;
+.outer-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 96%;
+    height: 300px;
+    margin: 10px;
+    padding: 5px;
     border-radius: 2px;
-    border: 1px solid grey;
     background-color: rgba(167, 167, 167, 0.1);
+    overflow: scroll;
 }
 
 .review-container:hover {
@@ -60,7 +55,6 @@
 }
 
 .score-container{
-    display: flex;
     align-items: center;
     margin-bottom: 0.8rem;
     font-size: 2rem;
