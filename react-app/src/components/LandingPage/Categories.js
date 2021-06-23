@@ -7,7 +7,7 @@ import styles from '../../css-modules/LandingPage.module.css'
 export default function Categories() {
     return (
         <div className={styles.categoryBox}>
-            <Carousel infiniteLoop useKeyboardArrows  showThumbs={false}>
+            <Carousel infiniteLoop useKeyboardArrows autoPlay showThumbs={false}>
                     <div className={styles.singleCategory1}>
                         <div className={styles.categoryTextBox}>
                             <h1 className={styles.categoryHeader}>Prehistoric</h1>
