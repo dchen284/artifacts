@@ -3,16 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ShoppingCart.css';
 
-const ShoppingCartItem = () => {
-
-    const cartItem = { quantity: 2, product: {quantity: 4}};
-
+const ShoppingCartItem = ({setCheckoutIsDisabled, item}) => {
+    console.log('WHAT IS ITEM',)
     //hooks and state
-    const [quantity, setQuantity] = useState(cartItem.quantity);
+    const [quantity, setQuantity] = useState(item.quantity);
     const [quantityStatus, setQuantityStatus] = useState();
     const [quantityError, setQuantityError] = useState(false);
-    // const dispatch = useDispatch();
-    // let quantityStatus;
+    const { product } = item;
     //to do
 
     //functions
@@ -33,8 +30,8 @@ const ShoppingCartItem = () => {
     This function updates the Redux store that the quantity of an item has changed.
     */
     const changeQuantity = (e) => {
-        if (e.target.value > cartItem.product.quantity) {
-            setQuantity(cartItem.product.quantity);
+        if (e.target.value > item.product.quantity) {
+            setQuantity(item.product.quantity);
             setQuantityError('Quantity exceeds stock quantity, please adjust.');
             setTimeout(() => {setQuantityError('')}, 5000);
             //dispatch(fetchChangeQuantityOfItem(quantity));
@@ -53,22 +50,24 @@ const ShoppingCartItem = () => {
     }
 
     useEffect(() => {
-        if (cartItem.product.quantity === 0) {
-            setQuantityStatus(`In Stock: ${cartItem.product.quantity} [Sold Out]`);
+        if (item.product.quantity === 0) {
+            setQuantityStatus(`In Stock: ${item.product.quantity} [Sold Out]`);
         }
-        else if (cartItem.product.quantity <= 5) {
-            setQuantityStatus(`In Stock: ${cartItem.product.quantity} [Almost out, order now!]`);
+        else if (item.product.quantity <= 5) {
+            setQuantityStatus(`In Stock: ${item.product.quantity} [Almost out, order now!]`);
         }
         else {
-            setQuantityStatus(`In Stock: ${cartItem.product.quantity}`);
+            setQuantityStatus(`In Stock: ${item.product.quantity}`);
         }
-    }, [cartItem]);
+    }, [item]);
 
     /*
     This function updates the Redux store that an item has been removed.
     */
     const deleteCartItem = (e) => {
-
+        // console.log(setCheckoutIsDisabled);
+        // quantity > 3 ? console.log(true) : console.log(false);
+        // setQuantity(item.quantity);
     }
 
 
@@ -76,12 +75,12 @@ const ShoppingCartItem = () => {
     return (
         <div className="shopping_cart_item">
             <div>
-                <img className="shopping_cart_item__image"/>
+                <img className="shopping_cart_item__image" src={product.imgURL}/>
             </div>
             <div>
                 <div className="shopping_cart_item__line">
-                    <Link to="/products/1">
-                        Item Name
+                    <Link to={`/products/${product.id}`}>
+                        {product.name}
                     </Link>
                 </div>
                 <div className="shopping_cart_item__line">

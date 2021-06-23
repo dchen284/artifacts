@@ -1,15 +1,25 @@
-import React, { useEffect, useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import ShoppingCartItem from './ShoppingCartItem';
 import CheckoutModal from './CheckoutModal';
+import { getCartItems } from '../../store/shopping_cart';
 import './ShoppingCart.css';
 
 const ShoppingCart = () => {
     //hooks and state variables
+    const dispatch = useDispatch();
     const [currentModal, setCurrentModal] = useState('');
     const [checkoutIsDisabled, setCheckoutIsDisabled] = useState(false);
-    // const dispatch = useDispatch();
-    // const cartItems = useSelector(state => state.cart);
+    const { session , shopping_cart } = useSelector(state => state);
+    const userId = session.user.id;
+    const cartItems = Object.values(shopping_cart);
+    // console.log('SHOPPING', cartItems);
+
+    useEffect(() => {
+        dispatch(getCartItems(userId))
+    }, [dispatch])
+    // const cartItems = useSelector(state => Object.values(state.shopping_cart));
+
 
     const cartItems = [
         { quantity: 2, product: {quantity: 3} },
@@ -57,10 +67,7 @@ const ShoppingCart = () => {
         <div className="shopping_cart">
             <div className="shopping_cart_item_display">
                 <div className="shopping_cart_item_display__title">Shopping Cart</div>
-                <ShoppingCartItem />
-                <ShoppingCartItem />
-                <ShoppingCartItem />
-                <ShoppingCartItem />
+                {cartItems?.map(item => <ShoppingCartItem setCheckoutIsDisabled={setCheckoutIsDisabled} item={item} key={item.id}/>)}
             </div>
             <div className="shopping_cart_summary">
                 <div className="shopping_cart_summary__title shopping_cart_summary__line">Cart Summary</div>
