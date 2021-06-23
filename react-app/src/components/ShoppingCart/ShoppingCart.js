@@ -21,10 +21,10 @@ const ShoppingCart = () => {
     // const cartItems = useSelector(state => Object.values(state.shopping_cart));
 
 
-    const cartItems = [
-        { quantity: 2, product: {quantity: 3} },
-        { quantity: 2, product: {quantity: 3} },
-    ];
+    // const cartItems = [
+    //     { quantity: 2, product: {quantity: 3} },
+    //     { quantity: 2, product: {quantity: 3} },
+    // ];
     // cartItems will be an array of objects, objects with the form:
     /*
         {
