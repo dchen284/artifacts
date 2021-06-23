@@ -8,6 +8,7 @@
   text-align: left;
   box-sizing: border-box;
   padding: 4px;
+  background-color:  rgba(167, 167, 167, 0.1);
 }
 
 .productDisplay__container:hover
