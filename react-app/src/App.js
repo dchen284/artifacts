@@ -9,8 +9,7 @@ import SingleReview from "./components/Reviews/SingleReview";
 import ReviewForm from "./components/Reviews/ReviewForm";
 import NavBar from "./components/Navigation/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import UsersList from "./components/UsersList";
-import User from "./components/User";
+import UserPage from "./components/UserPage";
 import LandingPage from "./components/LandingPage/LandingPage"
 import SearchResults from "./components/Search/SearchResults";
 import ShoppingCart from "./components/ShoppingCart"
@@ -58,11 +57,8 @@ function App() {
         <Route path="/reviews/review_form/:productId" exact={true}>
           <ReviewForm />
         </Route>
-        <ProtectedRoute path="/users" exact={true}>
-          <UsersList />
-        </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true}>
-          <User />
+          <UserPage />
         </ProtectedRoute>
         <ProtectedRoute path="/shopping-cart" exact={true}>
           <ShoppingCart />

@@ -10,13 +10,19 @@ product_routes = Blueprint('category', __name__)
 def products(category):
   categoryObj = Category.query.filter(Category.name.like(category)).first()
   products = Product.query.filter(Product.categoryId == categoryObj.id).all()
-  return {'products': [product.to_dict() for product in products]}
+  return jsonify([product.to_dict() for product in products])
 
 
 @product_routes.route('/products/<productId>')
 def retrieve_product(productId):
   productObj = Product.query.get(productId)
   return productObj.to_dict()
+
+
+@product_routes.route('/user/<Id>')
+def user_products(Id):
+  products = Product.query.filter(Product.userId == Id).all()
+  return jsonify([product.to_dict() for product in products])
 
 
 
@@ -52,3 +58,12 @@ def new_product():
   db.session.add(product)
   db.session.commit()
   return product.to_dict(), 200
+
+
+@product_routes.route('/products/<productId>', methods=['DELETE'])
+def remove_product(productId):
+  productObj = Product.query.get(productId)
+  print(productObj.to_dict(), 'HI HELLO IM IN THE FLASK SERVER PLEASE NOTICE MEEEEEEEEE')
+  db.session.delete(productObj)
+  db.session.commit()
+  return jsonify("Product Removed")
