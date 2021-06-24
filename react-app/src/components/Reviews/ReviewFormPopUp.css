@@ -1,5 +1,5 @@
-
-.review-form {
+.review-form,
+.review-edit-form {
     margin: 5px;
     background-color: lightyellow;
     display: inline-block;
@@ -20,7 +20,8 @@
     font-size: 15px;
 }
 
-.review-header {
+.review-header,
+.edit-form-title {
     font-weight: bold;
 }
 
@@ -67,8 +68,15 @@
 }
 
 .review-box > textarea {
-    border-radius: 2px;
+    border-radius: 3px;
     text-align: center;
+}
+
+.review-box-edit > textarea {
+    border-radius: 3px;
+    text-align: center;
+    height: 100px;
+    width: 300px;
 }
 
 .submit-button,
@@ -86,3 +94,14 @@
 .cancel-button:hover {
     box-shadow: 1px 2px 3px lightslategray;
 }
+
+.submit-button-edit,
+.cancel-button-edit {
+    background-color: rgba(230, 159, 29, 0.6);
+    border-radius: 2px;
+    width: 150px;
+    height: 30px;
+    padding: 7px;
+    margin: 5px;
+    cursor: pointer;
+} 

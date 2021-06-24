@@ -10,11 +10,13 @@ import './ReviewFormPopUp.css'
 
 
 function SingleReview() {
-    const user = useSelector(state => state.session.user);
+    // const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const reviewState = useSelector(state => state.reviews)
     const reviews = Object.values(reviewState);
     const { productId } = useParams()
+
+    const productIdInteger = parseInt(productId, 10)
 
     const [showForm, setShowForm] = useState(false);
     const [showButton, setButton] = useState(true);
@@ -37,7 +39,7 @@ function SingleReview() {
                 <h2 className='reviews-h2'>Reviews</h2>
                 <br></br>
                 {reviews.map((review) =>
-                    (productId == review.productId ? 
+                    (productIdInteger === review.productId ? 
                         <ReviewShowForm review={review} /> : null
                     )
                 )}

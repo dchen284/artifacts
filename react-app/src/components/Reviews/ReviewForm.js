@@ -14,7 +14,6 @@ const { productId } = useParams()
 
 const [rating, setRating] = useState(0);
 const [content, setContent] = useState('');
-const [errors, setErrors] = useState([]);
 
 
 useEffect(() => {
@@ -40,9 +39,6 @@ const handleSubmit = async (e) => {
 
 return (
         <form className='review-form' onSubmit={handleSubmit}>
-            <ul>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
             <br></br>
             <h2 className='review-header'>Leave Us Your Feedback</h2>
             <div className="rate">

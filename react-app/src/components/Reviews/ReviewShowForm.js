@@ -25,7 +25,7 @@ function ShowEditReview({ review }) {
 
     const openForm = () => {
     reviews.map((review) => {
-        if(user.id == review.userId) {
+        if(user.id === review.userId) {
             setShowForm(!showForm)
         }
     })
@@ -33,7 +33,7 @@ function ShowEditReview({ review }) {
 
     const handleDelete = async (id) => {
         reviews.map((review) => {
-            if(user.id == review.userId) {
+            if(user.id === review.userId) {
                 showDeleteButton(!deleteButton)
             }
     })
@@ -54,7 +54,7 @@ function ShowEditReview({ review }) {
         <div className='review-box-outer'>
             <div className='review-container' key={review.id}>
                     <h4 className='review-title'>{usersAll.map((user) => {
-                                        if(user.id == review.userId) {
+                                        if(user.id === review.userId) {
                                         return user.username
                                         }})}</h4>
                     <div className='review-score'>
@@ -69,25 +69,27 @@ function ShowEditReview({ review }) {
                     <div className='review-content'>
                     <i>{review.content}</i>
                     <p className='username'> - {usersAll.map((user) => {
-                                        if(user.id == review.userId) {
+                                        if(user.id === review.userId) {
                                         return user.email
                                         }})}</p>
                     </div>
                     <div className='button-group'>
                         <div>
-                            {user.id == review.userId &&
+                            {user.id === review.userId &&
                             <button className='open-edit-form' onClick={openForm}>Edit Review</button>
                             }
                         </div>
                         <div>
-                            {user.id == review.userId &&
+                            {user.id === review.userId &&
                             <button className='delete-review-button' onClick={() => handleDelete(review.id)}>Delete Review</button>
                             }
                         </div>
                     </div>
+                    {/* <br></br> */}
+                    {/* <br></br> */}
                     <br></br>
                 {showForm && (
-                    <UpdateReviewForm reviewId={review.id} openForm={openForm} />
+                    <UpdateReviewForm reviewId={review.id} openForm={openForm} review={review}/>
                 )}
                 </div>
         </div>

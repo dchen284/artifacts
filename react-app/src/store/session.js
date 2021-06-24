@@ -90,7 +90,6 @@ export const authenticate = () => async (dispatch) => {
 const initialState = {}
 
 export default function reducer( state = initialState, action) {
-  let newState;  
   switch(action.type){
         case SET_USER:
             return {user: action.payload}
