@@ -1,12 +1,13 @@
 import React from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
-import { checkoutCart } from "../../store/shopping_cart";
+import { checkoutCart, getCartItems } from "../../store/shopping_cart";
 import './CheckoutForm.css';
 
 const CheckoutForm = ({ setShowModal, cartItems, setErrors }) => {
 
     //hooks and state
+    const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -17,8 +18,11 @@ const CheckoutForm = ({ setShowModal, cartItems, setErrors }) => {
         console.log(errors);
         if(errors.length){
             setErrors(errors);
+            // setCheckoutIsDisabled(true);
+            dispatch(getCartItems(user.id))
             setShowModal(false);
         } else {
+            setErrors([]);
             history.push('/');
         }
     }

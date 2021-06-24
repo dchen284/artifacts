@@ -95,6 +95,7 @@ const ShoppingCart = () => {
                     checkoutIsDisabled={checkoutIsDisabled}
                     cartItems={cartItems}
                     setErrors={setErrors}
+                    // setCheckoutIsDisabled={setCheckoutIsDisabled}
                 />
                 {errors.length ? 
                 <ul>

@@ -31,7 +31,12 @@ export default function CheckoutModal({setCurrentModal, isCheckout, checkoutIsDi
                     setShowModal(false);
                     setCurrentModal('');
                 }}>
-                    <CheckoutForm setShowModal={setShowModal} cartItems={cartItems} setErrors={setErrors}/>
+                    <CheckoutForm 
+                    setShowModal={setShowModal} 
+                    cartItems={cartItems} 
+                    setErrors={setErrors}
+                    //setCheckoutIsDisabled={setCheckoutIsDisabled}
+                    />
                 </Modal>
             )}
         </>
