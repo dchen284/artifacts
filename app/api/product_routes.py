@@ -63,7 +63,16 @@ def new_product():
 @product_routes.route('/products/<productId>', methods=['DELETE'])
 def remove_product(productId):
   productObj = Product.query.get(productId)
-  print(productObj.to_dict(), 'HI HELLO IM IN THE FLASK SERVER PLEASE NOTICE MEEEEEEEEE')
   db.session.delete(productObj)
   db.session.commit()
+  return jsonify("Product Removed")
+
+
+@product_routes.route('/products/<productId>', methods=['PUT'])
+def update_product(productId):
+  productObj = Product.query.get(productId)
+  print(request.get_json(), 'I AM THE BACKENDDDDDDDD')
+
+
+  # db.session.commit()
   return jsonify("Product Removed")
