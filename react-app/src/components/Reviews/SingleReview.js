@@ -5,6 +5,7 @@ import { getReviews } from '../../store/reviews';
 import ReviewShowForm from './ReviewShowForm'
 import ReviewForm from './ReviewForm';
 import './ReviewForm.css';
+import './ReviewFormPopUp.css'
 
 
 
@@ -17,6 +18,7 @@ function SingleReview() {
     const { productId } = useParams()
 
     const [showForm, setShowForm] = useState(false);
+    const [showButton, setButton] = useState(true);
 
     const openForm = () => {
     reviews.map((review) => {
@@ -26,23 +28,29 @@ function SingleReview() {
     })
     }
 
+    const hideButton = () => {
+        setButton(!showButton)
+    }
+
     useEffect(() => {
         dispatch(getReviews())
     }, [dispatch])
 
     return (
         <div className='outer-div'>
-            <div>
                 <div>
                     <button className='new-review' onClick={openForm}>Write A Review</button>
                     {showForm &&
-                        <ReviewForm />
+                        <ReviewForm openForm={openForm}/>
                     }
                 </div>
+                <h2 className='reviews-h2'>Reviews</h2>
+                <br></br>
                 {reviews.map((review) =>
-                    <ReviewShowForm review={review}/>
+                    (productId == review.productId ? 
+                        <ReviewShowForm review={review} /> : null
+                    )
                 )}
-            </div>
         </div>
     )
 

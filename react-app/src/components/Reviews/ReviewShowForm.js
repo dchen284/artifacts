@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getReviews, deleteReview } from '../../store/reviews';
 import UpdateReviewForm from './UpdateReviewForm';
 import './ReviewForm.css';
+import './ReviewFormPopUp.css'
 
 function ShowEditReview({ review }) {
     const user = useSelector(state => state.session.user);
@@ -12,7 +13,6 @@ function ShowEditReview({ review }) {
 
     const [showForm, setShowForm] = useState(false);
     const [deleteButton, showDeleteButton] = useState(false);
-
 
     useEffect(() => {
         dispatch(getReviews())
@@ -37,6 +37,18 @@ function ShowEditReview({ review }) {
         dispatch(getReviews())
     }
 
+    function starsRatingTimes(rating) {
+        let stars = ''
+        for(let i = 0; i < rating; i++) {
+            stars += '⭐'
+        }
+        return stars
+    }
+
+    const getUserName = () => {
+
+    }
+
     return (
         <div className='review-box-outer'>
             <div className='review-container' key={review.id}>
@@ -46,13 +58,13 @@ function ShowEditReview({ review }) {
                             <span className='score'>{review.rating}</span>
                             <span>/5</span>
                             <span className='score-stars'>
-                                ⭐
+                                {starsRatingTimes(review.rating)}
                             </span>
                         </div>
                     </div>
                     <div className='review-content'>
                     <i>{review.content}</i>
-                    <small>User ID: {review.userId}</small>
+                    <small> - User ID: {review.userId}</small>
                     </div>
                     <div className='button-group'>
                         <div>
@@ -66,8 +78,9 @@ function ShowEditReview({ review }) {
                             }
                         </div>
                     </div>
+                    <br></br>
                 {showForm && (
-                    <UpdateReviewForm reviewId={review.id} />
+                    <UpdateReviewForm reviewId={review.id} openForm={openForm} />
                 )}
                 </div>
         </div>
