@@ -14,6 +14,7 @@ from .api.search_routes import search_routes
 from .api.s3_test_route import s3_test_route
 from .api.reviews_routes import reviews_routes
 from .api.shopping_routes import shopping_routes
+from .api.user_routes import user_routes
 
 from .seeds import seed_commands
 
@@ -42,6 +43,7 @@ app.register_blueprint(shopping_routes, url_prefix='/api/shopping')
 app.register_blueprint(s3_test_route, url_prefix='/api/s3')
 app.register_blueprint(reviews_routes, url_prefix='/api/reviews')
 app.register_blueprint(order_routes, url_prefix='/api/orders')
+app.register_blueprint(user_routes, url_prefix='/api/users')
 
 db.init_app(app)
 Migrate(app, db)

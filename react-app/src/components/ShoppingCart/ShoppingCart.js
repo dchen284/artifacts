@@ -10,6 +10,7 @@ const ShoppingCart = () => {
     const dispatch = useDispatch();
     const [currentModal, setCurrentModal] = useState('');
     const [checkoutIsDisabled, setCheckoutIsDisabled] = useState(false);
+    const [errors, setErrors] = useState([]);
     const { session , shopping_cart } = useSelector(state => state);
     const userId = session.user.id;
     const cartItems = Object.values(shopping_cart);
@@ -50,6 +51,9 @@ const ShoppingCart = () => {
 
     useEffect(() => {
         setCheckoutIsDisabled(false);
+        if (!cartItems.length) {
+            setCheckoutIsDisabled(true);
+        }
         cartItems.forEach( cartItem => {
             if (cartItem.quantity > cartItem.product.quantity || cartItem.quantity < 1) {
                 setCheckoutIsDisabled(true);
@@ -89,7 +93,16 @@ const ShoppingCart = () => {
                     setCurrentModal={setCurrentModal}
                     isCheckout={currentModal === 'checkout'}
                     checkoutIsDisabled={checkoutIsDisabled}
+                    cartItems={cartItems}
+                    setErrors={setErrors}
+                    // setCheckoutIsDisabled={setCheckoutIsDisabled}
                 />
+                {errors.length ? 
+                <ul>
+                    {errors.map(error => <li>{error}</li>)}
+                </ul> 
+                : 
+                null}
             </div>
         </div>
     )

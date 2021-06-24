@@ -3,6 +3,8 @@
 const GET_SHOPPING_CART = "shopping_cart/GET_SHOPPING_CART"
 const ADD_TO_SHOPPING_CART = "shopping_cart/ADD_TO_SHOPPING_CART"
 const REMOVE_FROM_SHOPPING_CART = "shopping_cart/REMOVE_FROM_SHOPPING_CART"
+const CLEAR_SHOPPING_CART = "shopping_cart/CLEAR_SHOPPING_CART"
+
 
 // ACTION CREATORS
 const addToCart = (item) => {
@@ -21,6 +23,12 @@ const removeFromCart = (item) => {
   return {
       type: REMOVE_FROM_SHOPPING_CART,
       item
+  }
+}
+
+const clearShoppingCart = () => {
+  return {
+      type: CLEAR_SHOPPING_CART
   }
 }
 
@@ -75,6 +83,31 @@ export const updateCartItemInDb = (itemToUpdate) => async dispatch => {
   }
 }
 
+
+export const checkoutCart = cartItems => async dispatch => { // cartItems comes as an array of shopping_cart_item objects
+    // Should also create an Order on the backend
+    // Iterate through and delete 'product' key since we don't need that object data
+    // for (let item of cartItems) {
+    //   delete item['product']
+    // }
+
+    const res = await fetch('/api/shopping/checkout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+    },
+      body: JSON.stringify(cartItems)
+    })
+
+    const message = await res.json();
+    // If there are no errors, update state
+    // Else return error messages to shopping cart component for rendering
+    if(!message.length){
+      dispatch(clearShoppingCart());
+    } 
+    return message;
+}
+
 // REDUCER
 
 const shoppingCartReducer = (state = {}, action) => {
@@ -91,6 +124,8 @@ const shoppingCartReducer = (state = {}, action) => {
         case REMOVE_FROM_SHOPPING_CART:
           delete newState[action.item.id];
           return newState;
+        case CLEAR_SHOPPING_CART:
+          return {};
         default:
           return newState
       }

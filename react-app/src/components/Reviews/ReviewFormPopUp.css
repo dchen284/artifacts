@@ -1,22 +1,40 @@
-.review-form {
-    float: right;
+.review-form,
+.review-edit-form {
     margin: 5px;
+    background-color: lightyellow;
+    display: inline-block;
+    text-align: center;
 }
 
 .score {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.review-title {
     font-size: 20px;
+    font-weight: bold;
+}
+
+.username {
+    font-size: 15px;
+}
+
+.review-header,
+.edit-form-title {
     font-weight: bold;
 }
 
 /* the stars: */
 .rate {
-    float: left;
+    display: inline-block;
+    text-align: center;
     height: 46px;
     padding: 0 10px;
 }
 .rate:not(:checked) > input {
     position:absolute;
-    top:-9999px;
+    visibility: hidden;
 }
 .rate:not(:checked) > label {
     float:right;
@@ -45,6 +63,22 @@
     color: #c59b08;
 }
 
+.review-box {
+    margin: auto;
+}
+
+.review-box > textarea {
+    border-radius: 3px;
+    text-align: center;
+}
+
+.review-box-edit > textarea {
+    border-radius: 3px;
+    text-align: center;
+    height: 100px;
+    width: 300px;
+}
+
 .submit-button,
 .cancel-button {
     background-color: rgba(230, 159, 29, 0.6);
@@ -60,3 +94,14 @@
 .cancel-button:hover {
     box-shadow: 1px 2px 3px lightslategray;
 }
+
+.submit-button-edit,
+.cancel-button-edit {
+    background-color: rgba(230, 159, 29, 0.6);
+    border-radius: 2px;
+    width: 150px;
+    height: 30px;
+    padding: 7px;
+    margin: 5px;
+    cursor: pointer;
+} 

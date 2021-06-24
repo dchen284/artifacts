@@ -12,6 +12,11 @@ export const retrieve = (product) => ({
   product
 });
 
+export const update = (product) => ({
+  type: RETRIEVE_PRODUCT,
+  product
+});
+
 
 const userProducts = products => ({
   type: GET_PRODUCTS,
@@ -42,7 +47,6 @@ export const getUserProducts = (id) => async dispatch => {
 
 
 export const retrieveProduct = (productId) => async dispatch => {
-  console.log(productId, 'thunking about products')
   const res = await fetch(`/api/category/products/${productId}`);
 
   if (res.ok) {
@@ -52,8 +56,18 @@ export const retrieveProduct = (productId) => async dispatch => {
 };
 
 export const removeListing = (productId) => async dispatch => {
-  const res = await fetch(`/api/category/products/${productId}`, {
+  const remove = await fetch(`/api/category/products/${productId}`, {
     method: 'DELETE',
+  });
+
+};
+
+export const updateListing = (product) => async dispatch => {
+  console.log(product, "I AM THE PRODUCTTTTTTTTTTTTTTTTTTTTTT")
+  const edit = await fetch(`/api/category/products/${product.id}`, {
+    method: 'PUT',
+    headers: {"Content-Type": "applicaton/json"},
+    body: product
   });
 
 };

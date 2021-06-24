@@ -19,3 +19,47 @@
 {
   background-color: lightslategrey;
 }
+
+.userListing__editForm
+{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 600px;
+  justify-content: space-between;
+  border: 2px solid black;
+  box-sizing: border-box;
+  padding: 2px;
+  background-color: whitesmoke;
+}
+
+.userListing__editForm > textarea
+{
+  display: flex;
+  flex-wrap: wrap;
+  height: 30%;
+  resize: none;
+  background-color: rgba(255, 255, 0, 0.2);
+  border-radius: 5px;
+}
+
+.userListing__editForm > input
+{
+  height: 40px;
+  background-color: rgba(255, 255, 0, 0.2);
+  border-radius: 5px;
+}
+
+.userListing__editForm > label
+{
+  font-weight: bold;
+}
+
+.userListing__editForm > button
+{
+  height: 40px;
+  width: 60%;
+  align-self: center;
+  border-radius: 5px;
+  background-color: rgb(156, 176, 189);
+}
