@@ -1,0 +1,12 @@
+.userPage__container
+{
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 420px;
+  width: 70%;
+  justify-content: space-between;
+  row-gap: 8px;
+  border: black 1px solid;
+  padding: 5px;
+}

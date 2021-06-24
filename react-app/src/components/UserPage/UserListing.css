@@ -1,0 +1,21 @@
+.userPage__image
+{
+  height: 278px;
+  width: 280px;
+  padding: 8px;
+}
+
+
+.userListing__container
+{
+  display: flex;
+  width: 100%;
+  height: 280px;
+  /* border: black 1px solid; */
+  box-sizing: border-box;
+}
+
+.userListing__container:hover
+{
+  background-color: lightslategrey;
+}
