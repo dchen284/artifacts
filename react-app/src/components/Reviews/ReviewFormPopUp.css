@@ -1,6 +1,9 @@
+
 .review-form {
-    float: right;
     margin: 5px;
+    background-color: lightyellow;
+    display: inline-block;
+    text-align: center;
 }
 
 .score {
@@ -17,9 +20,14 @@
     font-size: 15px;
 }
 
+.review-header {
+    font-weight: bold;
+}
+
 /* the stars: */
 .rate {
-    float: left;
+    display: inline-block;
+    text-align: center;
     height: 46px;
     padding: 0 10px;
 }
@@ -52,6 +60,15 @@
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
+}
+
+.review-box {
+    margin: auto;
+}
+
+.review-box > textarea {
+    border-radius: 2px;
+    text-align: center;
 }
 
 .submit-button,
