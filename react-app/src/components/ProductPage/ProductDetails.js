@@ -38,15 +38,24 @@ const ProductDetails = ({ product }) => {
       for(let i = 0; i < ratings.length; i++) {
         sum += ratings[i]
       }
-      let average = sum / 2
-      return average
+      let average = sum / ratings.length
+      return Math.round(average)
     }
+
+    function starsRating(rating) {
+      let stars = ''
+        for(let i = 0; i < rating; i++) {
+            stars += '⭐'
+        }
+      return stars
+    }
+
     const myRating = averageRating(ratings)
 
   return (
     <div className='productDetails__container'>
       <div className='productDetails__header'>{product.name}</div>
-      <div style={{"fontSize": "26px"}}>Rating: <span style={{"fontWeight": "bold"}}>{myRating} / 5</span></div>
+      <div style={{"fontSize": "26px"}}>Rating: <span style={{"fontWeight": "bold", "fontSize": "20px"}}>{myRating}</span><span> / 5 {starsRating(myRating)}</span></div>
       <div style={{"fontSize": "26px"}}>Price: <span style={{"fontWeight": "bold"}}>${product.price}</span></div>
       <div  style={{"fontSize": "26px"}}>Product Description: <br/><span style={{"fontStyle": "italic", "fontSize":"18px"}}>{product.description}</span></div>
       <span style={{"fontSize": "26px"}}>Quantity: <input type='number' value={currentQuantity} onChange={e => setCurrentQuantity(e.target.value)}></input></span>

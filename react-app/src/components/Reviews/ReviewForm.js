@@ -33,6 +33,7 @@ const handleSubmit = async (e) => {
 
         let createdReview = await dispatch(createReview(review))
         if (createdReview) {
+            openForm()
             history.push(`/products/${productId}`);
         }
     }

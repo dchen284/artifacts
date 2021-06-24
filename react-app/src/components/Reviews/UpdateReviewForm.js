@@ -30,6 +30,7 @@ function UpdateReviewForm({ reviewId, openForm, review }) {
         console.log(review)
         let updatedReview = await dispatch(updateReview(review))
         if(updatedReview) {
+            openForm()
             history.push(`/products/${productId}`)
         }
     }

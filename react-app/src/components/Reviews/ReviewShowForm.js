@@ -85,8 +85,6 @@ function ShowEditReview({ review }) {
                             }
                         </div>
                     </div>
-                    {/* <br></br> */}
-                    {/* <br></br> */}
                     <br></br>
                 {showForm && (
                     <UpdateReviewForm reviewId={review.id} openForm={openForm} review={review}/>

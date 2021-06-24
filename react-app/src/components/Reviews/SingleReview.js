@@ -10,7 +10,6 @@ import './ReviewFormPopUp.css'
 
 
 function SingleReview() {
-    // const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const reviewState = useSelector(state => state.reviews)
     const reviews = Object.values(reviewState);
