@@ -3,7 +3,7 @@ import { Modal } from '../../context/Modal';
 import CheckoutForm from './CheckoutForm';
 import './ShoppingCart.css';
 
-export default function CheckoutModal({setCurrentModal, isCheckout, checkoutIsDisabled}) {
+export default function CheckoutModal({setCurrentModal, isCheckout, checkoutIsDisabled, cartItems, setErrors}) {
 
     const [showModal, setShowModal] = useState(false);
 
@@ -31,7 +31,7 @@ export default function CheckoutModal({setCurrentModal, isCheckout, checkoutIsDi
                     setShowModal(false);
                     setCurrentModal('');
                 }}>
-                    <CheckoutForm setShowModal={setShowModal}/>
+                    <CheckoutForm setShowModal={setShowModal} cartItems={cartItems} setErrors={setErrors}/>
                 </Modal>
             )}
         </>

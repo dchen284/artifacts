@@ -1,19 +1,33 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
+import { checkoutCart } from "../../store/shopping_cart";
 import './CheckoutForm.css';
 
-const CheckoutForm = ({ setShowModal }) => {
+const CheckoutForm = ({ setShowModal, cartItems, setErrors }) => {
 
     //hooks and state
     const dispatch = useDispatch();
     const history = useHistory();
 
     //functions
-    const confirmOrder = () => {
+    const confirmOrder = async () => {
         //back end stuff
-        history.push('/');
+        const errors = await dispatch(checkoutCart( cartItems ))
+        console.log(errors);
+        if(errors.length){
+            setErrors(errors);
+            setShowModal(false);
+        } else {
+            history.push('/');
+        }
     }
+
+    const cartTotal = cartItems.reduce((accum, item) => {
+        const {product} = item;
+        accum += product.price * item.quantity;
+        return accum;
+    }, 0)
 
     //JSX
     return (
@@ -25,11 +39,21 @@ const CheckoutForm = ({ setShowModal }) => {
                     <div className="checkout_form__title">Name of Item</div>
                     <div className="checkout_form__title">Quantity of Item</div>
                 </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
+                {/* <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
                     <div>Thing 1 with a really long name like I dunno think of something you can do it or whatever oh look the linter is mad except this is JavaScript</div>
                     <div>1000000</div>
-                </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
+                </div> */}
+                {cartItems.map( (item) => {
+                    const { product } = item;
+                    return (
+                        <div key={product.id} className="shopping_cart_summary__priceline shopping_cart_summary__line">
+                        <div>{product.name}</div>
+                        <div>{item.quantity}</div>
+                        </div>
+                    )
+
+                })}
+                {/* <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
                     <div>Thing 2</div>
                     <div>1000000</div>
                 </div>
@@ -72,21 +96,21 @@ const CheckoutForm = ({ setShowModal }) => {
                 <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
                     <div>Thing 12</div>
                     <div>1000000</div>
-                </div>
+                </div> */}
             </div>
             <hr className="shopping_cart_summary__divider shopping_cart_summary__line"/>
-            <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
+            {/* <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
                 <div>Current Credits</div>
                 <div>$0.00</div>
-            </div>
+            </div> */}
             <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
                 <div>Total Cost of Order</div>
-                <div>$0.00</div>
+                <div>{`$${cartTotal}`}</div>
             </div>
-            <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
+            {/* <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
                 <div>Credits After Order</div>
                 <div>$0.00</div>
-            </div>
+            </div> */}
             <hr className="shopping_cart_summary__divider shopping_cart_summary__line"/>
             <div className="checkout_form__button_line">
                 <button

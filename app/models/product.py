@@ -1,4 +1,5 @@
 from .db import db
+from .order import order_product
 
 class Product(db.Model):
   __tablename__ = 'products'
@@ -16,6 +17,12 @@ class Product(db.Model):
   category = db.relationship("Category", back_populates="products")
   reviews = db.relationship("Review", back_populates="product")
   shopping_cart_items = db.relationship("ShoppingCartItem", back_populates="products")
+
+  order = db.relationship(
+    "Order",
+    secondary=order_product,
+    back_populates="products"
+  )
 
   def to_dict(self):
     return {
