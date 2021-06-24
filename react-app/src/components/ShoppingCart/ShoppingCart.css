@@ -24,7 +24,7 @@
 .shopping_cart_item__image {
     height: 200px;
     width: 250px;
-    background-color: pink;
+    /* background-color: pink; */
     margin: 5px;
 }
 

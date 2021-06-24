@@ -1,28 +1,18 @@
 import React, { useEffect, useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { deleteCartItemFromDb, updateCartItemInDb } from '../../store/shopping_cart';
 import './ShoppingCart.css';
 
-const ShoppingCartItem = ({setCheckoutIsDisabled, item}) => {
+const ShoppingCartItem = ({item}) => {
     console.log('WHAT IS ITEM',)
     //hooks and state
+    const dispatch = useDispatch();
     const [quantity, setQuantity] = useState(item.quantity);
     const [quantityStatus, setQuantityStatus] = useState();
     const [quantityError, setQuantityError] = useState(false);
     const { product } = item;
     //to do
-
-    //functions
-        //remove item from cart
-        //change quantity in cart
-            //if quantity is zero, remove item from cart
-            //max is...?
-                //based off inventory?
-
-    // flow:
-    // changing the quantity here will update Redux store for cart
-    // Redux store will contain cart items
-    // so on the Shopping Cart, it will get all the cart items from store
 
     // useEffects
 
@@ -34,21 +24,53 @@ const ShoppingCartItem = ({setCheckoutIsDisabled, item}) => {
             setQuantity(item.product.quantity);
             setQuantityError('Quantity exceeds stock quantity, please adjust.');
             setTimeout(() => {setQuantityError('')}, 5000);
-            //dispatch(fetchChangeQuantityOfItem(quantity));
         }
         else if (e.target.value < 1) {
             setQuantity(1);
             setQuantityError('Quantity must be 1 or greater; use Delete Item button to delete.');
             setTimeout(() => {setQuantityError('')}, 5000);
-            //dispatch(fetchChangeQuantityOfItem(1));
         }
         else {
             setQuantity(e.target.value);
-            //dispatch(fetchChangeQuantityOfItem(quantity));
         }
-
+        /*
+        Tried updating from here, the problem is that 'quantity' here is still the old value,
+        not the value set by setQuantity.  Used a useEffect to ensure that the 'quantity'
+        is after setQuantity fires.
+        */
     }
 
+    //This useEffect works after changeQuantity is invoked
+    useEffect(() => {
+        /*
+        'item.quantity' is from the database, 'quantity' is the user input.
+        The dispatch only occurs if the quantity needs updating, which is
+        when 'item.quantity' and 'quantity' do not match.  Without this 'if',
+        updates would be attempted every reload.
+
+        This useEffect creates a copy of the item named 'updatedItem',
+        but with the updated quantity.  'updatedItem' is then dispatched.
+        */
+        // setTimeout( () => {
+            if (item.quantity !== +quantity) {
+                const updatedItem = Object.assign({}, item);
+                updatedItem.quantity = +quantity;
+                // console.log('item and updatedItem', item, updatedItem);
+                dispatch(updateCartItemInDb(updatedItem));
+            }
+        // }, 500);
+
+    }, [dispatch, item, quantity])
+
+    /*
+    This function updates the Redux store that an item has been removed.
+    */
+    const deleteCartItem = () => {
+        console.log('>>>>>>item', item);
+        dispatch(deleteCartItemFromDb(item));
+    }
+
+    //This useEffect displays different quantity status text on the shopping cart screen.
     useEffect(() => {
         if (item.product.quantity === 0) {
             setQuantityStatus(`In Stock: ${item.product.quantity} [Sold Out]`);
@@ -60,16 +82,6 @@ const ShoppingCartItem = ({setCheckoutIsDisabled, item}) => {
             setQuantityStatus(`In Stock: ${item.product.quantity}`);
         }
     }, [item]);
-
-    /*
-    This function updates the Redux store that an item has been removed.
-    */
-    const deleteCartItem = (e) => {
-        // console.log(setCheckoutIsDisabled);
-        // quantity > 3 ? console.log(true) : console.log(false);
-        // setQuantity(item.quantity);
-    }
-
 
     //JSX
     return (

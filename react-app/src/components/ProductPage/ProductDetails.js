@@ -6,11 +6,11 @@ import "./ProductDetails.css"
 
 
 const ProductDetails = ({ product }) => {
-  const [currentQuantity, setCurrentQuantity] = useState(0);
+  const [currentQuantity, setCurrentQuantity] = useState(1);
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
   const history = useHistory();
-  
+
   const handleClick = () => {
     const item = {
       userId : user.id,
@@ -22,7 +22,7 @@ const ProductDetails = ({ product }) => {
 
     history.goBack();
   }
-  // 
+  //
 
 
   return (
