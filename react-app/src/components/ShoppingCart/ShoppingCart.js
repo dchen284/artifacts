@@ -17,7 +17,7 @@ const ShoppingCart = () => {
 
     useEffect(() => {
         dispatch(getCartItems(userId))
-    }, [dispatch])
+    }, [dispatch, userId])
     // const cartItems = useSelector(state => Object.values(state.shopping_cart));
 
 

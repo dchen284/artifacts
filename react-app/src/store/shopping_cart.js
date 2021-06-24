@@ -47,7 +47,7 @@ export const getCartItems = (userId) => async (dispatch) => {
 
 }
 
-export const deleteCartItem = (item) => async dispatch => {
+export const deleteCartItemFromDb = (item) => async dispatch => {
   const res = await fetch(`/api/shopping/`, {
     method: 'DELETE',
     headers: {
@@ -56,11 +56,24 @@ export const deleteCartItem = (item) => async dispatch => {
     body: JSON.stringify(item)
   })
   if (res.ok) {
-    const data = await res.json();
-    dispatch(removeFromCart(data));
+    //const data = await res.json();
+    dispatch(removeFromCart(item));
   }
 }
 
+export const updateCartItemInDb = (itemToUpdate) => async dispatch => {
+  const res = await fetch(`/api/shopping/`, {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(itemToUpdate)
+  })
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(addToCart(data)); //the logic for addToCart also works for updating
+  }
+}
 
 // REDUCER
 
