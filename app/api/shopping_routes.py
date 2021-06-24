@@ -13,9 +13,13 @@ def get_items(userId):
 
 @shopping_routes.route('/', methods=['POST'])
 def shopping_cart():
+    # Convert request data to JSON Object
     data = request.get_json()
+
+    # Query for item based on matching productId and UserId
     cart_item = ShoppingCartItem.query.filter(ShoppingCartItem.productId == data['productId'] and ShoppingCartItem.userId == data['userId']).first()
-    print("********************* CART ITEM ******************************", cart_item)
+
+    # If the item does not exist, add it to the database
     if cart_item is None:
         item = ShoppingCartItem()
         item.userId = data['userId']
@@ -25,6 +29,7 @@ def shopping_cart():
         db.session.add(item)
         db.session.commit()
         return item.to_dict()
+    # If item does exist update quantity
     else:
         cart_item.quantity += data['quantity']
         db.session.add(cart_item)

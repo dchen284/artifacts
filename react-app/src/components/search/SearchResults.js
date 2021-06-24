@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ProductDisplay from "../Listings/ProductDisplay";
+import ListingFilters from "../Listings/ListingFilters";
 
 const SearchResults = () => {
     const { searchTerm } = useParams();
@@ -19,7 +21,7 @@ const SearchResults = () => {
     return (
         <>
             <h1> Search Term: {searchTerm} </h1>
-            <ul>
+            {/* <ul>
                 {
                     searchResults.map( result => {
                         return (
@@ -30,8 +32,24 @@ const SearchResults = () => {
                         );
                     })
                 }
-            </ul>
-            {searchResults.length ? null : <h2>Sorry, no results found.</h2>}
+            </ul> */}
+            <div className='listingsPage__container'>
+                {searchResults.length ?
+                <>
+                    <ListingFilters />
+                    <div className='listingGrid__container'>
+                        {searchResults.map( result => (
+                            <ProductDisplay product={result} key={result.id}/>
+                        ))}
+
+                    </div>
+                </>
+                :
+                <h2>Sorry, no results found.</h2>
+                // {searchResults.length ? null : <h2>Sorry, no results found.</h2>}
+                        
+                }
+            </div>
         </>
     )
 }
