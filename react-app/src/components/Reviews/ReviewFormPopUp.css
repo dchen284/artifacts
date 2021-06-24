@@ -4,8 +4,17 @@
 }
 
 .score {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.review-title {
     font-size: 20px;
     font-weight: bold;
+}
+
+.username {
+    font-size: 15px;
 }
 
 /* the stars: */
