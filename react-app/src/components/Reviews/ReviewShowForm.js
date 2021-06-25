@@ -73,17 +73,17 @@ function ShowEditReview({ review }) {
                                         return user.email
                                         }})}</p>
                     </div>
-                    {user == true ? 
+                    {user ? 
                     <div className='button-group'>
                         <div>
-                            (user.id === review.userId &&
+                            {user.id === review.userId &&
                                 <button className='open-edit-form' onClick={openForm}>Edit Review</button>
-                            )
+                            }
                         </div>
                         <div>
-                            (user.id === review.userId
+                            {user.id === review.userId &&
                                 <button className='delete-review-button' onClick={() => handleDelete(review.id)}>Delete Review</button>
-                            )
+                            }
                         </div>
                     </div>
                     : null }

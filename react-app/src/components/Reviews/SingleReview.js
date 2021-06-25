@@ -30,19 +30,22 @@ function SingleReview() {
     }, [dispatch])
 
     return (
+        <>
+        <div className='review-header-div'>
+        <h2 className='reviews-h2'>Reviews</h2>
+            <button className='new-review' onClick={openForm}>Write A Review</button>
+            {showForm && 
+                <ReviewForm openForm={openForm}/>
+            }
+        </div>
         <div className='outer-div'>
-                    <button className='new-review' onClick={openForm}>Write A Review</button>
-                    {showForm && 
-                        <ReviewForm openForm={openForm}/>
-                    }
-                <h2 className='reviews-h2'>Reviews</h2>
-                <br></br>
                 {reviews.map((review) =>
                     (productIdInteger === review.productId ? 
                         <ReviewShowForm review={review} /> : null
                     )
                 )}
         </div>
+        </>
     )
 
 }

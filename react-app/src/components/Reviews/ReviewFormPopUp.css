@@ -22,7 +22,9 @@
 
 .review-header,
 .edit-form-title {
-    font-weight: bold;
+    font-weight: bolder;
+    color: white;
+    border: #495464;
 }
 
 /* the stars: */
@@ -70,6 +72,8 @@
 .review-box > textarea {
     border-radius: 3px;
     text-align: center;
+    height: 100px;
+    width: 300px;
 }
 
 .review-box-edit > textarea {
@@ -81,9 +85,10 @@
 
 .submit-button,
 .cancel-button {
-    background-color: rgba(230, 159, 29, 0.6);
+    color: #495464;
+    background-color: #F4F4F2 ;
     border-radius: 2px;
-    width: 200px;
+    width: 150px;
     height: 30px;
     padding: 7px;
     margin: 5px;
@@ -92,12 +97,14 @@
 
 .submit-button:hover,
 .cancel-button:hover {
+    background-color: #495464;
+    color: white;
     box-shadow: 1px 2px 3px #495464;
 }
 
 .submit-button-edit,
 .cancel-button-edit {
-    background-color: rgba(230, 159, 29, 0.6);
+    color: #495464;
     border-radius: 2px;
     width: 150px;
     height: 30px;
@@ -105,3 +112,10 @@
     margin: 5px;
     cursor: pointer;
 } 
+
+.submit-button-edit:hover,
+.cancel-button-edit:hover {
+    background-color: #495464;
+    color: white;
+    box-shadow: 1px 2px 3px #495464;
+}
