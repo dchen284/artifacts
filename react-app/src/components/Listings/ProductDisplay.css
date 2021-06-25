@@ -2,10 +2,12 @@
 {
   /* border: 3px solid red; */
   display: flex;
+  width: 250px;
+  height: 250px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: left;
+  text-align: center;
   box-sizing: border-box;
   padding: 4px;
   background-color:  rgba(167, 167, 167, 0.1);
@@ -21,6 +23,6 @@
 
 .productDisplay__image
 {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
