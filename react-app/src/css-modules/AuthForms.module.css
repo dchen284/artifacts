@@ -1,0 +1,55 @@
+.loginBtn,
+.authBtn,
+.registerBtn {
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    font-size: 16px;
+    background: #67768d;
+    border: 2px solid black;
+    color: white;
+}
+.loginBtn:hover,
+.authBtn:hover,
+.registerBtn:hover{
+    background: #495464;
+}
+
+.authBtnContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.authMsg{
+    color:red;
+}
+
+.authBtn{
+    height: 35px;
+    width: 100%;
+    margin: 5px 0px;
+}
+
+
+.modalHeader{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+.authForm{
+    padding: 15px;
+    width: 500px;
+}
+
+.authInput{
+    display: block;
+    height: 35px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+}

@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import { login } from "../../store/session";
+import styles from '../../css-modules/AuthForms.module.css';
 
-const LoginForm = ({ setCurrentModal }) => {
+const LoginForm = ({ setCurrentModal, auth }) => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
   const [errors, setErrors] = useState([]);
@@ -41,11 +42,12 @@ const LoginForm = ({ setCurrentModal }) => {
 
   return (
     <>
-      <div>
-        <h1>Sign in</h1>
-        <button onClick={() => setCurrentModal('signup')}>Register</button>
+      <div className={styles.modalHeader}>
+        <h1 className={styles.modalHeaderTxt}>Sign in</h1>
+        <button className={styles.registerBtn} onClick={() => setCurrentModal('signup')}>Register</button>
       </div>
-      <form onSubmit={onLogin}>
+        {auth && <p className={styles.authMsg}>{auth.authMsg}</p>}
+      <form className={styles.authForm} onSubmit={onLogin}>
         <div>
           {errors.map((error) => (
             <div>{error}</div>
@@ -59,6 +61,7 @@ const LoginForm = ({ setCurrentModal }) => {
             placeholder="Email"
             value={email}
             onChange={updateEmail}
+            className={styles.authInput}
           />
         </div>
         <div>
@@ -69,11 +72,12 @@ const LoginForm = ({ setCurrentModal }) => {
             placeholder="Password"
             value={password}
             onChange={updatePassword}
+            className={styles.authInput}
           />
-          <button type="submit">Login</button>
         </div>
-        <div>
-          <button onClick={loginDemo}>Login as Demo User</button>
+        <div className={styles.authBtnContainer}>
+          <button className={styles.authBtn} type="submit">Login</button>
+          <button  className={styles.authBtn} onClick={loginDemo}>Login as Demo User</button>
         </div>
       </form>
     </>
