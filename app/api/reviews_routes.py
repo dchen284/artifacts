@@ -12,6 +12,7 @@ reviews_routes = Blueprint('reviews', __name__)
 def reviews_all():
     reviews = Review.query.all()
     return {"reviews": [review.to_dict() for review in reviews]}
+    # return jsonify([review.to_dict() for review in reviews])
 
 
 
@@ -25,7 +26,7 @@ def create_review():
     review = Review()
     if form.validate():
         form.populate_obj(review)
-    
+
     db.session.add(review)
     db.session.commit()
 
@@ -45,7 +46,7 @@ def update_review(reviewId):
     if form.validate():
         form.populate_obj(review)
         db.session.commit()
-        
+
     return review.to_dict()
 
 
@@ -58,4 +59,3 @@ def delete_review(reviewId):
     db.session.commit()
 
     return jsonify("Success")
-
