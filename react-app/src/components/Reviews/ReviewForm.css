@@ -1,6 +1,6 @@
 .reviews-h2 {
     font-size: 25px;
-    font-weight: bold;
+    font-weight: bolder;
     margin: 5px;
 }
 
@@ -18,6 +18,10 @@
     overflow: scroll;
 }
 
+.review-container {
+    margin: 5px;
+}
+
 .score-container{
     align-items: center;
     margin-bottom: 0.8rem;
@@ -29,7 +33,7 @@
 }
 
 .review-text {
-    line-height: 1.45;
+    font-family: Montserrat, sans-serif;
 }
 
 .open-edit-form,
