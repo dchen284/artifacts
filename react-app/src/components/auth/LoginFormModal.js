@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from '../../context/Modal';
 import LoginForm from './LoginForm';
-export default function LoginFormModal({setCurrentModal, isLogin}) {
+import styles from '../../css-modules/AuthForms.module.css';
+
+export default function LoginFormModal({setCurrentModal, isLogin, auth}) {
     const [showLoginModal, setShowLoginModal] = useState(false);
 
     useEffect(() => {
@@ -9,13 +11,14 @@ export default function LoginFormModal({setCurrentModal, isLogin}) {
             setShowLoginModal(true);
         } else {
             setShowLoginModal(false);
+            auth.setAuthMsg('');
         }
     }, [isLogin])
 
 
     return (
         <>
-            <button onClick={() => {
+            <button className={styles.loginBtn} onClick={() => {
                 setShowLoginModal(true);
                 setCurrentModal('login');
             }}>Login</button>
@@ -24,7 +27,7 @@ export default function LoginFormModal({setCurrentModal, isLogin}) {
                     setShowLoginModal(false);
                     setCurrentModal('');
                 }}>
-                    <LoginForm hideLogin={() => setShowLoginModal(false)} setCurrentModal={setCurrentModal}/>
+                    <LoginForm hideLogin={() => setShowLoginModal(false)} setCurrentModal={setCurrentModal} auth={auth}/>
                 </Modal>
             )}
         </>
