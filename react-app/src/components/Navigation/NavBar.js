@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignUpModal from '../auth/SignUpModal';
@@ -8,7 +8,7 @@ import ProfileButton from './ProfileButton'
 import SearchBar from './SearchBar';
 import styles from '../../css-modules/NavBar.module.css'
 const NavBar = () => {
-  // TODO: Turn Login into button once Modal is created
+
   const [currentModal , setCurrentModal] = useState('');
   console.log("mode", currentModal)
   const user = useSelector(state => state.session.user);
@@ -17,21 +17,13 @@ const NavBar = () => {
     <nav>
       <ul className={styles.navItems}>
         <li className={styles.leftMenu}>
-          <NavLink to="/" exact={true} activeClassName="active">
-            Artifacts
-          </NavLink>
-          <NavLink to="/category/Prehistoric" exact={true} activeClassName="active">
-            Explore
-          </NavLink>
+          <Link to="/" exact={true} activeClassName="active">
+            <img className={styles.logo} src="logo2.png" />
+          </Link>
+          <Link to="/category/Prehistoric" exact={true} activeClassName="active">
+            <button className={styles.exploreBtn}>Explore</button>
+          </Link>
         </li>
-        {/* <li className={styles.searchContainer}>
-          <div className={styles.searchBar}>
-            <input type="text" placeholder="Search for anything"/>
-            <button>
-              <i className="fas fa-search fa-lg" />
-            </button>
-          </div>
-        </li> */}
         <SearchBar />
         <li className={styles.rightMenu}>
           {user ?
