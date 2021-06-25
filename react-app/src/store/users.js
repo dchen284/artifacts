@@ -8,7 +8,7 @@ const loadUsers = (users) => {
 }
 
 export const getUsers = () => async (dispatch) => {
-    const res = await fetch('/api/users');
+    const res = await fetch('/api/users/');
 
     if(res.ok) {
         const users = await res.json();
@@ -20,7 +20,7 @@ export const getUsers = () => async (dispatch) => {
 const initialState = {}
 
 export default function usersReducer( state = initialState, action) {
-    let newState;  
+    let newState;
     switch(action.type){
             case LOAD_USERS:
                 newState = {};

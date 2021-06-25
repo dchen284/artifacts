@@ -8,6 +8,8 @@ import LoginPromptModal from './LoginPromptModal';
 import ProfileButton from './ProfileButton'
 import SearchBar from './SearchBar';
 import styles from '../../css-modules/NavBar.module.css'
+import logo from '../../images/logo2.png'
+
 const NavBar = () => {
 
   const [currentModal , setCurrentModal] = useState('');
@@ -30,7 +32,7 @@ const NavBar = () => {
       <ul className={styles.navItems}>
         <li className={styles.leftMenu}>
           <Link to="/" exact="true" activeclassname="active">
-            <img alt="logo" className={styles.logo} src='/logo2.png' />
+            <img alt="logo" className={styles.logo} src={logo} />
           </Link>
           <Link to="/category/Prehistoric" exact="true" activeclassname="active">
             <button className={styles.exploreBtn}>Explore</button>
