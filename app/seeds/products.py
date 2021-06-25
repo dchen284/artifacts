@@ -23,8 +23,9 @@ def seed_products():
             Holocene glacial retreat, this delectable jerky was made by real
             Neanderthals, giving you a real taste of history.'''
     )
-    # p3 = Product(quantity=1, price=1, name='', description='', imgURL='', userId=4, categoryId=1)
-    # p4 = Product(quantity=2, price=1, name='', description='', imgURL='', userId=5, categoryId=1)
+    p3 = Product(quantity=3, price=10000, name='Original Cave Drawings', description='One of a kind pieces of art that were thought to be lost to the sands of time. Please no flash photography.',
+            imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/frontiers-in-psychology-cave-art-origin-modern-language.jpg', userId=4, categoryId=1)
+    p4 = Product(quantity=2, price=1, name='', description='', imgURL='', userId=5, categoryId=1)
     # p5 = Product(quantity=6, price=150000, name='T-Rex Skull', description='', imgURL='', userId=6, categoryId=1)
 
     # Antiquities
@@ -59,8 +60,12 @@ def seed_products():
             fortunes will be in store for you with this centerpiece!''',
 
     )
-    # a4 = Product(quantity=100, price=1, name='a4', description='', imgURL='', userId=5, categoryId=2)
-    # a5 = Product(quantity=1, price=1, name='a5', description='', imgURL='', userId=6, categoryId=2)
+    a4 = Product(quantity=100, price=80, name='Joshua Sandals', description='Worn by a once famous carpenter, these sandals still have many miles left on them. Worn, but not worn out, these will make you feel like you\'re walking on water!',
+            imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/istockphoto-970559914-612x612.jpg', userId=5, categoryId=2)
+    a5 = Product(quantity=300, price=900, name='Samurai Sword', description='These weapons were used by ancient warriors in Japan. The Katana, as it is known, can do more than slice through some fruit. May your foes quake when they see you wield this.',
+            imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/ceba00b4646565794cbd9fe5982d8f3c.jpg', userId=6, categoryId=2)
+    a6 = Product(quantity=10, price=2000, name='DaVinci Sketches', description='Original artwork from DaVinci himself, this drawing is one of his most famous works of art. Depicted here is a man with four arms and four legs. Why this many had so many limbs is still a mystery to this day. Don\'t ask how we got this.',
+            imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/merlin_161422065_f398f3f3-76e6-431e-a781-69337e62c19e-superJumbo.jpg', userId=2, categoryId=2)
 
     # Modern
     m1 = Product(
@@ -84,6 +89,12 @@ def seed_products():
          userId=5, categoryId=3)
     m5 = Product(quantity=1, price=900000, name='The Declaration of Independence', description='They say something interesting happens when you rub lemon juice on the back...' ,
          imgURL='https://library.wustl.edu/wp-content/uploads/2016/07/160624_jwb_declaration_of_independence_003-1024x691.jpg', userId=6, categoryId=3)
+    m6 = Product(quantity=1, price=300000, name='The First Basketball', description='Stitched together by the late great James Naismith himself, this ball still has plenty of bounce left!' ,
+         imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/lossless-page1-220px-Basketball_historic.tif.png', userId=6, categoryId=3)
+    m7 = Product(quantity=250, price=8, name='Coca-Cola', description='We went back and got the good stuff. You know...THAT coke. This will definitely put some pep in your step! Please drink responsibly.' ,
+         imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/fafe33725142af7a364f21e391efd719.jpg', userId=4, categoryId=3)
+    m8 = Product(quantity=120, price=250, name='Reversible Dress', description='Introducing the reversible dress, is it gold and white or black and blue? We\'ll leave it up to you how you would like to style this one of a kind article of clothing. Known for its versatility, step out in this number and you will be the talk of the town!' ,
+         imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/The_Dress_(viral_phenomenon).png', userId=4, categoryId=3)
 
     # Future
     f1 = Product(
@@ -96,16 +107,22 @@ def seed_products():
             stunning crystal-clear body and lightning-speed apps powered
             by quantum computing and nano-hamsters spinning nano-wheels!''',
     )
-    # f2 = Product(quantity=10, price=1, name='', description='', imgURL='', userId=3, categoryId=4)
-    # f3 = Product(quantity=20, price=1, name='', description='', imgURL='', userId=4, categoryId=4)
-    # f4 = Product(quantity=100, price=1, name='', description='', imgURL='', userId=5, categoryId=4)
-    # f5 = Product(quantity=1, price=1, name='', description='', imgURL='', userId=6, categoryId=4)
+    f2 = Product(quantity=1, price=10, name='Kyle Powers First Nobel Prize', description='With the invention of his farmer robot AI technology, Kyle Powers singlehandedly solved world hunger.',
+            imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/561381b103db1.jpg', userId=3, categoryId=4)
+    f3 = Product(quantity=1, price=50000000, name='The Last Ice', description='When faced with the climate crisis, the world failed miserably, however due to the heroic actions of Greta Thunberg we were able to salvage this ice. Legend says she walked to Arctis barefoot to procure this ice, some say she\'s still out there watching over us, waiting for the next crisis.',
+            imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/IMG2_1163-e1338677533853.jpg', userId=4, categoryId=4)
+    f4 = Product(quantity=800, price=30000, name='Fully Operational Time Machine', description='With this time machine you can head back to the past or back to the future of your choosing. Just pick the year, put it in gear, and step on the gas! Make sure you have plenty of runway before you take off and be sure not to make any time-altering decisions.',
+            imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/delorean-time-machine-from-back-to-the-future-photo-by-petersen-automotive-museum_100792849_h.jpg', userId=1, categoryId=4)
+    f5 = Product(quantity=15, price=5000, name='The Heels Worn By The First Woman President', description='In her first inaugural address she said, "Guys, like, let\'s just stop being mean to each other!" And with those words Kim Kardashian united the nation. She has since went on to pass such legislation as the Don\'t be Rude Act and the Stop Being Poor Bill, both of which have had far reaching and questionable results.',
+            imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/christian-louboutin-so-kate.jpg', userId=3, categoryId=4)
+    f6 = Product(quantity=200, price=600, name='Laser Sword', description='Why shoot when you can stab, featuring the Laser Sword that can cut through anything! Fully rectractable so you can take it on the go with you. Comes with two default settings \'Light\' and \'Dark\'.',
+            imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/Lightsaber%2C_silver_hilt%2C_blue_blade.png', userId=3, categoryId=4)
 
     products = [
-        p1, p2,
-        a1, a2, a3,
-        m1, m2, m3, m4, m5,
-        f1,
+        p1, p2, p3,
+        a1, a2, a3, a4, a5, a6,
+        m1, m2, m3, m4, m5, m6, m7, m8,
+        f1, f2, f3, f4, f5, f6
     ]
     for product in products:
         db.session.add(product)

@@ -81,6 +81,7 @@ def update_product(productId):
 
   image = request.files["image"]
 
+  print(image.filename)
   if not allowed_file(image.filename):
     return {"errors": "file type not permitted"}, 400
 
