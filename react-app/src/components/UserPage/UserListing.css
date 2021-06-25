@@ -18,7 +18,7 @@
 
 .userListing__container:hover
 {
-  background-color: lightslategrey;
+  background-color: #BBBFCA;
 }
 
 .userListing__editForm
@@ -31,7 +31,8 @@
   border: 2px solid black;
   box-sizing: border-box;
   padding: 2px;
-  background-color: whitesmoke;
+  background-color: #BBBFCA;
+  border-radius: 2px;
 }
 
 .userListing__editForm > textarea
@@ -40,29 +41,40 @@
   flex-wrap: wrap;
   height: 30%;
   resize: none;
-  background-color: rgba(255, 255, 0, 0.2);
+  background-color: #E8E8E8;
   border-radius: 5px;
+  margin: 7px;
 }
 
 .userListing__editForm > input
 {
   height: 40px;
-  background-color: rgba(255, 255, 0, 0.2);
+  background-color: #E8E8E8;
   border-radius: 5px;
+  margin: 7px;
 }
 
 .userListing__editForm > label
 {
-  font-weight: bold;
+  margin: 5px;
 }
 
 .userListing__editForm > button
 {
   height: 40px;
-  width: 60%;
+  width: 40%;
   align-self: center;
   border-radius: 5px;
-  background-color: rgb(156, 176, 189);
+  background-color: #495464;
+  color: white;
+  box-shadow: 1px 2px 3px #495464;
+  margin: 5px;
+}
+
+.userListing__editForm > button:hover {
+  color: #495464;
+  background-color: #F4F4F2;
+  box-shadow: 1px 2px 3px #495464;
 }
 
 .userListing__editForm > div
@@ -83,7 +95,18 @@
 .userListing__productDetails > button
 {
   height: 40px;
-  width: 30%;
+  width: 25%;
+  color: #495464;
+  background-color: #F4F4F2 ;
+  border-radius: 5px;
+  padding: 7px;
+  margin: 5px;
+}
+
+.userListing__productDetails > button:hover {
+  background-color: #495464;
+  color: white;
+  box-shadow: 1px 2px 3px #495464;
 }
 
 #userProduct___delete
@@ -97,6 +120,18 @@
   padding: 5px;
 }
 
+.edit-button,
+.delete-button {
+    color: #495464;
+    background-color: #F4F4F2 ;
+    border-radius: 2px;
+    width: 150px;
+    height: 30px;
+    padding: 7px;
+    margin: 5px;
+    cursor: pointer;
+}
+
 #userProduct___delete > div
 {
   text-align: center;
@@ -108,5 +143,7 @@
   height: 40px;
   width: 50%;
   align-self: center;
+  border-radius: 5px;
+  color: white;
   background-color: orangered;
 }

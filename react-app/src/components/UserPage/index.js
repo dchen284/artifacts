@@ -37,8 +37,8 @@ function UserPage() {
 
   return (
     <>
-      <div>
-        <h1>Hello, {user.username}</h1>
+      <div className='welcome-container'>
+        <h1 className='welcome'>Hello, {user.username}</h1>
         <div>Account No. {user.id}</div>
         <div>Email: {user.email}</div>
       </div>

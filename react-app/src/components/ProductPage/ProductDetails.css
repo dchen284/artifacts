@@ -21,7 +21,15 @@
 {
   height: 45px;
   width: 100%;
-  background-color: rgba(230, 159, 29, 0.6);
+  background-color: #495464;
+  color: white;
+  border-radius: 2px;
+}
+
+.productDetails__container > button:hover {
+    color: #495464;
+    background-color: #F4F4F2;
+    box-shadow: 1px 2px 3px #495464;
 }
 
 

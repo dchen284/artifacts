@@ -19,3 +19,15 @@
   position: relative;
   left: 400px;
 }
+
+.welcome-container {
+  background-color: #BBBFCA;
+  width: 300px;
+  margin: 5px;
+  padding: 7px;
+  border-radius: 3px;
+}
+
+.welcome {
+  font-weight: bolder;
+}
