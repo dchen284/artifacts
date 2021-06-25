@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import styles from '../../css-modules/AuthForms.module.css';
 
 const SignUpForm = ({setCurrentModal}) => {
   const dispatch = useDispatch();
@@ -42,11 +43,11 @@ const SignUpForm = ({setCurrentModal}) => {
 
   return (
     <>
-      <div>
+      <div className={styles.modalHeader}>
         <h1>Register</h1>
-        <button onClick={() => setCurrentModal('login')}>Login</button>
+        <button className={styles.registerBtn} onClick={() => setCurrentModal('login')}>Login</button>
       </div>
-      <form onSubmit={onSignUp}>
+      <form className={styles.authForm} onSubmit={onSignUp}>
         <div>
           <label>User Name</label>
           <input
@@ -54,6 +55,7 @@ const SignUpForm = ({setCurrentModal}) => {
             name="username"
             onChange={updateUsername}
             value={username}
+            className={styles.authInput}
           ></input>
         </div>
         <div>
@@ -63,6 +65,7 @@ const SignUpForm = ({setCurrentModal}) => {
             name="email"
             onChange={updateEmail}
             value={email}
+            className={styles.authInput}
           ></input>
         </div>
         <div>
@@ -72,19 +75,21 @@ const SignUpForm = ({setCurrentModal}) => {
             name="password"
             onChange={updatePassword}
             value={password}
+            className={styles.authInput}
           ></input>
         </div>
         <div>
-          <label>Repeat Password</label>
+          <label>Confirm Password</label>
           <input
             type="password"
             name="repeat_password"
             onChange={updateRepeatPassword}
             value={repeatPassword}
             required={true}
+            className={styles.authInput}
           ></input>
         </div>
-        <button type="submit">Sign Up</button>
+        <button className={styles.authBtn} type="submit">Sign Up</button>
       </form>
     </>
   );
