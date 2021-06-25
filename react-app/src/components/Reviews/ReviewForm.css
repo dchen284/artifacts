@@ -26,7 +26,8 @@
 }
 
 .review-container {
-    margin: 5px;
+    margin-left: 15px;
+    margin-top: 5px;
 }
 
 .score-container{
@@ -56,12 +57,16 @@
     cursor: pointer;
 }
 
-.open-edit-form:hover,
-.delete-review-button:hover {
+.open-edit-form:hover {
     color: #495464;
     background-color: #F4F4F2;
     box-shadow: 1px 2px 3px #495464;
 } 
+
+.delete-review-button:hover  {
+    background-color: red;
+    box-shadow: 1px 2px 3px #495464;
+}
 
 .new-review {
     background-color: #495464;
