@@ -30,7 +30,7 @@ const NavBar = () => {
       <ul className={styles.navItems}>
         <li className={styles.leftMenu}>
           <Link to="/" exact="true" activeclassname="active">
-            <img alt="logo" className={styles.logo} src="logo2.png" />
+            <img alt="logo" className={styles.logo} src='/logo2.png' />
           </Link>
           <Link to="/category/Prehistoric" exact="true" activeclassname="active">
             <button className={styles.exploreBtn}>Explore</button>

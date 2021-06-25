@@ -23,6 +23,7 @@
 
 .authMsg{
     color:red;
+    margin: 0px 10px;
 }
 
 .authBtn{
@@ -35,7 +36,7 @@
 .modalHeader{
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    margin: 15px;
     padding: 10px;
     border-bottom: 2px solid black;
 }
