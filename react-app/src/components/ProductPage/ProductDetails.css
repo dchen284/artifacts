@@ -36,3 +36,8 @@
   color: red;
   font-weight: bold;
 }
+
+.reviews-empty {
+  color: red;
+  font-style: italic;
+}
