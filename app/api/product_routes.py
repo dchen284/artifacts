@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, session, request
 from app.models import Product, Category, db
 from app.forms.product_form import ProductForm
+from app.forms.edit_product_form import EditProductForm
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
 
@@ -67,35 +68,28 @@ def remove_product(productId):
   db.session.commit()
   return jsonify("Product Removed")
 
-
+# If there's an imgURL, just update based on form
+# If there's a file in request.files, upload to s3
 @product_routes.route('/products/<productId>', methods=['PUT'])
 def update_product(productId):
   productObj = Product.query.get(productId)
-  form = ProductForm()
+  form = EditProductForm()
   form['csrf_token'].data = request.cookies['csrf_token']
+  print("validated?",  form.validate(), form.errors)
+  print("THE DATA", form.data)
   if form.validate():
     form.populate_obj(productObj)
-    # print("AFTER IF: product", product.name)
-  if "image" not in request.files:
-    return {"errors": "image required"}, 400
 
-  image = request.files["image"]
+  if "image" in request.files and allowed_file(request.files["image"].filename):
+    image = request.files["image"]
+    image.filename = get_unique_filename(image.filename)
+    upload = upload_file_to_s3(image)
+    if "url" in upload:
+      productObj.imgURL = upload["url"]    
+    else:
+      return upload, 400
 
-  print(image.filename)
-  if not allowed_file(image.filename):
-    return {"errors": "file type not permitted"}, 400
-
-  image.filename = get_unique_filename(image.filename)
-
-  upload = upload_file_to_s3(image)
-
-  if "url" not in upload:
-        # if the dictionary doesn't have a url key
-        # it means that there was an error when we tried to upload
-        # so we send back that error message
-    return upload, 400
-
-  productObj.imgURL = upload["url"]
+    
   db.session.add(productObj)
   db.session.commit()
   return productObj.to_dict()
