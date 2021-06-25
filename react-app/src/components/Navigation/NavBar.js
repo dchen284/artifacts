@@ -29,10 +29,10 @@ const NavBar = () => {
     <nav>
       <ul className={styles.navItems}>
         <li className={styles.leftMenu}>
-          <Link to="/" exact={true} activeClassName="active">
-            <img className={styles.logo} src="/logo2.png" />
+          <Link to="/" exact="true" activeclassname="active">
+            <img alt="logo" className={styles.logo} src="logo2.png" />
           </Link>
-          <Link to="/category/Prehistoric" exact={true} activeClassName="active">
+          <Link to="/category/Prehistoric" exact="true" activeclassname="active">
             <button className={styles.exploreBtn}>Explore</button>
           </Link>
         </li>

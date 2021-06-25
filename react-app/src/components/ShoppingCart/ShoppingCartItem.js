@@ -121,6 +121,7 @@ const ShoppingCartItem = ({item}) => {
                 </div>
                 <div className="shopping_cart_item__line">
                     <button
+                        className="shopping_cart_item__button"
                         onClick={deleteCartItem}
                     >
                         Delete Item

@@ -38,29 +38,29 @@ function App() {
       <NavBar />
       <Switch>
         {/* Removed protected route so it wouldn't redirect to login */}
-        <Route path="/" exact={true} >
+        <Route path="/" exact>
           <LandingPage />
         </Route>
-        <Route path="/login" exact={true}>
+        <Route path="/login" exact>
           <LoginForm />
         </Route>
-        <Route path="/sign-up" exact={true}>
+        <Route path="/sign-up" exact>
           <SignUpForm />
         </Route>
-        <Route path="/category/:category" exact={true}>
+        <Route path="/category/:category" exact>
           <Listings />
         </Route>
-        <Route path="/products/:productId" exact={true}>
+        <Route path="/products/:productId" exact>
           <ProductPage />
           <SingleReview />
         </Route>
-        <Route path="/reviews/review_form/:productId" exact={true}>
+        <Route path="/reviews/review_form/:productId" exact>
           <ReviewForm />
         </Route>
-        <ProtectedRoute path="/users/:userId" exact={true}>
+        <ProtectedRoute path="/users/:userId" exact>
           <UserPage />
         </ProtectedRoute>
-        <ProtectedRoute path="/shopping-cart" exact={true}>
+        <ProtectedRoute path="/shopping-cart" exact>
           <ShoppingCart />
         </ProtectedRoute>
         <Route path="/search/:searchTerm">

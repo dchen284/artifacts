@@ -19,23 +19,6 @@ const ShoppingCart = () => {
     useEffect(() => {
         dispatch(getCartItems(userId))
     }, [dispatch, userId])
-    // const cartItems = useSelector(state => Object.values(state.shopping_cart));
-
-
-    // const cartItems = [
-    //     { quantity: 2, product: {quantity: 3} },
-    //     { quantity: 2, product: {quantity: 3} },
-    // ];
-    // cartItems will be an array of objects, objects with the form:
-    /*
-        {
-            "id": self.id,
-            "userId": self.userId,
-            "productId": self.productId,
-            "quantity": self.quantity,
-            "product": self.products.to_dict()
-        }
-    */
 
     //useEffects
 
@@ -62,9 +45,11 @@ const ShoppingCart = () => {
     }, [cartItems]);
 
     //functions
-    // const checkout = () => {
-
-    // }
+    const cartTotal = cartItems.reduce((accum, item) => {
+        const {product} = item;
+        accum += product.price * item.quantity;
+        return accum;
+    }, 0)
 
     //JSX
     return (
@@ -77,7 +62,7 @@ const ShoppingCart = () => {
                 <div className="shopping_cart_summary__title shopping_cart_summary__line">Cart Summary</div>
                 <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
                     <div>Subtotal</div>
-                    <div>$0.00</div>
+                    <div>{`$${cartTotal}.00`}</div>
                 </div>
                 <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
                     <div>Tax</div>
@@ -86,7 +71,7 @@ const ShoppingCart = () => {
                 <hr className="shopping_cart_summary__divider shopping_cart_summary__line"/>
                 <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
                     <div className="shopping_cart_summary__line--bold">Total</div>
-                    <div className="shopping_cart_summary__line--bold">$0.00</div>
+                    <div className="shopping_cart_summary__line--bold">{`$${cartTotal}.00`}</div>
                 </div>
                 <hr className="shopping_cart_summary__divider shopping_cart_summary__line"/>
                 <CheckoutModal
@@ -97,11 +82,11 @@ const ShoppingCart = () => {
                     setErrors={setErrors}
                     // setCheckoutIsDisabled={setCheckoutIsDisabled}
                 />
-                {errors.length ? 
+                {errors.length ?
                 <ul>
                     {errors.map(error => <li>{error}</li>)}
-                </ul> 
-                : 
+                </ul>
+                :
                 null}
             </div>
         </div>

@@ -40,8 +40,8 @@ function SingleReview() {
         </div>
         <div className='outer-div'>
                 {reviews.map((review) =>
-                    (productIdInteger === review.productId ? 
-                        <ReviewShowForm review={review} /> : null
+                    (productIdInteger === review.productId ?
+                        <ReviewShowForm review={review} key={review.id}/> : null
                     )
                 )}
         </div>

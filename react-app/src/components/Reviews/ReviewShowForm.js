@@ -28,6 +28,7 @@ function ShowEditReview({ review }) {
         if(user.id === review.userId) {
             setShowForm(!showForm)
         }
+        return null;
     })
     }
 
@@ -36,10 +37,12 @@ function ShowEditReview({ review }) {
             if(user.id === review.userId) {
                 showDeleteButton(!deleteButton)
             }
+            return null;
     })
 
         dispatch(deleteReview(id));
         dispatch(getReviews())
+        return null;
     }
 
     function starsRatingTimes(rating) {
@@ -56,7 +59,8 @@ function ShowEditReview({ review }) {
                     <h4 className='review-title'>{usersAll.map((user) => {
                                         if(user.id === review.userId) {
                                         return user.username
-                                        }})}</h4>
+                                        }
+                                        return null;})}</h4>
                     <div className='review-score'>
                         <div className='score-container'>
                             <span className='score'>{review.rating}</span>
@@ -71,9 +75,11 @@ function ShowEditReview({ review }) {
                     <p className='username'> - {usersAll.map((user) => {
                                         if(user.id === review.userId) {
                                         return user.email
-                                        }})}</p>
+                                        }
+                                        return null;})}</p>
                     </div>
-                    {user ? 
+
+                    {user ?
                     <div className='button-group'>
                         <div>
                             {user.id === review.userId &&
