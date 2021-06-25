@@ -55,7 +55,10 @@ const ProductDetails = ({ product }) => {
   return (
     <div className='productDetails__container'>
       <div className='productDetails__header'>{product.name}</div>
-      <div style={{"fontSize": "26px"}}>Rating: <span style={{"fontWeight": "bold", "fontSize": "20px"}}>{myRating}</span><span> / 5 {starsRating(myRating)}</span></div>
+      {myRating > 0 ?
+        <div style={{"fontSize": "26px"}}>Rating: <span style={{"fontWeight": "bold", "fontSize": "20px"}}>
+            {myRating}</span><span> / 5 {starsRating(myRating)}</span></div> : <h2 className='reviews-empty'>No Reviews For This Product</h2>
+      }
       <div style={{"fontSize": "26px"}}>Price: <span style={{"fontWeight": "bold"}}>${product.price}</span></div>
       <div  style={{"fontSize": "26px"}}>Product Description: <br/><span style={{"fontStyle": "italic", "fontSize":"18px"}}>{product.description}</span></div>
       <span style={{"fontSize": "26px"}}>Quantity: <input type='number' value={currentQuantity} onChange={e => setCurrentQuantity(e.target.value)}></input></span>
