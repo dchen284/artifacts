@@ -9,4 +9,13 @@
   row-gap: 8px;
   border: black 1px solid;
   padding: 5px;
+  margin-left: 10px;
+}
+
+.userPage__header
+{
+  font-size: 28px;
+  display: inline-block;
+  position: relative;
+  left: 400px;
 }
