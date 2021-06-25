@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignUpModal from '../auth/SignUpModal';
 import UploadListingModal from '../UploadListing/UploadListingModal'
+import LoginPromptModal from './LoginPromptModal';
 import ProfileButton from './ProfileButton'
 import SearchBar from './SearchBar';
 import styles from '../../css-modules/NavBar.module.css'
 const NavBar = () => {
 
   const [currentModal , setCurrentModal] = useState('');
-  //console.log("mode", currentModal)
+  const [authMsg, setAuthMsg] = useState('');
+
+  const history = useHistory();
   const user = useSelector(state => state.session.user);
+
+  const checkForUser = e => {
+    if(user){
+      history.push('/shopping-cart')
+    } else {
+      setAuthMsg('Please login to access shopping cart')
+      setCurrentModal('login')
+    }
+  }
 
   return (
     <nav>
@@ -37,14 +49,15 @@ const NavBar = () => {
           </>
           :
           <>
-            <LoginFormModal setCurrentModal={setCurrentModal} isLogin={currentModal === 'login'}/>
+            {/* <LoginPromptModal setCurrentModal={setCurrentModal} isLoginPrompt={currentModal === 'login-prompt'}/>  */}
+            <LoginFormModal setCurrentModal={setCurrentModal} isLogin={currentModal === 'login'} auth={{authMsg, setAuthMsg}}/>
             <SignUpModal setCurrentModal={setCurrentModal} isSignup={currentModal === 'signup'}/>
           </>
           }
 
-          <NavLink to="/shopping-cart" className={styles.shoppingCart}>
+          <button onClick={checkForUser} className={styles.shoppingCart}>
             <i className="fas fa-shopping-cart fa-lg" />
-          </NavLink>
+          </button>
         </li>
 
       </ul>

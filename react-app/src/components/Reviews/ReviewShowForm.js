@@ -78,6 +78,7 @@ function ShowEditReview({ review }) {
                                         }
                                         return null;})}</p>
                     </div>
+
                     {user ?
                     <div className='button-group'>
                         <div>

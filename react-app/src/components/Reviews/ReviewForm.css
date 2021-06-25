@@ -1,7 +1,14 @@
 .reviews-h2 {
     font-size: 25px;
-    font-weight: bolder;
-    margin: 5px;
+    font-weight: 65;
+    margin: 15px;
+}
+
+.review-header-div {
+    margin: 10px;
+    background-color: #F4F4F2;
+    width: 350px;
+    padding: 10px;
 }
 
 .outer-div {
@@ -19,7 +26,8 @@
 }
 
 .review-container {
-    margin: 5px;
+    margin-left: 15px;
+    margin-top: 5px;
 }
 
 .score-container{
@@ -38,7 +46,8 @@
 
 .open-edit-form,
 .delete-review-button {
-    background-color: rgba(230, 159, 29, 0.6);
+    background-color: #495464;
+    color: white;
     justify-items: right;
     border-radius: 2px;
     height: 30px;
@@ -48,13 +57,20 @@
     cursor: pointer;
 }
 
-.open-edit-form:hover,
-.delete-review-button:hover {
+.open-edit-form:hover {
+    color: #495464;
+    background-color: #F4F4F2;
     box-shadow: 1px 2px 3px #495464;
 } 
 
+.delete-review-button:hover  {
+    background-color: red;
+    box-shadow: 1px 2px 3px #495464;
+}
+
 .new-review {
-    background-color: rgba(230, 159, 29, 0.6);
+    background-color: #495464;
+    color: white;
     align-self: center;
     justify-content: center;
     border-radius: 2px;
@@ -66,5 +82,7 @@
 }
 
 .new-review:hover {
-    box-shadow: 1px 2px 3px lightslategray;
+    color: #495464;
+    background-color: #F4F4F2;
+    box-shadow: 1px 2px 3px #495464;
 }
