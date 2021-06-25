@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
 
 
 const UserProductEdit = ({ product, history, setShowModal }) => {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const [editName, setEditName] = useState(product.name)
   const [editQuantity, setEditQuantity] = useState(product.quantity)
   const [editDescription, setEditDescription] = useState(product.description)

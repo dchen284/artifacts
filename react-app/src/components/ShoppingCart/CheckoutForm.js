@@ -57,64 +57,12 @@ const CheckoutForm = ({ setShowModal, cartItems, setErrors }) => {
                     )
 
                 })}
-                {/* <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                    <div>Thing 2</div>
-                    <div>1000000</div>
-                </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                    <div>Thing 3</div>
-                    <div>1000000</div>
-                </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                    <div>Thing 4</div>
-                    <div>1000000</div>
-                </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                    <div>Thing 5</div>
-                    <div>1000000</div>
-                </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                    <div>Thing 6</div>
-                    <div>1000000</div>
-                </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                    <div>Thing 7</div>
-                    <div>1000000</div>
-                </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                    <div>Thing 8</div>
-                    <div>1000000</div>
-                </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                    <div>Thing 9</div>
-                    <div>1000000</div>
-                </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                    <div>Thing 10</div>
-                    <div>1000000</div>
-                </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                    <div>Thing 11</div>
-                    <div>1000000</div>
-                </div>
-                <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                    <div>Thing 12</div>
-                    <div>1000000</div>
-                </div> */}
             </div>
             <hr className="shopping_cart_summary__divider shopping_cart_summary__line"/>
-            {/* <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                <div>Current Credits</div>
-                <div>$0.00</div>
-            </div> */}
             <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
                 <div>Total Cost of Order</div>
                 <div>{`$${cartTotal}`}</div>
             </div>
-            {/* <div className="shopping_cart_summary__priceline shopping_cart_summary__line">
-                <div>Credits After Order</div>
-                <div>$0.00</div>
-            </div> */}
             <hr className="shopping_cart_summary__divider shopping_cart_summary__line"/>
             <div className="checkout_form__button_line">
                 <button

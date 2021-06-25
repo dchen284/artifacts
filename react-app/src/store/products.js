@@ -52,7 +52,7 @@ export const retrieveProduct = (productId) => async dispatch => {
 };
 
 export const removeListing = (productId) => async dispatch => {
-  const remove = await fetch(`/api/category/products/${productId}`, {
+  await fetch(`/api/category/products/${productId}`, {
     method: 'DELETE',
   });
 

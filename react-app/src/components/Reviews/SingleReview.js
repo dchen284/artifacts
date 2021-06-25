@@ -32,14 +32,14 @@ function SingleReview() {
     return (
         <div className='outer-div'>
                     <button className='new-review' onClick={openForm}>Write A Review</button>
-                    {showForm && 
+                    {showForm &&
                         <ReviewForm openForm={openForm}/>
                     }
                 <h2 className='reviews-h2'>Reviews</h2>
                 <br></br>
                 {reviews.map((review) =>
-                    (productIdInteger === review.productId ? 
-                        <ReviewShowForm review={review} /> : null
+                    (productIdInteger === review.productId ?
+                        <ReviewShowForm review={review} key={review.id}/> : null
                     )
                 )}
         </div>
