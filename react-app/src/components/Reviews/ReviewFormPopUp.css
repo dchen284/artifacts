@@ -1,7 +1,7 @@
 .review-form,
 .review-edit-form {
     margin: 5px;
-    background-color: lightyellow;
+    background-color: #BBBFCA;
     display: inline-block;
     text-align: center;
 }
@@ -92,7 +92,7 @@
 
 .submit-button:hover,
 .cancel-button:hover {
-    box-shadow: 1px 2px 3px lightslategray;
+    box-shadow: 1px 2px 3px #495464;
 }
 
 .submit-button-edit,
