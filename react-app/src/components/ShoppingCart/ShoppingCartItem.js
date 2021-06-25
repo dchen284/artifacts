@@ -87,7 +87,7 @@ const ShoppingCartItem = ({item}) => {
     return (
         <div className="shopping_cart_item">
             <div>
-                <img className="shopping_cart_item__image" src={product.imgURL}/>
+                <img className="shopping_cart_item__image" alt={product.name} src={product.imgURL}/>
             </div>
             <div>
                 <div className="shopping_cart_item__line">
