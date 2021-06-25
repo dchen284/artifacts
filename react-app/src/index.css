@@ -26,16 +26,18 @@
     outline: 0;
     font-weight: normal;
     list-style-type: none;
+    font-family: 'Crimson Text', serif;
   }
   
   h1 {
     font-size: 2rem;
   }
-  
+
   button {
     border: none;
     outline: none;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
   }
   
   input,
