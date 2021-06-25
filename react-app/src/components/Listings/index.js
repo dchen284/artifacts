@@ -1,19 +1,24 @@
 import ListingsNavBar from "./ListingsNavBar";
 import ListingGrid from "./ListingGrid";
 import ListingFilters from "./ListingFilters";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css"
 
 
 const Listings = () => {
+  const [currentEra, setCurrentEra] = useState('grid_pre')
+
 
 
   return (
     <>
-      <ListingsNavBar />
-      <div className='listingsPage__container'>
-        <ListingFilters />
+      <div id="left-side" className={`listingsPage__header ${currentEra}`}>
+      <ListingsNavBar setCurrentEra={setCurrentEra}/>
+      </div>
+      <div className={`listingsPage__container`}>
+        {/* <ListingFilters /> */}
         <ListingGrid />
+        {/* <div id="right-side" className={`listingsPage__header ${currentEra}`}></div> */}
       </div>
     </>
   )

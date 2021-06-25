@@ -1,4 +1,47 @@
 .listingsPage__container
 {
   display: flex;
+  flex-direction: column;
+}
+
+.listingsPage__header
+{
+  width: 100%;
+  height: 200px;
+  border: 1px transparent black;
+  border-radius: 6px;
+}
+
+
+
+.grid_pre
+{
+  background-image:url('https://artifactsimages.s3.us-east-2.amazonaws.com/1593824.jpg');
+  background-position-x: center;
+  background-position-y: 68%;
+  background-size: cover;
+}
+
+
+.grid_ant
+{
+  background-image: url('https://artifactsimages.s3.us-east-2.amazonaws.com/Ruins-Forum-Rome.jpg');
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.grid_now
+{
+  background-image: url('https://artifactsimages.s3.us-east-2.amazonaws.com/shanghai-1484452_1920.jpg');
+  background-position-x: center;
+  background-position-y: 65%;
+  /* background-size: 95%; */
+}
+
+.grid_fut
+{
+  background-image: url('https://artifactsimages.s3.us-east-2.amazonaws.com/5826863.png');
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
 }
