@@ -12,7 +12,6 @@ reviews_routes = Blueprint('reviews', __name__)
 def reviews_all():
     reviews = Review.query.all()
     return {"reviews": [review.to_dict() for review in reviews]}
-    # return jsonify([review.to_dict() for review in reviews])
 
 
 
