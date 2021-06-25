@@ -4,7 +4,7 @@
   flex-direction: column;
   overflow-y: scroll;
   height: 420px;
-  width: 70%;
+  width: 1000px;
   justify-content: space-between;
   row-gap: 8px;
   border: black 1px solid;
