@@ -10,7 +10,7 @@ import styles from '../../css-modules/NavBar.module.css'
 const NavBar = () => {
   // TODO: Turn Login into button once Modal is created
   const [currentModal , setCurrentModal] = useState('');
-  console.log("mode", currentModal)
+  //console.log("mode", currentModal)
   const user = useSelector(state => state.session.user);
 
   return (

@@ -12,7 +12,7 @@ export default function UploadListing({ setCurrentModal }) {
     const [description, setDescription] = useState('');
     const [image, setImage] = useState(null);
     const [categoryId, setCategoryId] = useState('1');
-    console.log(categoryId)
+    //console.log(categoryId)
 
     const updateImage = (e) => {
         const file = e.target.files[0];
@@ -32,14 +32,14 @@ export default function UploadListing({ setCurrentModal }) {
         product.append("image", image);
         product.append("userId", user.id);
 
-        console.log(`
-        Name: ${product.get('name')},
-        Quantity: ${product.get('quantity')},
-        Price: ${product.get('price')},
-        Description: ${product.get('description')},
-        Image: ${product.get('image')},
-        Category: ${product.get('categoryId')},
-        `)
+        // console.log(`
+        // Name: ${product.get('name')},
+        // Quantity: ${product.get('quantity')},
+        // Price: ${product.get('price')},
+        // Description: ${product.get('description')},
+        // Image: ${product.get('image')},
+        // Category: ${product.get('categoryId')},
+        // `)
 
         const res = await fetch('/api/category/new-product', {
             method: "POST",
@@ -48,7 +48,7 @@ export default function UploadListing({ setCurrentModal }) {
         const data = await res.json();
 
         if(data){
-            console.log('Data', 'Test')
+            //console.log('Data', 'Test')
             history.push('/')
             setCurrentModal('');
         }

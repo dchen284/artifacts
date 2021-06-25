@@ -93,10 +93,13 @@ def checkout_cart():
             curr_product = Product.query.get(item['productId'])
             if curr_product is None:
                 errors.append('Product no longer exists')
-            if item['quantity'] > curr_product.quantity:
+            elif item['quantity'] > curr_product.quantity:
                 errors.append('Not enough inventory in store')
             # updated_product_quantities[f'{productId}'] = curr_product.quantity - item['quantity']
-            list_of_data.append((curr_product, item['quantity']))
+            list_of_data.append(
+                (curr_product,
+                 item['quantity'] if curr_product is not None else None)
+            )
             order.products.append(curr_product)
         # process order after for loop
         if errors:
@@ -119,11 +122,11 @@ def checkout_cart():
     except ValueError:
         return jsonify(errors)
 
- 
 
-    
-    # [{'id': 9, 'productId': 2, 'quantity': 4, 'userId': 2}, 
-    # {'id': 10, 'productId': 1, 'quantity': 3, 'userId': 2}, 
+
+
+    # [{'id': 9, 'productId': 2, 'quantity': 4, 'userId': 2},
+    # {'id': 10, 'productId': 1, 'quantity': 3, 'userId': 2},
     # {'id': 11, 'productId': 7, 'quantity': 3, 'userId': 2}]
 
     # data = request.get_json()

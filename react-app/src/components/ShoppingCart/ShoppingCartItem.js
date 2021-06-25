@@ -5,7 +5,7 @@ import { deleteCartItemFromDb, updateCartItemInDb } from '../../store/shopping_c
 import './ShoppingCart.css';
 
 const ShoppingCartItem = ({item}) => {
-    console.log('WHAT IS ITEM',)
+    //console.log('WHAT IS ITEM',)
     //hooks and state
     const dispatch = useDispatch();
     const [quantity, setQuantity] = useState(item.quantity);
@@ -66,7 +66,7 @@ const ShoppingCartItem = ({item}) => {
     This function updates the Redux store that an item has been removed.
     */
     const deleteCartItem = () => {
-        console.log('>>>>>>item', item);
+        //console.log('>>>>>>item', item);
         dispatch(deleteCartItemFromDb(item));
     }
 
@@ -87,7 +87,7 @@ const ShoppingCartItem = ({item}) => {
     return (
         <div className="shopping_cart_item">
             <div>
-                <img className="shopping_cart_item__image" src={product.imgURL}/>
+                <img className="shopping_cart_item__image" alt={product.name} src={product.imgURL}/>
             </div>
             <div>
                 <div className="shopping_cart_item__line">

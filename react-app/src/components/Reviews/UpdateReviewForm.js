@@ -27,7 +27,7 @@ function UpdateReviewForm({ reviewId, openForm, review }) {
             userId: user.id,
             productId
         }
-        console.log(review)
+        //console.log(review)
         let updatedReview = await dispatch(updateReview(review))
         if(updatedReview) {
             openForm()

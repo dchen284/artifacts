@@ -3,25 +3,28 @@ from app.models import db, Product
 def seed_products():
     # skeleton => Product(quantity=, price=, name='', description='', imgURL='', userId=, categoryId=)
 
+    # String concatentation for linter purposes
+
     # Prehistoric
     p1 = Product(
         name='Authentic Saber-Tooth Tiger Cub',
         quantity=20, price=10000, userId=1, categoryId=1,
         imgURL='http://pm1.narvii.com/6490/def309f188af821c6f0b2bec71fdd2b2eb8fa1f0_hq.jpg',
-        description='''Sure to bring a Smilodon to your face, this adorable
-            saber-tooth tiger cub will be sure to delight children of all
-            ages.  Lovingly procured from the Pleistocene epoch, this
-            feline\'s loving smile will make you feel warm all over.
-            Seller is not responsible for resulting missing children and/or
-            injuries from this product.'''
+        description=('Sure to bring a Smilodon to your face, this adorable '
+                     'saber-tooth tiger cub will be sure to delight children '
+                     'of all ages.  Lovingly procured from the Pleistocene '
+                     'epoch, this feline\'s loving smile will make you feel '
+                     'warm all over.  Seller is not responsible for resulting '
+                     'missing children and/or injuries from this product.')
     )
     p2 = Product(
         name='Artisinal Mammoth Jerky',
         quantity=100, price=250, userId=1, categoryId=1,
         imgURL='https://cdn.shopify.com/s/files/1/1516/5908/products/MeatMountain_1024x1024.jpg?v=1510154162',
-        description='''Satisfies even mammoth-size cravings!  Imported from the
-            Holocene glacial retreat, this delectable jerky was made by real
-            Neanderthals, giving you a real taste of history.'''
+        description=('Satisfies even mammoth-size cravings!  Imported from the '
+                     'Holocene glacial retreat, this delectable jerky was made '
+                     'by real Neanderthals, giving you a real taste of '
+                     'history.')
     )
     p3 = Product(quantity=3, price=10000, name='Original Cave Drawings', description='One of a kind pieces of art that were thought to be lost to the sands of time. Please no flash photography.',
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/frontiers-in-psychology-cave-art-origin-modern-language.jpg', userId=4, categoryId=1)
@@ -33,31 +36,33 @@ def seed_products():
         name='Original "Fifty Raids of Gray"',
         quantity=100, price=250, userId=1, categoryId=2,
         imgURL='https://www.judaicawebstore.com/media/catalog/product/Assets/NewProductImages/product_page_image_large_no_frame/D/e/Deluxe-Megilat-Esther-Scroll-JT-7102-7103-2_large.jpg',
-        description='''Rescued from the Greaty Library of Alexandria right
-            before the great fire, these are original copies of the
-            great romance novel, "Fifty Raids of Gray"!  Professional
-            scriveners have transcripted this wonderful tale onto the finest
-            parchment. This scroll makes a great piece on the coffee table,
-            and is great for late-night reading!''',
+        description=('Rescued from the Greaty Library of Alexandria right '
+                     'before the great fire, these are original copies of the '
+                     'great romance novel, "Fifty Raids of Gray"!  '
+                     'Professional scriveners have transcripted this '
+                     'wonderful tale onto the finest parchment. This scroll '
+                     'makes a great piece on the coffee table, and is great '
+                     'for late-night reading!'),
     )
     a2 = Product(
         name='Julius Caesar Daggers',
         quantity=23, price=750, userId=1, categoryId=2,
         imgURL='https://bladesmithsforum.com/uploads/monthly_2017_04/58e68b3d90cd0_Pugia1.JPG.53d6b9d183ce4df25733f64048b43f1c.JPG',
-        description='''These pugione daggers are to die for!  Act out your
-            inner conspiratorial fantasies by wielding authentic blades
-            used by the Roman senators on the Ides of March.  A
-            sic (semper tyrannus) conversation piece!''',
+        description=('These pugione daggers are to die for!  Act out your '
+                     'inner conspiratorial fantasies by wielding authentic '
+                     'blades used by the Roman senators on the Ides of'
+                     'March.  A sic (semper tyrannus) conversation piece!'),
     )
     a3 = Product(
         name='THE Sphinx\'s Nose',
         quantity=1, price=9000000, userId=1, categoryId=2,
         imgURL='https://chairish-prod.global.ssl.fastly.net/image/product/master/86266890-c840-4b81-bde6-86e10a95c4e8',
-        description='''Q: What happened to the Sphinx\'s nose?  A: It needed
-            to spice up your living space!  Originally lost in time, our
-            crack team of time-travelling procurement agents have been able
-            to obtain the authentic Sphinx\'s nose for you!  Who nose what
-            fortunes will be in store for you with this centerpiece!''',
+        description=('Q: What happened to the Sphinx\'s nose?  A: It needed '
+                     'to spice up your living space!  Originally lost in time, '
+                     'our crack team of time-travelling procurement agents '
+                     'have been able to obtain the authentic Sphinx\'s nose '
+                     'for you!  Who nose what fortunes will be in store for '
+                     'you with this centerpiece!'),
 
     )
     a4 = Product(quantity=100, price=80, name='Joshua Sandals', description='Worn by a once famous carpenter, these sandals still have many miles left on them. Worn, but not worn out, these will make you feel like you\'re walking on water!',
@@ -72,12 +77,12 @@ def seed_products():
         name='Prohibition Era Bootlegger\'s Wine',
         quantity=200, price=50, userId=1, categoryId=3,
         imgURL='https://www.thevintagenews.com/wp-content/uploads/2015/07/Prohibition-small.jpg',
-        description='''Bring the spirit of the 1920s to your table!  This
-            bespoke wine was made under the cover of night, with a secret
-            recipe, and brought to you from the Prohibition Era.  This
-            item is not FDA approved; seller is not response for blindness,
-            nausea, other minor side effects, other major side effects,
-            and/or death.''',
+        description=('Bring the spirit of the 1920s to your table!  This '
+                     'bespoke wine was made under the cover of night, with a '
+                     'secret recipe, and brought to you from the Prohibition '
+                     'Era.  This item is not FDA approved; seller is not '
+                     'response for blindness, nausea, other minor side '
+                     'effects, other major side effects, and/or death.'),
     )
     m2 = Product(quantity=5, price=450, name="Malcom X's Glasses", description='', imgURL='https://i.pinimg.com/originals/a1/4b/cb/a14bcb3e4eab84a87b717a38f36eae1c.jpg', userId=4, categoryId=3)
     m3 = Product(quantity=20, price=600, name='Bose Quietcomfort Headphones', description='Noise cancelling still works! Made in 2010.',
@@ -101,11 +106,12 @@ def seed_products():
         name='iPhone millenium: Phone of the future!',
         quantity=50, price=2000, userId=1, categoryId=4,
         imgURL='http://4.bp.blogspot.com/-8nXEq3tPvsM/VMZ489STLMI/AAAAAAABTss/5ecvC9SNmy0/s1600/iPhone%2BX%2B-%2BiPhone%2B7%2BFuturistic%2BConcept.jpg',
-        description='''Tired of being behind the latest trends in phones?
-            Race to the front, by buying future tech, today!  This iPhone
-            model will be sure to make you the talk of the town, with its
-            stunning crystal-clear body and lightning-speed apps powered
-            by quantum computing and nano-hamsters spinning nano-wheels!''',
+        description=('Tired of being behind the latest trends in phones?'
+                     'Race to the front, by buying future tech, today!  This'
+                     'iPhone model will be sure to make you the talk of the'
+                     'town, with its stunning crystal-clear body and'
+                     'lightning-speed apps powered by quantum computing and'
+                     'nano-hamsters spinning nano-wheels!'),
     )
     f2 = Product(quantity=1, price=10, name='Kyle Powers First Nobel Prize', description='With the invention of his farmer robot AI technology, Kyle Powers singlehandedly solved world hunger.',
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/561381b103db1.jpg', userId=3, categoryId=4)

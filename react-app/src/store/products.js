@@ -25,7 +25,7 @@ export const getProducts = (category) => async dispatch => {
 
   if (res.ok) {
     const products = await res.json();
-    console.log(products, 'return from fetch')
+    //console.log(products, 'return from fetch')
     dispatch(list(products));
   }
 };

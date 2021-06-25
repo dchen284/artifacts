@@ -34,7 +34,7 @@ const removeReview = (id) => {
 // THUNKS
 
 export const getReviews = () => async (dispatch) => {
-    const res = await fetch('/api/reviews');
+    const res = await fetch('/api/reviews/');
     if(res.ok) {
         const reviews = await res.json();
         dispatch(loadReviews(reviews.reviews));

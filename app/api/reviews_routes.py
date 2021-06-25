@@ -25,7 +25,7 @@ def create_review():
     review = Review()
     if form.validate():
         form.populate_obj(review)
-    
+
     db.session.add(review)
     db.session.commit()
 
@@ -45,7 +45,7 @@ def update_review(reviewId):
     if form.validate():
         form.populate_obj(review)
         db.session.commit()
-        
+
     return review.to_dict()
 
 
@@ -58,4 +58,3 @@ def delete_review(reviewId):
     db.session.commit()
 
     return jsonify("Success")
-

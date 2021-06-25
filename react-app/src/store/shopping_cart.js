@@ -26,7 +26,7 @@ const removeFromCart = (item) => {
   }
 }
 
-const clearShoppingCart = () => {
+export const clearShoppingCart = () => {
   return {
       type: CLEAR_SHOPPING_CART
   }
@@ -104,7 +104,7 @@ export const checkoutCart = cartItems => async dispatch => { // cartItems comes 
     // Else return error messages to shopping cart component for rendering
     if(!message.length){
       dispatch(clearShoppingCart());
-    } 
+    }
     return message;
 }
 
@@ -114,10 +114,15 @@ const shoppingCartReducer = (state = {}, action) => {
       const newState = { ...state }
     switch(action.type) {
         case GET_SHOPPING_CART:
+          // action.items.forEach(item => {
+          //   newState[item.id] = item;
+          // })
+          // return newState;
+          const restartState = {};
           action.items.forEach(item => {
-            newState[item.id] = item;
+            restartState[item.id] = item;
           })
-          return newState;
+          return restartState;
         case ADD_TO_SHOPPING_CART:
           newState[action.item.id] = action.item;
           return newState;
