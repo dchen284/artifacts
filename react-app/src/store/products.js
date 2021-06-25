@@ -12,10 +12,6 @@ export const retrieve = (product) => ({
   product
 });
 
-export const update = (product) => ({
-  type: RETRIEVE_PRODUCT,
-  product
-});
 
 
 const userProducts = products => ({
@@ -62,15 +58,6 @@ export const removeListing = (productId) => async dispatch => {
 
 };
 
-export const updateListing = (product) => async dispatch => {
-  console.log(product, "I AM THE PRODUCTTTTTTTTTTTTTTTTTTTTTT")
-  const edit = await fetch(`/api/category/products/${product.id}`, {
-    method: 'PUT',
-    headers: {"Content-Type": "applicaton/json"},
-    body: product
-  });
-
-};
 
 
 const productReducer = (state = {}, action) => {

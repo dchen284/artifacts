@@ -71,8 +71,30 @@ def remove_product(productId):
 @product_routes.route('/products/<productId>', methods=['PUT'])
 def update_product(productId):
   productObj = Product.query.get(productId)
-  print(request.get_json(), 'I AM THE BACKENDDDDDDDD')
+  form = ProductForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+  if form.validate():
+    form.populate_obj(productObj)
+    # print("AFTER IF: product", product.name)
+  if "image" not in request.files:
+    return {"errors": "image required"}, 400
 
+  image = request.files["image"]
 
-  # db.session.commit()
-  return jsonify("Product Removed")
+  if not allowed_file(image.filename):
+    return {"errors": "file type not permitted"}, 400
+
+  image.filename = get_unique_filename(image.filename)
+
+  upload = upload_file_to_s3(image)
+
+  if "url" not in upload:
+        # if the dictionary doesn't have a url key
+        # it means that there was an error when we tried to upload
+        # so we send back that error message
+    return upload, 400
+
+  productObj.imgURL = upload["url"]
+  db.session.add(productObj)
+  db.session.commit()
+  return productObj.to_dict()

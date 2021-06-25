@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateListing } from "../../store/products";
+
 
 
 const UserProductEdit = ({ product, history, setShowModal }) => {
@@ -9,37 +9,48 @@ const UserProductEdit = ({ product, history, setShowModal }) => {
   const [editQuantity, setEditQuantity] = useState(product.quantity)
   const [editDescription, setEditDescription] = useState(product.description)
   const [editPrice, setEditPrice] = useState(product.price)
-  const [editImage, setEditImage] = useState(product.imageURL)
-  const update = (e) => {
-    e.preventDefault()
-    const newProduct = {
-      id: product.id,
-      quantity: editQuantity,
-      name: editName,
-      description: editDescription,
-      imageURL: editImage,
-      categoryId: product.categoryId,
-      userId: product.userId
+  const [editImage, setEditImage] = useState(product.imgURL)
+
+    const update = async (e) => {
+      e.preventDefault()
+
+
+      const formProduct = new FormData();
+      formProduct.append("id", product.id)
+      formProduct.append("name", editName);
+      formProduct.append("quantity", +editQuantity);
+      formProduct.append("price", +editPrice);
+      formProduct.append("description", editDescription);
+      formProduct.append("categoryId", +product.categoryId);
+      formProduct.append("image", editImage);
+      formProduct.append("userId", product.userId);
+
+      const res = await fetch(`/api/category/products/${product.id}`, {
+        method: "PUT",
+        body: formProduct,
+    });
+    if (res.ok) {
+      history.go()
     }
 
-    dispatch(updateListing(newProduct))
-    // history.go()
-  }
+    }
+
+
 
   return (
-    <form className='userListing__editForm'>
+    <form className='userListing__editForm' onSubmit={update}>
       <div>Edit Product Info</div>
       <label>Product Name</label>
-      <input type='text' value={editName} onChange={e => setEditName(e.target.value)}></input>
+      <input required type='text' value={editName} onChange={e => setEditName(e.target.value)}></input>
       <label>Product Quantity</label>
-      <input type='number' value={editQuantity} onChange={e => setEditQuantity(e.target.value)}></input>
+      <input required type='number' value={editQuantity} onChange={e => setEditQuantity(e.target.value)}></input>
       <label>Product Price</label>
-      <input type='number' value={editPrice} onChange={e => setEditPrice(e.target.value)}></input>
+      <input required type='number' value={editPrice} onChange={e => setEditPrice(e.target.value)}></input>
       <label>Product Image</label>
       <input type="file" accept="image/*" onChange={e => setEditImage(e.target.files[0])}/>
       <label>Product Description</label>
-      <textarea value={editDescription} onChange={e => setEditDescription(e.target.value)}></textarea>
-      <button onSubmit={e => update}>Confirm Changes</button>
+      <textarea required value={editDescription} onChange={e => setEditDescription(e.target.value)}></textarea>
+      <button type="submit">Confirm Changes</button>
       <button onClick={() => setShowModal(false)}>Abandon Changes</button>
     </form>
   )
