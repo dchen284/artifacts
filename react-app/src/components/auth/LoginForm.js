@@ -46,7 +46,7 @@ const LoginForm = ({ setCurrentModal, auth }) => {
         <h1 className={styles.modalHeaderTxt}>Sign in</h1>
         <button className={styles.registerBtn} onClick={() => setCurrentModal('signup')}>Register</button>
       </div>
-        {auth && <p className={styles.authMsg}>{auth.authMsg}</p>}
+        {auth && <p className={styles.authMsg}><em>{auth.authMsg}</em></p>}
       <form className={styles.authForm} onSubmit={onLogin}>
         <div>
           {errors.map((error) => (
