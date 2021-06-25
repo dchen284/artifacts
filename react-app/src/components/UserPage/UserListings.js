@@ -40,7 +40,7 @@ const UserListings = ({ product }) => {
           <img className='userPage__image' src={product.imgURL} alt={product.name}/>
         </div>
       </Link>
-      <div>
+      <div className='userListing__productDetails'>
         <h1>{product.name}</h1>
         <div>Total Listings: {product.quantity}</div>
         <div>About <br/>{product.description}</div>

@@ -43,7 +43,7 @@ function UserPage() {
         <div>Email: {user.email}</div>
       </div>
       <br/>
-      <h2>Listings</h2>
+      <h2 className='userPage__header'>Here's What You're Selling!</h2>
       <div className='userPage__container'>
         {userProducts?.map(product =>  <UserListings key={product.id} product={product}/>)}
       </div>
