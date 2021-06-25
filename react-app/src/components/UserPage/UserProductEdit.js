@@ -9,7 +9,7 @@ const UserProductEdit = ({ product, history, setShowModal }) => {
   const [editQuantity, setEditQuantity] = useState(product.quantity)
   const [editDescription, setEditDescription] = useState(product.description)
   const [editPrice, setEditPrice] = useState(product.price)
-  const [editImage, setEditImage] = useState(product.imgURL)
+  const [editImage, setEditImage] = useState(null)
 
     const update = async (e) => {
       e.preventDefault()
@@ -22,7 +22,7 @@ const UserProductEdit = ({ product, history, setShowModal }) => {
       formProduct.append("price", +editPrice);
       formProduct.append("description", editDescription);
       formProduct.append("categoryId", +product.categoryId);
-      formProduct.append("image", editImage);
+      if(formProduct !== null) formProduct.append("image", editImage);
       formProduct.append("userId", product.userId);
 
       const res = await fetch(`/api/category/products/${product.id}`, {
