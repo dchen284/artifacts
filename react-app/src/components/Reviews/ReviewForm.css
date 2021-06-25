@@ -1,6 +1,6 @@
 .reviews-h2 {
     font-size: 25px;
-    font-weight: bold;
+    font-weight: bolder;
     margin: 5px;
 }
 
@@ -14,8 +14,12 @@
     margin: 10px;
     padding: 5px;
     border-radius: 2px;
-    background-color: rgba(167, 167, 167, 0.1);
+    background-color: #F4F4F2;
     overflow: scroll;
+}
+
+.review-container {
+    margin: 5px;
 }
 
 .score-container{
@@ -29,7 +33,7 @@
 }
 
 .review-text {
-    line-height: 1.45;
+    font-family: Montserrat, sans-serif;
 }
 
 .open-edit-form,
@@ -46,7 +50,7 @@
 
 .open-edit-form:hover,
 .delete-review-button:hover {
-    box-shadow: 1px 2px 3px lightslategray;
+    box-shadow: 1px 2px 3px #495464;
 } 
 
 .new-review {

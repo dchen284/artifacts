@@ -29,14 +29,42 @@
 {
   margin-left: 5px;
   margin-right: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.modern-nav > span
+{
+  font-family: 'Lato', sans-serif;
 }
 
 .antiquities-nav
 {
   margin-left: 5px;
+  font-family: 'MedievalSharp', cursive;
+}
+
+.antiquities-nav > span
+{
+  font-family: 'Lato', sans-serif;
 }
 
 .active
 {
   background-color: rgb(128, 128, 128, 0.5);
+}
+
+#prehistoric {
+  font-family: 'IM Fell English SC', serif;
+}
+
+#prehistoric > span {
+  font-family: 'Lato', sans-serif;
+}
+
+#future {
+  font-family: 'Orbitron', sans-serif;
+}
+
+#future > span {
+  font-family: 'Lato', sans-serif;
 }
