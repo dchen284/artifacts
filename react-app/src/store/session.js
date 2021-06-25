@@ -1,3 +1,5 @@
+import { clearShoppingCart } from './shopping_cart';
+
 // constants
 const SET_USER = "session/SET_USER";
 const REMOVE_USER = "session/REMOVE_USER";
@@ -61,6 +63,7 @@ export const authenticate = () => async (dispatch) => {
     });
 
     dispatch(removeUser())
+    dispatch(clearShoppingCart())
   };
 
 
