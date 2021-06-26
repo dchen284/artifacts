@@ -4,18 +4,21 @@ from app.models import Product, ShoppingCartItem, Order, db
 
 shopping_routes = Blueprint('shopping', __name__)
 
+
 @shopping_routes.route('/<int:userId>')
+@login_required
 def get_items(userId):
     items = ShoppingCartItem.query.filter(ShoppingCartItem.userId == userId).all()
-    print("SHOPPING CART ITEMS", items)
+    # print("SHOPPING CART ITEMS", items)
     return jsonify([item.to_dict() for item in items])
 
 
 @shopping_routes.route('/', methods=['POST'])
+@login_required
 def shopping_cart():
     # Convert request data to JSON Object
     data = request.get_json()
-    print("ITEM DATA ***", data)
+    # print("ITEM DATA ***", data)
     # Query for item based on matching productId and UserId
     cart_item = ShoppingCartItem.query.filter(ShoppingCartItem.productId == data['productId']).filter(ShoppingCartItem.userId == data['userId']).first()
 
@@ -38,21 +41,18 @@ def shopping_cart():
 
 
 @shopping_routes.route('/', methods=['DELETE'])
+@login_required
 def delete_cart_item():
     data = request.get_json()
-    print('>>>>>>>.data', data)
+    # print('>>>>>>>.data', data)
     cart_item = ShoppingCartItem.query.get(data['id'])
-    # cart_item = ShoppingCartItem.query.filter(ShoppingCartItem.productId == data['productId'] and ShoppingCartItem.userId == data['userId']).first()
-    # copy_because_cart_item_gets_deleted_maybe = cart_item.to_dict()
-    # print('>>>>>>>>>to_dict', cart_item.to_dict())
     db.session.delete(cart_item)
     db.session.commit()
-    # print('+++++++++.', cart_item.to_dict())
-    # return copy_because_cart_item_gets_deleted_maybe
     return {'success': 'success'}
 
 
 @shopping_routes.route('/', methods=['PUT'])
+@login_required
 def update_cart_item():
     data = request.get_json()
     # print('>>>>>>>update.data', data)
@@ -62,6 +62,7 @@ def update_cart_item():
     db.session.add(cart_item)
     db.session.commit()
     return cart_item.to_dict()
+
 
 '''
  for each shopping cart item, query for the given product to get the most up-to-date quantity
@@ -78,15 +79,15 @@ def update_cart_item():
 '''
 
 @shopping_routes.route('/checkout', methods=['POST'])
+@login_required
 def checkout_cart():
-    print(request.get_json())
+    # print(request.get_json())
 
     cart_items = request.get_json()
     userId = cart_items[0]['userId']
     order = Order(userId=userId)
     errors = []
-    # updated_product_quantities = {'productId': 'new_quantity'}
-    # [{product: Product, cart_quantity: quantity}, ]
+
     list_of_data = []
     try:
         for item in cart_items:
@@ -95,7 +96,6 @@ def checkout_cart():
                 errors.append('Product no longer exists')
             elif item['quantity'] > curr_product.quantity:
                 errors.append('Not enough inventory in store')
-            # updated_product_quantities[f'{productId}'] = curr_product.quantity - item['quantity']
             list_of_data.append(
                 (curr_product,
                  item['quantity'] if curr_product is not None else None)
@@ -121,27 +121,3 @@ def checkout_cart():
         return jsonify([])
     except ValueError:
         return jsonify(errors)
-
-
-
-
-    # [{'id': 9, 'productId': 2, 'quantity': 4, 'userId': 2},
-    # {'id': 10, 'productId': 1, 'quantity': 3, 'userId': 2},
-    # {'id': 11, 'productId': 7, 'quantity': 3, 'userId': 2}]
-
-    # data = request.get_json()
-    # cart_items = ShoppingCartItem.query.filter_by(data.userId).all()
-    # cart_items = ShoppingCartItem.query.all()
-    # try:
-    #     # create order object
-    #     new_order = Order()
-
-    #     for item in cart_items:
-    #         if item.quantity > item.products.quantity:
-    #             raise ValueError('Not enough inventory in store')
-
-    #     # add order object to database
-    #     # delete all cart items
-    #     return 'did an order'
-    # except ValueError:
-    #     return 'not enough inventory, close modal'

@@ -54,9 +54,9 @@ function App() {
           <ProductPage />
           <SingleReview />
         </Route>
-        <Route path="/reviews/review_form/:productId" exact>
+        <ProtectedRoute path="/reviews/review_form/:productId" exact>
           <ReviewForm />
-        </Route>
+        </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact>
           <UserPage />
         </ProtectedRoute>

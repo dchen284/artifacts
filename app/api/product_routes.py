@@ -29,7 +29,7 @@ def user_products(Id):
 
 @product_routes.route('/new-product', methods=['POST'])
 def new_product():
-  print("BEFORE IF: POST REQUEST RECEIVED", request.form, request.files)
+  # print("BEFORE IF: POST REQUEST RECEIVED", request.form, request.files)
   form = ProductForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
@@ -75,8 +75,8 @@ def update_product(productId):
   productObj = Product.query.get(productId)
   form = EditProductForm()
   form['csrf_token'].data = request.cookies['csrf_token']
-  print("validated?",  form.validate(), form.errors)
-  print("THE DATA", form.data)
+  # print("validated?",  form.validate(), form.errors)
+  # print("THE DATA", form.data)
   if form.validate():
     form.populate_obj(productObj)
 
@@ -85,11 +85,11 @@ def update_product(productId):
     image.filename = get_unique_filename(image.filename)
     upload = upload_file_to_s3(image)
     if "url" in upload:
-      productObj.imgURL = upload["url"]    
+      productObj.imgURL = upload["url"]
     else:
       return upload, 400
 
-    
+
   db.session.add(productObj)
   db.session.commit()
   return productObj.to_dict()

@@ -34,6 +34,7 @@ def create_review():
 
 # PUT /api/reviews/:reviewId
 @reviews_routes.route('/<int:reviewId>', methods=["PUT"])
+@login_required
 def update_review(reviewId):
     review = Review.query.get(reviewId)
 
