@@ -14,6 +14,7 @@ function SingleReview() {
     const reviewState = useSelector(state => state.reviews)
     const reviews = Object.values(reviewState);
     const { productId } = useParams()
+    const user = useSelector(state => state.session.user);
 
     const productIdInteger = parseInt(productId, 10)
 
@@ -33,8 +34,8 @@ function SingleReview() {
         <>
         <div className='review-header-div'>
         <h2 className='reviews-h2'>Reviews</h2>
-            <button className='new-review' onClick={openForm}>Write A Review</button>
-            {showForm && 
+            <button className='new-review' hidden={!user} onClick={openForm}>Write A Review</button>
+            {showForm &&
                 <ReviewForm openForm={openForm}/>
             }
         </div>
