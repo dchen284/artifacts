@@ -38,6 +38,7 @@
     outline: none;
     cursor: pointer;
     font-weight: bold;
+    font-family: 'Crimson Text', serif;
   }
   
   input,
@@ -64,3 +65,4 @@
     min-height: 100vh; 
     min-width: 100vw;
   }
+  

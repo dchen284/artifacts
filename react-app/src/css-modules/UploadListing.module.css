@@ -4,6 +4,91 @@
     align-items: center;
     justify-content: space-evenly;
     width: 500px;
-    height: 300px;
+    /* height: 400px; */
+    padding: 15px;
+    border: 2px solid black;
+
+    background-color: #BBBFCA;
+}
+
+
+
+
+.listingBtn{
+    height: 35px;
+    width: 50%;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    font-size: 16px;
+    background: #495464;
+    box-shadow: 1px 2px 3px #495464;
+    border: 2px solid black;
+    color: white;
+}
+
+.listingBtn:hover,
+.fileUploadLabel:hover{
+    color: #495464;
+    background-color: #F4F4F2;
+}
+
+.inputLabel{
+    width: 100%;
+}
+.listingInput{
+    display: block;
+    height: 35px;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: #E8E8E8;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.listingDescription{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    height: 150px;
+    width: 100%;
+    resize: none;
+    border: 2px solid black;
+    background-color: #E8E8E8;
+    border-radius: 5px;
+    /* margin: 7px; */
+}
+
+.select{
+    display:block;
+    width: 100%;
+    height: 35px;
+    border: 2px solid black;
 
 }
+
+/* File upload styles */
+.hiddenInput{
+    visibility: hidden;
+    position: absolute;
+}
+.fileUploadLabel{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-size: 16px;
+    font-weight: bold;
+    background: #495464;
+    box-shadow: 1px 2px 3px #495464;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 35px;
+    width: 50%;
+    color: white;
+    transition: .2s ease-in;
+    text-align: center;
+    margin: 10px 0px;
+
+}
+.fileUploadLabel:hover{
+    cursor: pointer;
+}
+
