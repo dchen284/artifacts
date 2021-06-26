@@ -36,7 +36,7 @@ const SearchResults = () => {
             <div className='listingsPage__container'>
                 {searchResults.length ?
                 <>
-                    <ListingFilters />
+                    {/* <ListingFilters /> */}
                     <div className='listingGrid__container'>
                         {searchResults.map( result => (
                             <ProductDisplay product={result} key={result.id}/>

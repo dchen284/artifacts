@@ -96,6 +96,9 @@
 /* CATEGORY TEXT STYLES */
 .categoryTextBox{
     margin-left: 100px;
+    background: rgb(0,0,0,.5);
+    box-shadow: 0px 0px 10px 10px rgb(0,0,0,.5);
+    padding: 15px;
 }
 .categoryHeader,
 .categorySubheader{
@@ -115,11 +118,19 @@
     color: white;
     display: block;
     width: 100px;
-    height: 30px;
-    background: black;
+    height: 40px;
+    border-radius: 5px;
+    background: #495464;
+    transition: .2s ease-in;
+    border: 2px solid black;
     align-self: center;
+    font-size: 16px;
 }
-
+.categoryLink:hover{
+    border: 2px solid black;
+    background: rgb(239, 239, 239);
+    color: #495464
+}
 
 
 /* MOBILE - MEDIA QUERY STYLES */
