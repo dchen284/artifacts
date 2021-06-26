@@ -1,7 +1,7 @@
 import ListingsNavBar from "./ListingsNavBar";
 import ListingGrid from "./ListingGrid";
-import ListingFilters from "./ListingFilters";
-import React, { useEffect, useState } from "react";
+// import ListingFilters from "./ListingFilters";
+import React, { useState } from "react";
 import "./index.css"
 
 

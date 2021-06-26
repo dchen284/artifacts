@@ -73,7 +73,10 @@ const productReducer = (state = {}, action) => {
       }
     case RETRIEVE_PRODUCT:
       {
-        return {...action.product};
+        const res = { ...state }
+        res[action.product.id] = action.product;
+        return res;
+        // return {...action.product};
       }
     default:
       return newState
