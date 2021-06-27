@@ -117,7 +117,7 @@ const ShoppingCartItem = ({item}) => {
                 <div className="shopping_cart_item__quantity_error">{quantityError}</div>
                 <div className="shopping_cart_item__line shopping_cart_item__priceline">
                     <div>Total</div>
-                    <div>$0.00</div>
+                    <div>{`$${quantity * product.price}.00`}</div>
                 </div>
                 <div className="shopping_cart_item__line">
                     <button
