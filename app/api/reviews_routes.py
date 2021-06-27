@@ -14,7 +14,6 @@ def reviews_all():
     return {"reviews": [review.to_dict() for review in reviews]}
 
 
-
 # POST /api/reviews
 @reviews_routes.route('/new_review', methods=["POST"])
 @login_required

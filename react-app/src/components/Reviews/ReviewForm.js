@@ -12,7 +12,7 @@ const history = useHistory();
 const user = useSelector(state => state.session.user);
 const { productId } = useParams()
 
-const [rating, setRating] = useState(0);
+const [rating, setRating] = useState(5);
 const [content, setContent] = useState('');
 
 
@@ -57,7 +57,7 @@ return (
             <br></br>
             <br></br>
             <div className='review-box'>
-                <textarea placeholder='Your Review' rows='10' cols='50' value={content} onChange={(e) => setContent(e.target.value)}></textarea>
+                <textarea required placeholder='Your Review' rows='10' cols='50' value={content} onChange={(e) => setContent(e.target.value)}></textarea>
             </div>
             <button type='submit' className='submit-button'>Submit</button>
             <button className='cancel-button' onClick={openForm}>Cancel</button>
