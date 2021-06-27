@@ -13,7 +13,7 @@ export default function LoginFormModal({setCurrentModal, isLogin, auth}) {
             setShowLoginModal(false);
             auth.setAuthMsg('');
         }
-    }, [isLogin])
+    }, [auth, isLogin])
 
 
     return (

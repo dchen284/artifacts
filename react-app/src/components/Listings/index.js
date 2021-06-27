@@ -1,14 +1,25 @@
 import ListingsNavBar from "./ListingsNavBar";
 import ListingGrid from "./ListingGrid";
-import ListingFilters from "./ListingFilters";
-import React, { useEffect, useState } from "react";
+// import ListingFilters from "./ListingFilters";
+import React, { useState } from "react";
+import { useParams } from "react-router";
 import "./index.css"
 
 
 const Listings = () => {
-  const [currentEra, setCurrentEra] = useState('grid_pre')
+  const { category } = useParams();
+  let currentEraString = 'grid_pre';
+  if (category === "Antiquities") {
+    currentEraString = 'grid_ant';
+  }
+  else if (category === "Modern") {
+    currentEraString = 'grid_now';
+  }
+  else if (category === "Future") {
+    currentEraString = 'grid_fut';
+  }
 
-
+  const [currentEra, setCurrentEra] = useState(currentEraString)
 
   return (
     <>

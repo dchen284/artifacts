@@ -14,7 +14,6 @@ def reviews_all():
     return {"reviews": [review.to_dict() for review in reviews]}
 
 
-
 # POST /api/reviews
 @reviews_routes.route('/new_review', methods=["POST"])
 @login_required
@@ -34,6 +33,7 @@ def create_review():
 
 # PUT /api/reviews/:reviewId
 @reviews_routes.route('/<int:reviewId>', methods=["PUT"])
+@login_required
 def update_review(reviewId):
     review = Review.query.get(reviewId)
 

@@ -8,13 +8,16 @@ import "./index.css"
 const ProductPage = () => {
   const { productId } = useParams();
   const dispatch = useDispatch();
-  const product = useSelector(state => state.products)
+  // const product = useSelector(state => state.products)
+  const product = useSelector(state => state.products[productId])
 
   useEffect(() => {
     dispatch(retrieveProduct(productId))
   }, [dispatch, productId]);
 
-
+  if (!product) {
+    return null;
+  }
 
   return (
     <div>

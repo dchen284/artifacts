@@ -84,7 +84,7 @@ const ShoppingCart = () => {
                 />
                 {errors.length ?
                 <ul>
-                    {errors.map(error => <li>{error}</li>)}
+                    {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
                 :
                 null}
