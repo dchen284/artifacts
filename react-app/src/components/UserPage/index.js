@@ -14,7 +14,7 @@ function UserPage() {
   const dispatch = useDispatch()
   const user = session.user;
   const userProducts = Object.values(products);
-  console.log('userProducts', userProducts)
+  // console.log('userProducts', userProducts)
 
   useEffect(() => {
     dispatch(getUserProducts(user.id))
