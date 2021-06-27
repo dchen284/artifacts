@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import styles from '../../css-modules/NavBar.module.css';
 
@@ -28,10 +28,10 @@ export default function ProfileButton({user, setCurrentModal}) {
             {showMenu &&
             <ul className={styles.dropDown}>
                 <li>
-                    <NavLink to={`/users/${user.id}`}>
-                        {user.username}
+                    <Link to={`/users/${user.id}`}>
+                        <div>Hi, {user.username}</div>
                         <div>View your profile</div>
-                    </NavLink>
+                    </Link>
                 </li>
                 <li>
                     <button className={styles.dropDownBtn} onClick={() => {

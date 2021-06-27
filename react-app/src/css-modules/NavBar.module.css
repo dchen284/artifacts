@@ -49,6 +49,9 @@
     right: 0px;
 }
 
+.dropDown a{
+    text-align: center;
+}
 .dropDown li:hover{
     background: #BBBFCA;
 }
@@ -66,7 +69,9 @@
     width: 100%;
     padding: 10px;
     background: transparent;
+    font-size: 16px;
 }
+
 
 /* Shopping cart */
 .shoppingCart{
