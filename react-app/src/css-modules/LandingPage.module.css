@@ -1,6 +1,6 @@
 .landingContainer{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,7 +11,7 @@
 /* WELCOME */
 .welcomeContainer {
     width: 95%;
-    height: 40vh;
+    min-height: 45%;
     /* background-image: url('../components/LandingPage/images/pocket-watch.jpeg'); */
     background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e37029ac-88b2-4c87-9bd2-ffd28e06e5da/dbv3rr4-c48d8e7d-fce7-4a59-b8f1-b72541fcb7e2.jpg/v1/fill/w_1158,h_690,q_70,strp/photography_class_03___part_timer_by_fyoriosity_dbv3rr4-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9Mjk0OSIsInBhdGgiOiJcL2ZcL2UzNzAyOWFjLTg4YjItNGM4Ny05YmQyLWZmZDI4ZTA2ZTVkYVwvZGJ2M3JyNC1jNDhkOGU3ZC1mY2U3LTRhNTktYjhmMS1iNzI1NDFmY2I3ZTIuanBnIiwid2lkdGgiOiI8PTQ5NDUifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.mNXM4PJ7QGLrMxMsFH3zRENpOflrbdZDx3nNmKsWHzQ');
     background-size: cover;
@@ -47,7 +47,8 @@
 /* CATEGORIES */
 
 .categoryBox {
-    height: 40vh;
+    min-height: 50%;
+    /* height: 50%; */
     width: 95%;
 }
 .singleCategory1,
@@ -55,7 +56,7 @@
 .singleCategory3,
 .singleCategory4 {
     width: 100%;
-    height: 45vh;
+    height: 48vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

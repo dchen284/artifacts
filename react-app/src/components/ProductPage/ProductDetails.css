@@ -23,6 +23,7 @@
   width: 100%;
   background-color: #495464;
   color: white;
+  transition: 100ms ease-in;
   border-radius: 2px;
 }
 

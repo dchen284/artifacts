@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import LoginForm from "./components/auth/LoginForm";
-import SignUpForm from "./components/auth/SignUpForm";
+// import LoginForm from "./components/auth/LoginForm";
+// import SignUpForm from "./components/auth/SignUpForm";
 import Listings from "./components/Listings";
 import ProductPage from "./components/ProductPage";
 import SingleReview from "./components/Reviews/SingleReview";
@@ -13,6 +13,7 @@ import UserPage from "./components/UserPage";
 import LandingPage from "./components/LandingPage/LandingPage"
 import SearchResults from "./components/Search/SearchResults";
 import ShoppingCart from "./components/ShoppingCart"
+import Footer from "./components/Footer/Footer";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
   }
 
   return (
+    <div className="page-container">
+      <div className="content-wrap">
     <BrowserRouter>
       <NavBar />
       <Switch>
@@ -41,12 +44,12 @@ function App() {
         <Route path="/" exact>
           <LandingPage />
         </Route>
-        <Route path="/login" exact>
+        {/* <Route path="/login" exact>
           <LoginForm />
-        </Route>
-        <Route path="/sign-up" exact>
+        </Route> */}
+        {/* <Route path="/sign-up" exact>
           <SignUpForm />
-        </Route>
+        </Route> */}
         <Route path="/category/:category" exact>
           <Listings />
         </Route>
@@ -68,6 +71,9 @@ function App() {
         </Route>
       </Switch>
     </BrowserRouter>
+    </div>
+    <Footer />
+    </div>
   );
 }
 
