@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from '../../css-modules/UploadListing.module.css';
 // import { useDispatch } from "react-redux";
 
 
@@ -39,16 +40,19 @@ const UserProductEdit = ({ product, history, setShowModal }) => {
 
   return (
     <form className='userListing__editForm' onSubmit={update}>
-      <div>Edit Product Info</div>
+      <h1>Edit Product Info</h1>
       <label>Product Name</label>
       <input required type='text' value={editName} onChange={e => setEditName(e.target.value)}></input>
-      <label>Product Quantity</label>
+      <label>Quantity</label>
       <input required type='number' value={editQuantity} onChange={e => setEditQuantity(e.target.value)}></input>
-      <label>Product Price</label>
+      <label>Price</label>
       <input required type='number' value={editPrice} onChange={e => setEditPrice(e.target.value)}></input>
-      <label>Product Image</label>
-      <input type="file" accept="image/*" onChange={e => setEditImage(e.target.files[0])}/>
-      <label>Product Description</label>
+      <label>Image</label>
+      <label id={'editForm__filelabel'} for='edit-upload-image' className={styles.fileUploadLabel}>
+        <p>Choose file</p>
+        <input id='edit-upload-image' className={styles.hiddenInput} type="file" accept="image/*" onChange={e => setEditImage(e.target.files[0])}/>
+      </label>
+      <label>Description</label>
       <textarea required value={editDescription} onChange={e => setEditDescription(e.target.value)}></textarea>
       <button type="submit">Confirm Changes</button>
       <button onClick={() => setShowModal(false)}>Abandon Changes</button>

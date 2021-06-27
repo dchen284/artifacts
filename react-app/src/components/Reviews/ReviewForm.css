@@ -78,6 +78,7 @@
     height: 30px;
     padding: 7px;
     margin: 5px;
+    transition: 100ms ease-in;
     cursor: pointer;
 }
 

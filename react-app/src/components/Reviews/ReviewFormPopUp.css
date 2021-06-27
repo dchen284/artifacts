@@ -91,6 +91,7 @@
     width: 150px;
     height: 30px;
     padding: 7px;
+    transition: 100ms ease-in;
     margin: 5px;
     cursor: pointer;
 }

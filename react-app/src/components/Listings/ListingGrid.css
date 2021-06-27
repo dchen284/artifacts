@@ -1,11 +1,20 @@
 .listingGrid__container
 {
   display: grid;
-  width: 60%;
+  width: 70%;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   row-gap: 5px;
   column-gap: 5px;
   margin: 0 8px 8px 8px;
   align-self: center;
+}
+
+
+@media screen and (max-width: 800px){
+  .listingGrid__container{
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+
+  }
 }

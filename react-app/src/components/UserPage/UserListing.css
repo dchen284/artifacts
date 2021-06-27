@@ -34,7 +34,9 @@
   background-color: #BBBFCA;
   border-radius: 2px;
 }
-
+.userListing__editForm > h1{
+  text-align: center;
+}
 .userListing__editForm > textarea
 {
   display: flex;
@@ -42,6 +44,7 @@
   height: 30%;
   resize: none;
   background-color: #E8E8E8;
+  border: 2px solid black;
   border-radius: 5px;
   margin: 7px;
 }
@@ -50,8 +53,16 @@
 {
   height: 40px;
   background-color: #E8E8E8;
+  border: 2px solid black;
   border-radius: 5px;
   margin: 7px;
+}
+
+#editForm__filelabel{
+  width: 97%;
+  margin: 0px;
+  padding: 10px;
+  align-self: center;
 }
 
 .userListing__editForm > label
@@ -66,9 +77,11 @@
   align-self: center;
   border-radius: 5px;
   background-color: #495464;
+  border: 2px solid black;
   color: white;
   box-shadow: 1px 2px 3px #495464;
   margin: 5px;
+  transition: .2s ease-in;
 }
 
 .userListing__editForm > button:hover {
