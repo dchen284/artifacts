@@ -33,6 +33,10 @@
     box-shadow: 1px 2px 3px #495464;
 }
 
+.productDetails__container > button:disabled {
+    color: darkgrey;
+    background-color: grey;
+}
 
 .productDetails__header
 {

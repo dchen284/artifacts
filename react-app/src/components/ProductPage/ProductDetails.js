@@ -64,7 +64,7 @@ const ProductDetails = ({ product }) => {
       <span style={{"fontSize": "26px"}}>Quantity: <input type='number' value={currentQuantity} onChange={e => setCurrentQuantity(e.target.value)}></input></span>
       {(product.quantity < currentQuantity || product.quantity < 5) && <div className='productDetails__stock'>Only {product.quantity} left in stock!</div>}
       <div style={{"fontSize": "26px"}}>Total: <span style={{"fontWeight": "bold"}}>${product.price * currentQuantity}</span></div>
-      <button onClick={handleClick} disabled={(product.quantity < currentQuantity || currentQuantity < 1) ? true : false}>Add To Cart</button>
+      <button onClick={handleClick} disabled={(product.quantity < currentQuantity || currentQuantity < 1 || !user) ? true : false}>Add To Cart</button>
     </div>
   )
 }
