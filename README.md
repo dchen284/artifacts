@@ -23,8 +23,6 @@ https://artifacts-app.herokuapp.com/
 
 [Feature List](https://github.com/dchen284/artifacts/wiki/Feature-List)
 
-[Routes](https://github.com/dchen284/artifacts/wiki/Routes)
-
 [User Stories](https://github.com/dchen284/artifacts/wiki/User-Stories)
 
 [Wireframes](https://github.com/dchen284/artifacts/wiki/Wireframes)
