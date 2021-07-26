@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import styles from '../../css-modules/UploadListing.module.css'
+import * as productActions from '../../store/products';
 
 export default function UploadListing({ setCurrentModal }) {
     const history = useHistory();
+    const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState(0);
@@ -48,8 +50,9 @@ export default function UploadListing({ setCurrentModal }) {
         const data = await res.json();
 
         if(data){
-            //console.log('Data', 'Test')
-            history.push('/')
+            // console.log('Data', 'Test')
+            dispatch(productActions.retrieve(data));
+            history.push(`/users/${user.id}`);
             setCurrentModal('');
         }
 
@@ -83,7 +86,7 @@ export default function UploadListing({ setCurrentModal }) {
                         <option value="4">Future</option>
                     </select>
                 </label>
-                <label for='upload-image' className={styles.fileUploadLabel}>
+                <label htmlFor='upload-image' className={styles.fileUploadLabel}>
                     <p>Choose Image</p>
                     <input id='upload-image' className={styles.hiddenInput} type="file" accept="image/*" onChange={updateImage}/>
                 </label>

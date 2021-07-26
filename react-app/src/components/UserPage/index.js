@@ -45,7 +45,7 @@ function UserPage() {
       <br/>
       <h2 className='userPage__header'>Here's What You're Selling!</h2>
       <div className='userPage__container'>
-        {userProducts?.map(product => <UserListings key={product.id} product={product}/>)}
+        {userProducts?.reverse().map(product => <UserListings key={product.id} product={product}/>)}
       </div>
     </>
   );
