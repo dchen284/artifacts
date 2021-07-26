@@ -9,11 +9,19 @@ const SignUpForm = ({setCurrentModal}) => {
   const user = useSelector(state => state.session.user);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [errors, setErrors] = useState([])
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const errorStyles = {
+    'color' : 'red',
+    'marginLeft' : '5px',
+  }
 
   const onSignUp = async (e) => {
     e.preventDefault();
+
+    if (password !== repeatPassword) setErrors(['Passwords do not match'])
+
     if (password === repeatPassword) {
       await dispatch(signUp(username, email, password));
       // TODO: add errors for signup form
@@ -47,6 +55,7 @@ const SignUpForm = ({setCurrentModal}) => {
         <h1>Register</h1>
         <button className={styles.registerBtn} onClick={() => setCurrentModal('login')}>Login</button>
       </div>
+      {errors?.map(error => <strong style={errorStyles}>{error}</strong>)}
       <form className={styles.authForm} onSubmit={onSignUp}>
         <div>
           <label>User Name</label>
