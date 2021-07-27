@@ -168,7 +168,7 @@ def seed_products():
                      'iPhone model will be sure to make you the talk of the'
                      'town, with its stunning crystal-clear body and'
                      'lightning-speed apps powered by quantum computing and'
-                     'nano-hamsters spinning nano-wheels!'),
+                     'nano-hamsters spinning nano-wheels!!!'),
     )
     f2 = Product(quantity=1, price=10, name='Kyle Powers First Nobel Prize', description='With the invention of his farmer robot AI technology, Kyle Powers singlehandedly solved world hunger.',
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/561381b103db1.jpg', userId=3, categoryId=4)
@@ -182,7 +182,7 @@ def seed_products():
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/Lightsaber%2C_silver_hilt%2C_blue_blade.png', userId=3, categoryId=4)
 
     products = [
-        p1, p2, p3, p4, p5, p6, p7, p8, p9
+        p1, p2, p3, p4, p5, p6, p7, p8, p9,
         a1, a2, a3, a4, a5, a6,
         m1, m2, m3, m4, m5, m6, m7, m8,
         f1, f2, f3, f4, f5, f6
