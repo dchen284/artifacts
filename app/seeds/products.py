@@ -182,7 +182,7 @@ def seed_products():
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/Lightsaber%2C_silver_hilt%2C_blue_blade.png', userId=3, categoryId=4)
 
     products = [
-        p1, p2, p3, p4, p5, p6, p7, p8, p9
+        p1, p2, p3, p4, p5, p6, p7, p8, p9,
         a1, a2, a3, a4, a5, a6,
         m1, m2, m3, m4, m5, m6, m7, m8,
         f1, f2, f3, f4, f5, f6
