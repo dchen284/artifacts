@@ -33,10 +33,8 @@ const ShoppingCart = () => {
     */
 
     useEffect(() => {
-        console.log(cartItems.length);
         setCheckoutIsDisabled(false);
         if (!cartItems.length) {
-            console.log('was here')
             setCheckoutIsDisabled(true);
         }
         cartItems.forEach( cartItem => {
