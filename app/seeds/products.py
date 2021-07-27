@@ -21,14 +21,71 @@ def seed_products():
         name='Artisinal Mammoth Jerky',
         quantity=100, price=250, userId=1, categoryId=1,
         imgURL='https://cdn.shopify.com/s/files/1/1516/5908/products/MeatMountain_1024x1024.jpg?v=1510154162',
-        description=('Satisfies even mammoth-size cravings!  Imported from the '
-                     'Holocene glacial retreat, this delectable jerky was made '
-                     'by real Neanderthals, giving you a real taste of '
+        description=('Satisfies even mammoth-size cravings!  Imported from '
+                     'the Holocene glacial retreat, this delectable jerky was '
+                     'made by real Neanderthals, giving you a real taste of '
                      'history.')
     )
     p3 = Product(quantity=3, price=10000, name='Original Cave Drawings', description='One of a kind pieces of art that were thought to be lost to the sands of time. Please no flash photography.',
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/frontiers-in-psychology-cave-art-origin-modern-language.jpg', userId=4, categoryId=1)
-    p4 = Product(quantity=2, price=1, name='', description='', imgURL='', userId=5, categoryId=1)
+    p4 = Product(
+        name='Williamsonia - Living Prehistory!',
+        quantity=100, price=100, userId=2, categoryId=1,
+        imgURL='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Williamsonia_life_restoration_-_MUSE.jpg/220px-Williamsonia_life_restoration_-_MUSE.jpg',
+        description=('Want to give your garden a fresh new look?  Add this '
+                     'gorgeous prehistoric plant to show the timeless '
+                     'beauty that is nature.  Fun for botanists both '
+                     'young and old!')
+    )
+    p5 = Product(
+        name='Stone Age Canoe',
+        quantity=40, price=30000, userId=2, categoryId=1,
+        imgURL='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Dugout_boats_Kierikki_Centre_Oulu_20130526.JPG/220px-Dugout_boats_Kierikki_Centre_Oulu_20130526.JPG',
+        description=('Dugouts are the oldest boat type fro prehistory, dating '
+                     'back about 8,000 years to the Neolithic Stone Age.  You '
+                     'simply won\'t find this kind of quality wood anywhere '
+                     '(or anytime) else!')
+    )
+    p6 = Product(
+        name='Mystery Fish from 400 million years ago!',
+        quantity=100, price=30000, userId=2, categoryId=1,
+        imgURL='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Foceana.org%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Flightbox_full%2Fpublic%2Fcoelacanth.jpg%3Fitok%3DHTe_gtF9&f=1&nofb=1',
+        description=('Be the envy of your peers by adding this fantastic fish '
+                     'to your aquarium!  Its armored scales allow it to fend '
+                     'off the most vicious of attacks.  Beware Southeast '
+                     'Asian vendors selling similar items, the real deal can '
+                     'only be found here on Artifacts!')
+    )
+    p7 = Product(
+        name='Trilobite Pet',
+        quantity=200, price=15000, userId=3, categoryId=1,
+        imgURL='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Triarthrus_NT_small.jpg/220px-Triarthrus_NT_small.jpg',
+        description=('Sea monkeys are soooo last year.  Go way back into '
+                     'the past to raise one of history\'s most famous sea '
+                     'creatures!  Easy to care for, this item comes with '
+                     'packets of prehistoric plankton needed for a happy '
+                     'anthropod.')
+    )
+    p8 = Product(
+        name='Mesolithic Hut',
+        quantity=50, price=300000, userId=3, categoryId=1,
+        imgURL='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Hunter_gatherer%27s_camp_at_Irish_National_Heritage_Park_-_geograph.org.uk_-_1252699.jpg/330px-Hunter_gatherer%27s_camp_at_Irish_National_Heritage_Park_-_geograph.org.uk_-_1252699.jpg',
+        description=('Gone fishing, but want to relax in something unique? '
+                     'Have our Old World crafters make you an authentic '
+                     'Mesolithic Hut!  Get back to nature and time for '
+                     'a wonderfully charming abode.  You provide the '
+                     'appropriate waterfront site.')
+    )
+    p9 = Product(
+        name='Randomized Prehistoric Egg',
+        quantity=100, price=1000000, userId=3, categoryId=1,
+        imgURL='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.homedepot-static.com%2FproductImages%2F396af3a4-6730-4e71-9993-22cc69bb1d7d%2Fsvn%2Fdesign-toscano-garden-statues-ne140031-64_1000.jpg&f=1&nofb=1',
+        description=('What\'s inside?  No one will know, until you buy '
+                     'buy buy!  Each purchase gives you a randomized '
+                     'egg, each capable of hatching into a charming '
+                     'creature!  Keeping buying to collect the full '
+                     'set of 10 possible pets!')
+    )
     # p5 = Product(quantity=6, price=150000, name='T-Rex Skull', description='', imgURL='', userId=6, categoryId=1)
 
     # Antiquities
@@ -125,7 +182,7 @@ def seed_products():
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/Lightsaber%2C_silver_hilt%2C_blue_blade.png', userId=3, categoryId=4)
 
     products = [
-        p1, p2, p3,
+        p1, p2, p3, p4, p5, p6, p7, p8, p9
         a1, a2, a3, a4, a5, a6,
         m1, m2, m3, m4, m5, m6, m7, m8,
         f1, f2, f3, f4, f5, f6
