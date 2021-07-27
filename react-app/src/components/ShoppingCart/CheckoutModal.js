@@ -24,16 +24,16 @@ export default function CheckoutModal({setCurrentModal, isCheckout, checkoutIsDi
                 onClick={() => {setShowModal(true)}}
                 disabled={checkoutIsDisabled}
             >
-                Checkout
+                {checkoutIsDisabled ? 'Cannot Checkout' : 'Checkout'}
             </button>
             {showModal && (
                 <Modal onClose={() => {
                     setShowModal(false);
                     setCurrentModal('');
                 }}>
-                    <CheckoutForm 
-                    setShowModal={setShowModal} 
-                    cartItems={cartItems} 
+                    <CheckoutForm
+                    setShowModal={setShowModal}
+                    cartItems={cartItems}
                     setErrors={setErrors}
                     //setCheckoutIsDisabled={setCheckoutIsDisabled}
                     />
