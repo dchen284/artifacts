@@ -168,7 +168,7 @@ def seed_products():
                      'iPhone model will be sure to make you the talk of the'
                      'town, with its stunning crystal-clear body and'
                      'lightning-speed apps powered by quantum computing and'
-                     'nano-hamsters spinning nano-wheels!'),
+                     'nano-hamsters spinning nano-wheels!!'),
     )
     f2 = Product(quantity=1, price=10, name='Kyle Powers First Nobel Prize', description='With the invention of his farmer robot AI technology, Kyle Powers singlehandedly solved world hunger.',
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/561381b103db1.jpg', userId=3, categoryId=4)
