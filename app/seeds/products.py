@@ -157,6 +157,14 @@ def seed_products():
          imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/fafe33725142af7a364f21e391efd719.jpg', userId=4, categoryId=3)
     m8 = Product(quantity=120, price=250, name='Reversible Dress', description='Introducing the reversible dress, is it gold and white or black and blue? We\'ll leave it up to you how you would like to style this one of a kind article of clothing. Known for its versatility, step out in this number and you will be the talk of the town!' ,
          imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/The_Dress_(viral_phenomenon).png', userId=4, categoryId=3)
+    m9 = Product(quantity=1, price=800000, name='van Gogh\'s Ear', description='One of the most talented ears in history.' ,
+         imgURL='https://i.pinimg.com/originals/88/0c/14/880c14455f141a82c2014071d5cb917c.png', userId=4, categoryId=3)
+    m10 = Product(quantity=1, price=7000, name='First Selfie', description='In 1839, Robert Cornelius, an American pioneer in photography, produced a daguerreotype of himself which ended up as one of the first photographs of a person.' ,
+         imgURL='https://www.photoblog.com/learn/wp-content/uploads/2019/06/firstselfportraitphoto.jpg', userId=4, categoryId=3)
+    m11 = Product(quantity=1, price=500000, name='Agnes Varda\'s First Camera', description='The camera that launched the French New Wave.' ,
+         imgURL='https://www2.bfi.org.uk/sites/bfi.org.uk/files/fb-images/varda-agnes-004-directing-pointe%20courte-1955-on-back-of-man_1000x750.jpg', userId=4, categoryId=3)
+    m12 = Product(quantity=1, price=3000, name='Trenchcoat Formerly Known as Purple', description='Put it on and watch the rain turn purple.' ,
+         imgURL='https://i1.wp.com/dismantlemag.com/wp-content/uploads/2018/09/Prince-Purple-Trenchcoat.png?fit=468%2C659&ssl=1', userId=4, categoryId=3)
 
     # Future
     f1 = Product(
@@ -184,7 +192,7 @@ def seed_products():
     products = [
         p1, p2, p3, p4, p5, p6, p7, p8, p9,
         a1, a2, a3, a4, a5, a6,
-        m1, m2, m3, m4, m5, m6, m7, m8,
+        m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12,
         f1, f2, f3, f4, f5, f6
     ]
     for product in products:
