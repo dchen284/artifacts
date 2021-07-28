@@ -4,14 +4,16 @@
   display: flex;
   /* width: 250px; */
   width: 250px;
-  height: 250px;
+  height: 280px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   box-sizing: border-box;
+  border: 1px black transparent;
   padding: 4px;
   background-color:  rgba(167, 167, 167, 0.1);
+
 }
 
 .productDisplay__container:hover
@@ -28,4 +30,39 @@
   height: 60%;
   /* width: 90%; */
   /* height: 90%; */
+}
+
+
+.productAbout
+{
+  width: 100%;
+  font-size: 20px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.productTitle:hover
+{
+  white-space: normal;
+}
+
+.productPrice
+{
+  font-weight: 800;
+  font-size: larger;
+}
+
+
+.productDisplay__AboutContainer
+{
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  width: 100%;
+  align-self: flex-start;
+  justify-content: center;
 }
