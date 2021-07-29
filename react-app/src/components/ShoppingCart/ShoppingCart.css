@@ -12,12 +12,15 @@
     transition: .2s ease-in;
 }
 
-.shopping_cart_checkout_button:disabled {
-    background-color: lightgrey;
-}
+
 
 .shopping_cart_checkout_button:hover {
     background: #495464;
+    color: white;
+}
+
+.shopping_cart_checkout_button:disabled {
+    background-color: lightgrey;
     color: white;
 }
 

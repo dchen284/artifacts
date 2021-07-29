@@ -56,6 +56,7 @@ const ShoppingCart = () => {
         <div className="shopping_cart">
             <div className="shopping_cart_item_display">
                 <div className="shopping_cart_item_display__title">Shopping Cart</div>
+                {cartItems.length ? null : <div>No items in cart.</div>}
                 {cartItems?.map(item => <ShoppingCartItem item={item} key={item.id}/>)}
             </div>
             <div className="shopping_cart_summary">

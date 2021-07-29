@@ -9,7 +9,7 @@ def seed_products():
     p1 = Product(
         name='Authentic Saber-Tooth Tiger Cub',
         quantity=20, price=10000, userId=1, categoryId=1,
-        imgURL='http://pm1.narvii.com/6490/def309f188af821c6f0b2bec71fdd2b2eb8fa1f0_hq.jpg',
+        imgURL='https://pm1.narvii.com/6490/def309f188af821c6f0b2bec71fdd2b2eb8fa1f0_hq.jpg',
         description=('Sure to bring a Smilodon to your face, this adorable '
                      'saber-tooth tiger cub will be sure to delight children '
                      'of all ages.  Lovingly procured from the Pleistocene '
@@ -162,7 +162,7 @@ def seed_products():
     f1 = Product(
         name='iPhone millenium: Phone of the future!',
         quantity=50, price=2000, userId=1, categoryId=4,
-        imgURL='http://4.bp.blogspot.com/-8nXEq3tPvsM/VMZ489STLMI/AAAAAAABTss/5ecvC9SNmy0/s1600/iPhone%2BX%2B-%2BiPhone%2B7%2BFuturistic%2BConcept.jpg',
+        imgURL='https://4.bp.blogspot.com/-8nXEq3tPvsM/VMZ489STLMI/AAAAAAABTss/5ecvC9SNmy0/s1600/iPhone%2BX%2B-%2BiPhone%2B7%2BFuturistic%2BConcept.jpg',
         description=('Tired of being behind the latest trends in phones?'
                      'Race to the front, by buying future tech, today!  This'
                      'iPhone model will be sure to make you the talk of the'
