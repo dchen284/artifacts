@@ -12,18 +12,19 @@ const userOrders = orders => ({
 })
 
 export const getUserOrders = (id) => async dispatch => {
-    const res = await fetch(`/api/category/user/${id}`);
-
+    const res = await fetch(`/api/orders/user/${id}`);
+    console.log('BEFORE IF')
     if (res.ok) {
         const orders = await res.json();
-
-        dispatch(userOrders(orders));
+        console.log('ORDERS', orders)
+        dispatch(userOrders(orders.orders));
+        return res;
     }
 };
 
 
 export const retrieveOrder = (productId) => async dispatch => {
-    const res = await fetch(`/api/category/products/${productId}`);
+    const res = await fetch(`/api/orders/products/${productId}`);
 
     if (res.ok) {
         const order = await res.json();
@@ -31,25 +32,25 @@ export const retrieveOrder = (productId) => async dispatch => {
     }
 };
 
-const orderReducer = (state = {}, action) => {
-    const newState = { ...state }
-    switch(action.type) {
+
+const initialState = {}
+
+const orderReducer = (state = initialState, action) => {
+    let newState;
+    switch (action.type) {
         case GET_ORDERS:
-        {
-            const res = {}
-            action.orders.forEach(order => {
-            res[order.id] = order;
+            newState = {};
+            action.orders.forEach((order) => {
+                newState[order.id] = order;
             });
-            return res;
-        }
+            return newState;
         case RETRIEVE_ORDER:
-        {
-            const res = { ...state }
-            res[action.order.id] = action.order;
-            return res;
-        }
+            newState = { ...state };
+            newState[action.order.id] = action.order;
+            return newState;
         default:
-        return newState
+            return state;
     }
 }
+
 export default orderReducer;

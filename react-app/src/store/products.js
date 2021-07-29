@@ -76,7 +76,6 @@ const productReducer = (state = {}, action) => {
         const res = { ...state }
         res[action.product.id] = action.product;
         return res;
-        // return {...action.product};
       }
     default:
       return newState

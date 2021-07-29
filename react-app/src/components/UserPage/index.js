@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import UserListings from "./UserListings";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserProducts } from "../../store/products";
+import { getUserOrders } from "../../store/orders";
 import "./index.css"
 
 function UserPage() {
@@ -10,14 +11,16 @@ function UserPage() {
   // Notice we use useParams here instead of getting the params
   // From props.
   // const { userId }  = useParams();
-  const { session, products } = useSelector(state => state)
+  const { session, products, orders } = useSelector(state => state)
   const dispatch = useDispatch()
   const user = session.user;
   const userProducts = Object.values(products);
-  // console.log('userProducts', userProducts)
+  const userOrders = Object.values(orders);
+  console.log('user ORDERS', userOrders)
 
   useEffect(() => {
-    dispatch(getUserProducts(user.id))
+    dispatch(getUserProducts(user.id));
+    dispatch(getUserOrders(user.id))
   }, [dispatch, user.id]);
 
   // useEffect(() => {
