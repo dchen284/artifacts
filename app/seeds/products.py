@@ -128,6 +128,14 @@ def seed_products():
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/ceba00b4646565794cbd9fe5982d8f3c.jpg', userId=6, categoryId=2)
     a6 = Product(quantity=10, price=2000, name='DaVinci Sketches', description='Original artwork from DaVinci himself, this drawing is one of his most famous works of art. Depicted here is a man with four arms and four legs. Why this many had so many limbs is still a mystery to this day. Don\'t ask how we got this.',
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/merlin_161422065_f398f3f3-76e6-431e-a781-69337e62c19e-superJumbo.jpg', userId=2, categoryId=2)
+    a7 = Product(quantity=4, price=800000, name='Viking Ship', description='Row row row your boat.',
+            imgURL='https://lh3.googleusercontent.com/proxy/hEhYns-is2oUxrWu9aVUqha9LgAYSLhK-WFO4D78hDMQRjsyGVv6YU_p_MfCmbwNUfgb42YtsfrgX5ydYV7MSg', userId=5, categoryId=2)
+    a8 = Product(quantity=1, price=5000000, name='Cleopatra\'s Crown', description='The crown of the last active ruler of the Ptolemaic Kingdom of Egypt.',
+            imgURL='https://theloveforhistory.files.wordpress.com/2011/05/cleopatra.gif?w=242', userId=5, categoryId=2)
+    a9 = Product(quantity=30, price=1000, name='Rumi\'s Handwritten Poetry', description='"Out beyond ideas of wrongdoing and rightdoing there is a field. I\'ll meet you there. When the soul lies down in that grass the world is too full to talk about."',
+            imgURL='https://content.wdl.org/4074/thumbnail/1399476860/616x510.jpg', userId=5, categoryId=2)
+    a10 = Product(quantity=2, price=20000, name='Frey Pie', description='Made special by Arya Stark. I wouldn\'t eat it if I were you.',
+            imgURL='https://static.wikia.nocookie.net/gameofthrones/images/8/88/Frey_pie_ep10_s6.jpg/revision/latest?cb=20160702034429', userId=5, categoryId=2)
 
     # Modern
     m1 = Product(
@@ -157,6 +165,14 @@ def seed_products():
          imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/fafe33725142af7a364f21e391efd719.jpg', userId=4, categoryId=3)
     m8 = Product(quantity=120, price=250, name='Reversible Dress', description='Introducing the reversible dress, is it gold and white or black and blue? We\'ll leave it up to you how you would like to style this one of a kind article of clothing. Known for its versatility, step out in this number and you will be the talk of the town!' ,
          imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/The_Dress_(viral_phenomenon).png', userId=4, categoryId=3)
+    m9 = Product(quantity=1, price=800000, name='van Gogh\'s Ear', description='One of the most talented ears in history.' ,
+         imgURL='https://i.pinimg.com/originals/88/0c/14/880c14455f141a82c2014071d5cb917c.png', userId=4, categoryId=3)
+    m10 = Product(quantity=1, price=7000, name='First Selfie', description='In 1839, Robert Cornelius, an American pioneer in photography, produced a daguerreotype of himself which ended up as one of the first photographs of a person.' ,
+         imgURL='https://www.photoblog.com/learn/wp-content/uploads/2019/06/firstselfportraitphoto.jpg', userId=4, categoryId=3)
+    m11 = Product(quantity=1, price=500000, name='Agnes Varda\'s First Camera', description='The camera that launched the French New Wave.' ,
+         imgURL='https://www2.bfi.org.uk/sites/bfi.org.uk/files/fb-images/varda-agnes-004-directing-pointe%20courte-1955-on-back-of-man_1000x750.jpg', userId=4, categoryId=3)
+    m12 = Product(quantity=1, price=3000, name='Trenchcoat Formerly Known as Purple', description='Put it on and watch the rain turn purple.' ,
+         imgURL='https://i1.wp.com/dismantlemag.com/wp-content/uploads/2018/09/Prince-Purple-Trenchcoat.png?fit=468%2C659&ssl=1', userId=4, categoryId=3)
 
     # Future
     f1 = Product(
@@ -183,8 +199,8 @@ def seed_products():
 
     products = [
         p1, p2, p3, p4, p5, p6, p7, p8, p9,
-        a1, a2, a3, a4, a5, a6,
-        m1, m2, m3, m4, m5, m6, m7, m8,
+        a1, a2, a3, a4, a5, a6, a7, a8, a9, a10,
+        m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12,
         f1, f2, f3, f4, f5, f6
     ]
     for product in products:

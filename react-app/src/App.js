@@ -11,7 +11,7 @@ import NavBar from "./components/Navigation/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UserPage from "./components/UserPage";
 import LandingPage from "./components/LandingPage/LandingPage"
-import SearchResults from "./components/Search/SearchResults";
+import SearchResults from "./components/search/SearchResults";
 import ShoppingCart from "./components/ShoppingCart"
 import Footer from "./components/Footer/Footer";
 import { authenticate } from "./store/session";
