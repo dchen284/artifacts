@@ -16,7 +16,7 @@ const CheckoutForm = ({ setShowModal, cartItems, setErrors }) => {
     const confirmOrder = async () => {
         //back end stuff
         const errors = await dispatch(checkoutCart( cartItems ))
-        //console.log(errors);
+
         if(errors.length){
             setErrors(errors);
             // setCheckoutIsDisabled(true);
