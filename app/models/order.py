@@ -18,4 +18,10 @@ class Order(db.Model):
     "Product",
     secondary=order_product,
     back_populates="order"
-  )
+    )
+
+    def to_dict(self):
+        return {
+        "id": self.id,
+        "userId": self.userId,
+        }

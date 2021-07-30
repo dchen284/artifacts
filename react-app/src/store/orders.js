@@ -17,7 +17,7 @@ export const getUserOrders = (id) => async dispatch => {
     if (res.ok) {
         const orders = await res.json();
         console.log('ORDERS', orders)
-        dispatch(userOrders(orders.orders));
+        dispatch(userOrders(orders));
         return res;
     }
 };
