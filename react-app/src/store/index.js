@@ -6,6 +6,7 @@ import reviewsReducer from './reviews';
 import shoppingCartReducer from './shopping_cart';
 import usersReducer from './users';
 import orderReducer from './orders';
+import orderProductsReducer from './order_products';
 
 const rootReducer = combineReducers({
     session,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
     reviews: reviewsReducer,
     shopping_cart: shoppingCartReducer,
     users: usersReducer,
-    orders: orderReducer
+    orders: orderReducer,
+    order_products: orderProductsReducer
 });
 
 let enhancer;
