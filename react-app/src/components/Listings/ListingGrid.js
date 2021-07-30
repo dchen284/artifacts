@@ -16,7 +16,6 @@ const ListingGrid = () => {
   const products = Object.values(stateObj.products)
   const reviews = Object.values(stateObj.reviews)
 
-  console.log(reviews)
 
   useEffect(() => {
     dispatch(getProducts(category))

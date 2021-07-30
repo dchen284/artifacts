@@ -29,7 +29,6 @@ const ProductDisplay = ({product, reviews}) => {
           <div className='productAbout productTitle'>{product.name}</div>
           <div className='productAbout'>{reviews.length ? reviews.reduce((acc, review) => {
             count++;
-            console.log(acc)
             acc += review.rating;
             return acc / count
           }, 0) : <span style={{'fontSize' : '14px'}}>No reviews yet</span>}
