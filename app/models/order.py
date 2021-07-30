@@ -23,5 +23,9 @@ class Order(db.Model):
     def to_dict(self):
         return {
         "id": self.id,
-        "userId": self.userId,
+        "userId": self.userId
         }
+
+    def to_dict_products(self):
+        orderId = self.order_product.orderId
+        productId = self.order_product.productId

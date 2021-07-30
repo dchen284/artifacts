@@ -13,10 +13,8 @@ const userOrders = orders => ({
 
 export const getUserOrders = (id) => async dispatch => {
     const res = await fetch(`/api/orders/user/${id}`);
-    console.log('BEFORE IF')
     if (res.ok) {
         const orders = await res.json();
-        console.log('ORDERS', orders)
         dispatch(userOrders(orders));
         return res;
     }
