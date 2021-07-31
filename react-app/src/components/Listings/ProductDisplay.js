@@ -20,6 +20,7 @@ const ProductDisplay = ({product, reviews}) => {
     return newPrice.join('')
   }
 
+  count = reviews.length;
 
   return (
     <Link to={`/products/${product.id}`}>
@@ -27,11 +28,14 @@ const ProductDisplay = ({product, reviews}) => {
         <img className='productDisplay__image'src={product.imgURL} alt={product.name}/>
         <div className='productDisplay__AboutContainer'>
           <div className='productAbout productTitle'>{product.name}</div>
-          <div className='productAbout'>{reviews.length ? reviews.reduce((acc, review) => {
+          <div className='productAbout'>{reviews.length ?
+          (reviews.reduce((acc, review) => acc += review.rating, 0)/count).toFixed(2)
+          : <span style={{'fontSize' : '14px'}}>No reviews yet</span>}
+          {/* <div className='productAbout'>{reviews.length ? reviews.reduce((acc, review) => {
             count++;
             acc += review.rating;
-            return Math.round(10*acc / count)/10
-          }, 0) : <span style={{'fontSize' : '14px'}}>No reviews yet</span>}
+            return acc / count
+          }, 0) : <span style={{'fontSize' : '14px'}}>No reviews yet</span>} */}
           {reviews.length > 0 && <i style={{'fontSize' : '12px', 'padding' : '0 1px'}}className="fas fa-star"></i>}
           {reviews.length > 0 && <span style={{'fontSize' : '14px'}}>({count} reviews)</span>}</div>
           <div className='productAbout productPrice'>${calcPrice()}.00</div>
