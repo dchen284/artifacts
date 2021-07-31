@@ -62,7 +62,7 @@ const SignUpForm = ({setCurrentModal}) => {
         <button className={styles.registerBtn} onClick={() => setCurrentModal('login')}>Login</button>
       </div>
       <div>
-        {errors?.map(error => <div style={errorStyles}>{error}</div>)}
+        {errors?.map(error => <div key={error} style={errorStyles}>{error}</div>)}
       </div>
       <form className={styles.authForm} onSubmit={onSignUp}>
         <div>
