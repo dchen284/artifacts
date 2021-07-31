@@ -56,7 +56,7 @@ function UpdateReviewForm({ reviewId, openForm, review }) {
             </div>
             <br></br>
             <div className='review-box-edit'>
-                <textarea placeholder="Your Review" rows='10' cols='50' value={content} onChange={(e) => setContent(e.target.value)} required></textarea>
+                <textarea rows='10' cols='50' value={content} onChange={(e) => setContent(e.target.value)} required></textarea>
             </div>
             <button type='submit' className='submit-button-edit'>Submit</button>
             <button className='cancel-button-edit' onClick={openForm}>Cancel</button>
