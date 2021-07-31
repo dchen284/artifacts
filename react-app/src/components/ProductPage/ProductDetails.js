@@ -13,7 +13,7 @@ const ProductDetails = ({ product }) => {
   const history = useHistory();
   const reviewState = useSelector(state => state.reviews)
   const reviews = Object.values(reviewState);
-  console.log('+++++++++++=', reviews)
+
   const handleClick = () => {
     const item = {
       userId : user.id,
@@ -51,8 +51,7 @@ const ProductDetails = ({ product }) => {
     }
 
     const myRating = averageRating(ratings)
-    console.log('+++++++ratings', ratings)
-    console.log('+++++++myRating', myRating)
+
 
   return (
     <div className='productDetails__container'>
