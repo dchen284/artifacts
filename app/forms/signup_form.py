@@ -12,15 +12,6 @@ def user_exists(form, field):
         raise ValidationError("User is already registered.")
 
 
-# def repeat_password_matches(form, field):
-#     password = field.data
-#     repeat_password = field.data
-#     print('password', password)
-#     print('repeat_password', repeat_password)
-#     if not password == repeat_password:
-#         raise ValidationError("Password and repeat password do not match.")
-
-
 class SignUpForm(FlaskForm):
     username = StringField('username', validators=[DataRequired()])
     email = StringField('email',
