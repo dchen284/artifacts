@@ -53,9 +53,9 @@ const NavBar = () => {
           {user ?
           <>
             {/* <LogoutButton />  */}
-            <button className={styles.favoritesBtn}>
+            {/* <button className={styles.favoritesBtn}>
               <i className="far fa-heart fa-lg" />
-            </button>
+            </button> */}
             <ProfileButton user={user} setCurrentModal={setCurrentModal}/>
             <UploadListingModal setCurrentModal={setCurrentModal} isUpload={currentModal === 'upload'}/>
           </>
@@ -66,7 +66,6 @@ const NavBar = () => {
             <SignUpModal setCurrentModal={setCurrentModal} isSignup={currentModal === 'signup'}/>
           </>
           }
-
           <button onClick={checkForUser} className={styles.shoppingCart}>
             <i className="fas fa-shopping-cart fa-lg" />
             {user ? <div>:{cartItems.length}</div> : null}

@@ -30,7 +30,7 @@ const ProductDisplay = ({product, reviews}) => {
           <div className='productAbout'>{reviews.length ? reviews.reduce((acc, review) => {
             count++;
             acc += review.rating;
-            return acc / count
+            return Math.round(10*acc / count)/10
           }, 0) : <span style={{'fontSize' : '14px'}}>No reviews yet</span>}
           {reviews.length > 0 && <i style={{'fontSize' : '12px', 'padding' : '0 1px'}}className="fas fa-star"></i>}
           {reviews.length > 0 && <span style={{'fontSize' : '14px'}}>({count} reviews)</span>}</div>
