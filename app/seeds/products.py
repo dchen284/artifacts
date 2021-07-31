@@ -129,13 +129,13 @@ def seed_products():
     a6 = Product(quantity=10, price=2000, name='DaVinci Sketches', description='Original artwork from DaVinci himself, this drawing is one of his most famous works of art. Depicted here is a man with four arms and four legs. Why this many had so many limbs is still a mystery to this day. Don\'t ask how we got this.',
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/merlin_161422065_f398f3f3-76e6-431e-a781-69337e62c19e-superJumbo.jpg', userId=2, categoryId=2)
     a7 = Product(quantity=4, price=800000, name='Viking Ship', description='Row row row your boat.',
-            imgURL='https://lh3.googleusercontent.com/proxy/hEhYns-is2oUxrWu9aVUqha9LgAYSLhK-WFO4D78hDMQRjsyGVv6YU_p_MfCmbwNUfgb42YtsfrgX5ydYV7MSg', userId=5, categoryId=2)
+            imgURL='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Moragsoorm.jpg/300px-Moragsoorm.jpg', userId=5, categoryId=2)
     a8 = Product(quantity=1, price=5000000, name='Cleopatra\'s Crown', description='The crown of the last active ruler of the Ptolemaic Kingdom of Egypt.',
             imgURL='https://theloveforhistory.files.wordpress.com/2011/05/cleopatra.gif?w=242', userId=5, categoryId=2)
     a9 = Product(quantity=30, price=1000, name='Rumi\'s Handwritten Poetry', description='"Out beyond ideas of wrongdoing and rightdoing there is a field. I\'ll meet you there. When the soul lies down in that grass the world is too full to talk about."',
             imgURL='https://content.wdl.org/4074/thumbnail/1399476860/616x510.jpg', userId=5, categoryId=2)
     a10 = Product(quantity=2, price=20000, name='Frey Pie', description='Made special by Arya Stark. I wouldn\'t eat it if I were you.',
-            imgURL='https://static.wikia.nocookie.net/gameofthrones/images/8/88/Frey_pie_ep10_s6.jpg/revision/latest?cb=20160702034429', userId=5, categoryId=2)
+            imgURL='https://i.imgur.com/wIclK5d.jpg', userId=5, categoryId=2)
 
     # Modern
     m1 = Product(
@@ -196,12 +196,42 @@ def seed_products():
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/christian-louboutin-so-kate.jpg', userId=3, categoryId=4)
     f6 = Product(quantity=200, price=600, name='Laser Sword', description='Why shoot when you can stab, featuring the Laser Sword that can cut through anything! Fully rectractable so you can take it on the go with you. Comes with two default settings \'Light\' and \'Dark\'.',
             imgURL='https://artifactsimages.s3.us-east-2.amazonaws.com/Lightsaber%2C_silver_hilt%2C_blue_blade.png', userId=3, categoryId=4)
+    f7 = Product(
+        name='Fish of the Future!',
+        quantity=100, price=30000, userId=2, categoryId=4,
+        imgURL='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Foceana.org%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Flightbox_full%2Fpublic%2Fcoelacanth.jpg%3Fitok%3DHTe_gtF9&f=1&nofb=1',
+        description=('Wonder what amazing aquatic animals will exist in the '
+                     'future?  Wonder no more!  Order futuristic fish from '
+                     'Artifacts, and wow your peers with never-before-seen '
+                     'specimens!  Burnish your image as a true connoisseur '
+                     'of the cutting-edge of ichthyology!'),
+    )
+    f8 = Product(
+        name='Neo Balenciaga Petals Dress',
+        quantity=200, price=1000, userId=2, categoryId=4,
+        imgURL='https://n-e-r-v-o-u-s.com/projects/i.php?/001/042/Petals-Dress-triptych,medium_large.1456767704.jpg',
+        description=('The future of fashion, today!  This gorgeous dress '
+                     'is composed of high-tech "petals" that swirl around '
+                     'the wearer as she moves!  Be the envy of the crowd '
+                     'with this fusion of fashion and technology!'),
+    )
+    f9 = Product(
+        name='100% Organic Snacks of the Future!',
+        quantity=10000, price=100, userId=2, categoryId=4,
+        imgURL='https://allthatsinteresting.com/wordpress/wp-content/uploads/2015/03/future-food-edible-growth.jpg',
+        description=('The quest for the perfect snack is never-ending, so '
+                     'why not let Artifacts bring you the newest in snack '
+                     'technology?!  Cultivated with futuristic organic '
+                     'farming principles, these delectible orbs combine '
+                     'flavor and nutrition.  Buy in bulk, this superfood '
+                     'will be your newest guilty pleasure!'),
+    )
 
     products = [
         p1, p2, p3, p4, p5, p6, p7, p8, p9,
         a1, a2, a3, a4, a5, a6, a7, a8, a9, a10,
         m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12,
-        f1, f2, f3, f4, f5, f6
+        f1, f2, f3, f4, f5, f6, f7, f8, f9,
     ]
     for product in products:
         db.session.add(product)
