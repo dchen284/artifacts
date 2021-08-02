@@ -25,7 +25,3 @@ class Order(db.Model):
         "id": self.id,
         "userId": self.userId
         }
-
-    def to_dict_products(self):
-        orderId = self.order_product.orderId
-        productId = self.order_product.productId

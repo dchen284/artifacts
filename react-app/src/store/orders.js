@@ -38,9 +38,9 @@ const orderReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_ORDERS:
             newState = {};
-            action.orders.forEach((order) => {
-                newState[order.id] = order;
-            });
+            for (const key in action.orders) {
+                newState[key] = action.orders[key];
+            }
             return newState;
         case RETRIEVE_ORDER:
             newState = { ...state };
