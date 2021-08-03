@@ -69,6 +69,9 @@ function App() {
         <Route path="/search/:searchTerm">
           <SearchResults />
         </Route>
+        <Route>
+          <h1>This page does not exist across all of time (404).</h1>
+        </Route>
       </Switch>
     </BrowserRouter>
     </div>
