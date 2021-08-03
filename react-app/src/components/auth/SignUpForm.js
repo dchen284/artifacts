@@ -20,13 +20,19 @@ const SignUpForm = ({setCurrentModal}) => {
   const onSignUp = async (e) => {
     e.preventDefault();
 
-    if (password !== repeatPassword) setErrors(['Passwords do not match'])
+    // if (password !== repeatPassword) setErrors(['Passwords do not match'])
 
-    if (password === repeatPassword) {
-      await dispatch(signUp(username, email, password));
-      // TODO: add errors for signup form
-      setCurrentModal('');
-    }
+    // if (password === repeatPassword) {
+      // await dispatch(signUp(username, email, password));
+      // // TODO: add errors for signup form
+      // setCurrentModal('');
+      const data = await dispatch(signUp(username, email, password, repeatPassword));
+      if (data.errors) {
+        setErrors(data.errors);
+      } else {
+        setCurrentModal('')
+      }
+    // }
   };
 
   const updateUsername = (e) => {
@@ -55,7 +61,9 @@ const SignUpForm = ({setCurrentModal}) => {
         <h1>Register</h1>
         <button className={styles.registerBtn} onClick={() => setCurrentModal('login')}>Login</button>
       </div>
-      {errors?.map(error => <strong style={errorStyles}>{error}</strong>)}
+      <div>
+        {errors?.map(error => <div key={error} style={errorStyles}>{error}</div>)}
+      </div>
       <form className={styles.authForm} onSubmit={onSignUp}>
         <div>
           <label>User Name</label>

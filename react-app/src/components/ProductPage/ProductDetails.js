@@ -52,6 +52,7 @@ const ProductDetails = ({ product }) => {
 
     const myRating = averageRating(ratings)
 
+
   return (
     <div className='productDetails__container'>
       <div className='productDetails__header'>{product.name}</div>

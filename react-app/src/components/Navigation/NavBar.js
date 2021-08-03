@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignUpModal from '../auth/SignUpModal';
 import UploadListingModal from '../UploadListing/UploadListingModal'
@@ -9,14 +9,24 @@ import ProfileButton from './ProfileButton'
 import SearchBar from './SearchBar';
 import styles from '../../css-modules/NavBar.module.css'
 import logo from '../../images/logo2.png'
+import { getCartItems } from '../../store/shopping_cart';
 
 const NavBar = () => {
 
   const [currentModal , setCurrentModal] = useState('');
   const [authMsg, setAuthMsg] = useState('');
 
+  const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector(state => state.session.user);
+  const shopping_cart = useSelector(state => state.shopping_cart);
+  const cartItems = Object.values(shopping_cart);
+
+  useEffect(() => {
+    if (user) {
+      dispatch(getCartItems(user.id))
+    }
+  }, [dispatch, user])
 
   const checkForUser = e => {
     if(user){
@@ -43,9 +53,9 @@ const NavBar = () => {
           {user ?
           <>
             {/* <LogoutButton />  */}
-            <button className={styles.favoritesBtn}>
+            {/* <button className={styles.favoritesBtn}>
               <i className="far fa-heart fa-lg" />
-            </button>
+            </button> */}
             <ProfileButton user={user} setCurrentModal={setCurrentModal}/>
             <UploadListingModal setCurrentModal={setCurrentModal} isUpload={currentModal === 'upload'}/>
           </>
@@ -56,9 +66,9 @@ const NavBar = () => {
             <SignUpModal setCurrentModal={setCurrentModal} isSignup={currentModal === 'signup'}/>
           </>
           }
-
           <button onClick={checkForUser} className={styles.shoppingCart}>
             <i className="fas fa-shopping-cart fa-lg" />
+            {user ? <div>:{cartItems.length}</div> : null}
           </button>
         </li>
 

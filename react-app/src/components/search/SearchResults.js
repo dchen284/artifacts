@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ProductDisplay from "../Listings/ProductDisplay";
+import { getReviews } from "../../store/reviews";
 // import ListingFilters from "../Listings/ListingFilters";
 
 const SearchResults = () => {
+    const dispatch = useDispatch();
     const { searchTerm } = useParams();
     const [searchResults, setSearchResults] = useState([]);
+    const reviewsObj = useSelector(state => state.reviews);
+    const reviews = Object.values(reviewsObj);
 
     useEffect(() => {
         (async() => {
@@ -17,6 +22,10 @@ const SearchResults = () => {
             }
         })();
     }, [searchTerm]);
+
+    useEffect(()=>{
+        dispatch(getReviews());
+    }, [dispatch]);
 
     return (
         <>
@@ -38,9 +47,11 @@ const SearchResults = () => {
                 <>
                     {/* <ListingFilters /> */}
                     <div className='listingGrid__container'>
-                        {searchResults.map( result => (
-                            <ProductDisplay product={result} key={result.id}/>
-                        ))}
+                        {searchResults?.map( result => {
+                            const indReviews = reviews.filter(review => review.productId === result.id);
+                            return <ProductDisplay product={result} reviews={indReviews} key={result.id}/>
+                            }
+                        )}
 
                     </div>
                 </>
