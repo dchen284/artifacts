@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { removeListing } from "../../store/products";
 import { Modal } from "../../context/Modal";
@@ -15,6 +15,9 @@ const UserListings = ({ product }) => {
   const history = useHistory()
   const [showModal, setShowModal] = useState(false);
   const [EoD, setEoD] = useState('');
+  const { session } = useSelector(state => state)
+  const user = session.user;
+
 
   const remove = () => {
     dispatch(removeListing(product.id))
@@ -45,14 +48,22 @@ const UserListings = ({ product }) => {
         <div>Total Listings: {product.quantity}</div>
         <div>About <br/>{product.description}</div>
         <div>Price: ${product.price}</div>
-        <button onClick={editButton}>Edit Product Info</button>
-        <button onClick={deleteButton}>Remove Product</button>
-        {showModal && (
-          <Modal onClose={() => setShowModal(false)}>
-            {EoD === 'delete' && <UserProductDelete remove={remove} productName={product.name}/>}
-            {EoD === 'edit' && <UserProductEdit setShowModal={setShowModal} product={product} history={history} dispatch={dispatch}/>}
-          </Modal>
-        )}
+        {
+          product.userId === user.id ?
+          <>
+            <button onClick={editButton}>Edit Product Info</button>
+            <button onClick={deleteButton}>Remove Product</button>
+            {showModal && (
+              <Modal onClose={() => setShowModal(false)}>
+                {EoD === 'delete' && <UserProductDelete remove={remove} productName={product.name}/>}
+                {EoD === 'edit' && <UserProductEdit setShowModal={setShowModal} product={product} history={history} dispatch={dispatch}/>}
+              </Modal>
+            )}
+          </>
+          :
+          null
+        }
+
       </div>
     </div>
   )

@@ -22,14 +22,23 @@ function UserPage() {
     dispatch(getUserOrders(user.id));
   }, [dispatch, user.id]);
 
-
-  let allProducts = []
+  let allProducts = {} //starting with object to remove duplicate values
   userOrders.map(order => {
     for (let i = 0; i < order.length; i++) {
-      allProducts.push(order[i])
-    }
+        allProducts[order[i].id] = order[i];
+    } // if there are duplicate products, the same key is overwritten
+    return null;
   })
-  console.log(allProducts)
+  allProducts = Object.values(allProducts); //convert object to array for JSX
+
+  // let allProducts = []
+  // userOrders.map(order => {
+  //   for (let i = 0; i < order.length; i++) {
+  //     allProducts.push(order[i])
+  //   }
+  //   return null;
+  // })
+  // console.log(allProducts)
 
   // useEffect(() => {
   //   if (!userId) {

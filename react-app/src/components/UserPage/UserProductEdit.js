@@ -48,7 +48,7 @@ const UserProductEdit = ({ product, history, setShowModal }) => {
       <label>Price</label>
       <input required type='number' value={editPrice} onChange={e => setEditPrice(e.target.value)}></input>
       <label>Image</label>
-      <label id={'editForm__filelabel'} for='edit-upload-image' className={styles.fileUploadLabel}>
+      <label id={'editForm__filelabel'} htmlFor='edit-upload-image' className={styles.fileUploadLabel}>
         <p>Choose file</p>
         <input id='edit-upload-image' className={styles.hiddenInput} type="file" accept="image/*" onChange={e => setEditImage(e.target.files[0])}/>
       </label>
