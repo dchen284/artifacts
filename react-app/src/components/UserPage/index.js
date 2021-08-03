@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import UserListings from "./UserListings";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserProducts } from "../../store/products";
+import { getUserOrders } from "../../store/orders";
 import "./index.css"
 
 function UserPage() {
@@ -10,15 +11,25 @@ function UserPage() {
   // Notice we use useParams here instead of getting the params
   // From props.
   // const { userId }  = useParams();
-  const { session, products } = useSelector(state => state)
+  const { session, products, orders } = useSelector(state => state)
   const dispatch = useDispatch()
   const user = session.user;
   const userProducts = Object.values(products);
-  // console.log('userProducts', userProducts)
+  const userOrders = Object.values(orders);
 
   useEffect(() => {
-    dispatch(getUserProducts(user.id))
+    dispatch(getUserProducts(user.id));
+    dispatch(getUserOrders(user.id));
   }, [dispatch, user.id]);
+
+
+  let allProducts = []
+  userOrders.map(order => {
+    for (let i = 0; i < order.length; i++) {
+      allProducts.push(order[i])
+    }
+  })
+  console.log(allProducts)
 
   // useEffect(() => {
   //   if (!userId) {
@@ -51,7 +62,7 @@ function UserPage() {
       <br/>
       <h2 className='userPage__header'>Here's What You Bought!</h2>
       <div className='userPage__container'>
-        {userProducts?.reverse().map(product => <UserListings key={product.id} product={product}/>)}
+        {allProducts?.reverse().map(product => <UserListings key={product.id} product={product}/>)}
       </div>
     </>
   );
