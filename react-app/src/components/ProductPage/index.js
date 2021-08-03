@@ -18,15 +18,15 @@ const ProductPage = () => {
         setIsLoaded(true);
       })
       .catch((e)=>{
-        setIsLoaded(true);
-      })
+        setIsLoaded(true); //if there is an error from finding a non-existent product,
+      }) // set isLoaded to true, to indicate the fetch was attempted
   }, [dispatch, productId]);
 
   if (!isLoaded) {
     return null;
   }
 
-  if (isLoaded && !product) {
+  if (isLoaded && !product) { //fetching a non-existent product happened
     return <h1>This product does not exist across all of time (404).</h1>
   }
 
