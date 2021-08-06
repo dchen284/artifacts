@@ -64,15 +64,15 @@ export default function UploadListing({ setCurrentModal }) {
             <h1>UPLOAD</h1>
                 <label className={styles.inputLabel}>
                     Product Name
-                    <input className={styles.listingInput} type="text" onChange={e => setName(e.target.value)}/>
+                    <input required className={styles.listingInput} type="text" onChange={e => setName(e.target.value)}/>
                 </label>
                 <label className={styles.inputLabel}>
                     Quantity
-                    <input className={styles.listingInput} type="number" min="1" onChange={e => setQuantity(e.target.value)}/>
+                    <input required className={styles.listingInput} type="number" min="1" onChange={e => setQuantity(e.target.value)}/>
                 </label>
                 <label className={styles.inputLabel}>
                     Price
-                    <input className={styles.listingInput} type="number" min="1" onChange={e => setPrice(e.target.value)}/>
+                    <input required className={styles.listingInput} type="number" min="1" onChange={e => setPrice(e.target.value)}/>
                 </label>
                 <label className={styles.inputLabel}>
                     <textarea className={styles.listingDescription} placeholder='Add a description (optional)' onChange={e => setDescription(e.target.value)}/>

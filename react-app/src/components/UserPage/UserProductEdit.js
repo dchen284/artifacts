@@ -53,7 +53,7 @@ const UserProductEdit = ({ product, history, setShowModal }) => {
         <input id='edit-upload-image' className={styles.hiddenInput} type="file" accept="image/*" onChange={e => setEditImage(e.target.files[0])}/>
       </label>
       <label>Description</label>
-      <textarea required value={editDescription} onChange={e => setEditDescription(e.target.value)}></textarea>
+      <textarea value={editDescription} onChange={e => setEditDescription(e.target.value)}></textarea>
       <button type="submit">Confirm Changes</button>
       <button onClick={() => setShowModal(false)}>Abandon Changes</button>
     </form>
