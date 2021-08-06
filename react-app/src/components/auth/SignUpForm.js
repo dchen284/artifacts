@@ -102,7 +102,7 @@ const SignUpForm = ({setCurrentModal}) => {
             name="repeat_password"
             onChange={updateRepeatPassword}
             value={repeatPassword}
-            required={true}
+            // required={true}
             className={styles.authInput}
           ></input>
         </div>

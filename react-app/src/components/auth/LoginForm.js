@@ -50,7 +50,7 @@ const LoginForm = ({ setCurrentModal, auth }) => {
       <form className={styles.authForm} onSubmit={onLogin}>
         <div>
           {errors.map((error) => (
-            <div>{error}</div>
+            <div key={error} className={styles.authMsg}>{error}</div>
           ))}
         </div>
         <div>
